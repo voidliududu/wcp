@@ -1,0 +1,27 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: liududu
+ * Date: 17-3-30
+ * Time: 下午12:54
+ */
+define('DBCONFIG',array(
+    'host' => '127.0.0.1',
+    'username' => 'root',
+    'password' => 'liu19980526',
+    'database' => 'wcp',
+    'charset' => 'utf8',
+    'prefix' => '',
+    'persistent' => false,
+    'debug'=>true
+));
+define('PSW','root');
+define('WEBROOT','localhost');
+define('UPLOAD_DIR',WEBROOT.'/Resourse/uploadimg/');
+define('UPDYPES',array(
+    'img' =>array(
+        'image/jpg',
+        'image/jpeg',
+        'image/png'
+    ),
+));
