@@ -27,7 +27,13 @@ class Resource
     }
     public function delete($id)
     {
-        $flag = $this->con->Update('resource',array('isdelete' => 1))->Where('Resid = ?',$id)->AffectedRows();
+        $m = $this->con->Select('resource',array('path'))->Where('resid = ?',$id)->FetchRow();
+        $filePath = FILE_ROOT.$m['path'];
+        if(file_exists($filePath)){
+            unlink($filePath);
+        }
+        $flag = $this->con->Update('resource',array('isdelete' => 1))->Where('resid = ?',$id)->AffectedRows();
+
         if($flag == 1){
             return true;
         }else{
@@ -39,7 +45,7 @@ class Resource
             $res = $this->con->Select('resource')->Where('isdelete = 0')->Limit($num)->FetchAll();
         }else {
             $f = $id + $num;
-            $res = $this->con->Select('resource')->Where('Resid >= ? and Resid < ? and isdelete = 0', array($id,$f))->FetchAll();
+            $res = $this->con->Select('resource')->Where('resid >= ? and resid < ? and isdelete = 0', array($id,$f))->FetchAll();
         }
         if(!empty($res)){
             return $res;

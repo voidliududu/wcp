@@ -42,7 +42,7 @@ class Department
             return false;
         }
     }
-    public function get($id){
+    public function get($id,$num){
         $res = $this->con->Select('deptinfo')->Where('iid = ? and isdelete = 0',$id);
         if(!empty($res)){
             return $res;

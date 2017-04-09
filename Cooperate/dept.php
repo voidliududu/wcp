@@ -14,8 +14,7 @@ $_POST['updept'] = '升华网';*/
 /*$_POST['content'] = '这是微电影工作站的介绍';
 $_POST['author'] = 'void';
 $_POST['from'] = '升华网';*/
-
-require_once 'functions.php';
+require_once '../include.php';
 check_login();
 if(!isset($_GET['m'])){
     //header();
@@ -61,11 +60,32 @@ switch ($_GET['m']){
         break;
     //TODO 记得返回数据
     case 4:
-        $id = $_GET['id'] or fail();
-        $studio = Studio::getInstance();
-        echo $studio->get($id);
+        if(isset($_GET['id'])) {
+            $id = $_GET['id'];
+            if (!isset($_GET['num'])) {
+                echo json_encode(getInfo($id));
+            } else {
+                $num = $_GET['num'];
+                echo json_encode(getInfo($id,$num));
+            }
+        }else{
+            echo json_encode(getInfo());
+        }
         break;
     default:
-        $studio = Store::getInstance();
+        $studio = Studio::getInstance();
         echo $studio->get();
+}
+function getInfo($id=null,$num=1){
+    $dept = Studio::getInstance();
+    $res = Resource::getInstance();
+    $infoarr = $dept->get($id,$num);
+    foreach ($infoarr as &$info){
+        $flag = $info['brand'];
+        if($flag){
+            $r = $res->get($flag);
+            $info['brand'] = $r[0]['path'];
+        }
+    }
+    return $infoarr;
 }

@@ -18,8 +18,8 @@ define('DBCONFIG',array(
 define('PSW','root');
 define('WEBROOT','localhost');
 define('UPLOAD_DIR',array(
-    'img' => dirname($_SERVER['PHP_SELF']).'/Resource/uploadimg/'
-
+    //'img' => dirname($_SERVER['PHP_SELF']).'/Resource/uploadimg/'
+    'img' => '/wcp/Resource/uploadimg/'
 ));
 define('UPTYPES',array(
     'img' =>array(
