@@ -2,6 +2,10 @@
 
     WEBROOT 为网站根目录
     中括号中的内容为可变值
+
+
+
+
     分类管理：
         查询分类：
             接口：http://WEBROOT/Cooperate/category.php?m=4&id=[i]&num=[n]
@@ -23,3 +27,35 @@
                     $_FILE[img]    分类图片
             说明：[i]为要更改的分类id
             返回值：json
+                 {"state":[n]}
+                 [n] =        0     执行成功
+                         100001     文件太大
+                         100002     文件类型非法
+                         100003     存在同名文件
+                         100004     移动文件出错
+        添加分类：
+            接口：http://WEBROOT/Cooprate/category.php?m=1
+                post数据：
+                    $_POST[name]   分类名
+                    $_POST[info]   分类信息
+                    $_FILE[img]    分类图片
+            返回值：json
+                {"state":[n]}
+                 [n] =        0     执行成功
+                         100001     文件太大
+                         100002     文件类型非法
+                         100003     存在同名文件
+                         100004     移动文件出错
+        删除分类：
+            接口：http://WEBROOT/Cooprate/category.php?m=3&id=[i]
+            说明：[i]为要删除的分类id
+            返回值：json
+                {"state":0}      执行成功
+
+    工作室管理：
+        查询工作室
+
+
+
+
+

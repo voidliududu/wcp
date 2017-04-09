@@ -15,7 +15,6 @@ $_POST['updept'] = '升华网';*/
 $_POST['author'] = 'void';
 $_POST['from'] = '升华网';*/
 
-require_once 'functions.php';
 check_login();
 if(!isset($_GET['m'])){
     //header();

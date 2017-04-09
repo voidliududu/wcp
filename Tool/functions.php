@@ -24,7 +24,8 @@ function check_token()
 }
 function fail()
 {
-    header('Location: '.WEBROOT.'/admin.php');
+   /* echo __LINE__;
+    header('Location: '.WEBROOT.'/admin.php');*/
 }
 function file_upload($name,$type){
     if(isset($_FILES[$name])){
@@ -40,11 +41,11 @@ function file_upload($name,$type){
         $pinfo = pathinfo($file['name']);
         $ftype = $pinfo['extension'];
         $destination = UPLOAD_DIR['img'].sha1(time()*time()).'.'.$ftype;
-        echo FILE_ROOT.$destination;
         if(file_exists($destination)) {
             die(json_encode(array('state' => 100003)));  //die('同名文件已存在');
         }
-        if(!move_uploaded_file($filename,FILE_ROOT.$destination)){
+        echo FILE_ROOT.$destination;
+        if(!move_uploaded_file($filename,FILE_ROOT.$destination)) {
             die(json_encode(array('state' => 100004)));  //die('移动文件出错');
         }else {
             $arr = array(
@@ -67,7 +68,7 @@ function getCateInfo()
 
     isset($_POST['name'])?($name = $_POST['name']):fail();
     isset($_POST['info'])?($cateinfo = $_POST['info']):fail();
-    $cateimg = file_upload('img','img');
+    $cateimg = (int)file_upload('img','img');
     $time = time();
     return array(
         'catename'    =>   $name,
