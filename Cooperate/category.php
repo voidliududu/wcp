@@ -25,7 +25,6 @@ switch ($_GET['m']){
         break;
     case 2:
         $info = getCateInfo();
-        var_dump($info);
         $id = $_GET['id'] or fail();
         $cate =Cate::getInstance();
         $inf = $cate->get($id);
@@ -46,7 +45,6 @@ switch ($_GET['m']){
         break;
         //TODO 记得返回数据
     case 4:
-        $cate = Cate::getInstance();
         if(isset($_GET['id'])) {
             $id = $_GET['id'];
             if (!isset($_GET['num'])) {

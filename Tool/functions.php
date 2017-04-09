@@ -44,7 +44,6 @@ function file_upload($name,$type){
         if(file_exists($destination)) {
             die(json_encode(array('state' => 100003)));  //die('同名文件已存在');
         }
-        echo FILE_ROOT.$destination;
         if(!move_uploaded_file($filename,FILE_ROOT.$destination)) {
             die(json_encode(array('state' => 100004)));  //die('移动文件出错');
         }else {
