@@ -18,10 +18,10 @@ define('DBCONFIG',array(
 define('PSW','root');
 define('WEBROOT','localhost');
 define('UPLOAD_DIR',array(
-    'img' => WEBROOT.'/Resource/uploadimg/'
+    'img' => dirname($_SERVER['PHP_SELF']).'/Resource/uploadimg/'
 
 ));
-define('UPDYPES',array(
+define('UPTYPES',array(
     'img' =>array(
         'image/jpg',
         'image/jpeg',
@@ -29,3 +29,4 @@ define('UPDYPES',array(
     ),
 ));
 define('MAX_FILE_SIZE',1000000);
+define('FILE_ROOT','/var/www/html');

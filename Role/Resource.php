@@ -23,11 +23,11 @@ class Resource
     }
     public function add(array $array)
     {
-        return $this->con->Insert('Resource',$array)->LastId();
+        return $this->con->Insert('resource',$array)->LastId();
     }
     public function delete($id)
     {
-        $flag = $this->con->Update('Resource',array('isdelete' => 1))->Where('Resid = ?',$id)->AffectedRows();
+        $flag = $this->con->Update('resource',array('isdelete' => 1))->Where('Resid = ?',$id)->AffectedRows();
         if($flag == 1){
             return true;
         }else{
@@ -36,10 +36,10 @@ class Resource
     }
     public function get($id = null,$num = 1){
         if(!$id){
-            $res = $this->con->Select('Resource')->Where('isdelete = 0')->Limit($num)->FetchAll();
+            $res = $this->con->Select('resource')->Where('isdelete = 0')->Limit($num)->FetchAll();
         }else {
             $f = $id + $num;
-            $res = $this->con->Select('Resource')->Where('Resid >= ? and Resid < ? and isdelete = 0', array($id,$f))->FetchAll();
+            $res = $this->con->Select('resource')->Where('Resid >= ? and Resid < ? and isdelete = 0', array($id,$f))->FetchAll();
         }
         if(!empty($res)){
             return $res;

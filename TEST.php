@@ -13,11 +13,13 @@
  *
  *
  * */
+include_once './Role/Resource.php';
 include_once './Environment/Config.php';
 include_once './Tool/functions.php';
 include_once './Tool/PDOHelper.class.php';
 include_once './Role/Cate.php';
 include_once './Cooperate/category.php';
+include_once './Role/Cate.php';
 //cate info
 /*$_POST['name'] ='微影音' ;
 $_POST['info'] = '这是微影音的介绍';

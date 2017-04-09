@@ -21,3 +21,5 @@
                     $_POST[name]   分类名
                     $_POST[info]   分类信息
                     $_FILE[img]    分类图片
+            说明：[i]为要更改的分类id
+            返回值：json

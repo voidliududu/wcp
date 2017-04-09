@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="wcp@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="wcp">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mpb"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="SH.O.A."/>
+    <schema id="8" parent="1" name="survey"/>
+    <schema id="9" parent="1" name="test"/>
+    <table id="10" parent="2" name="category"/>
+    <table id="11" parent="2" name="department"/>
+    <table id="12" parent="2" name="deptinfo"/>
+    <table id="13" parent="2" name="product"/>
+    <table id="14" parent="2" name="productinfo"/>
+    <table id="15" parent="2" name="resource"/>
+    <column id="16" parent="10" name="cateid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="17" parent="10" name="catename">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="10" name="cateinfo">
+      <Position>3</Position>
+      <DataType>mediumtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="10" name="cateimg">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="20" parent="10" name="isdelete">
+      <Position>5</Position>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="21" parent="10" name="clickcount">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="22" parent="10" name="time">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="23" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cateid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="11" name="deptid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="11" name="deptname">
+      <Position>2</Position>
+      <Comment>部门名称</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="11" name="brand">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="11" name="updept">
+      <Position>4</Position>
+      <Comment>所属部门</Comment>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="28" parent="11" name="rank">
+      <Position>5</Position>
+      <Comment>排行</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="29" parent="11" name="contribution">
+      <Position>6</Position>
+      <Comment>贡献数</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="30" parent="11" name="time">
+      <Position>7</Position>
+      <Comment>创建时间</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="11" name="infoid">
+      <Position>8</Position>
+      <Comment>详细介绍id</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="32" parent="11" name="isdelete">
+      <Position>9</Position>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="33" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>deptid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="12" name="iid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="12" name="content">
+      <Position>2</Position>
+      <Comment>介绍信息</Comment>
+      <DataType>mediumtext|0</DataType>
+    </column>
+    <column id="36" parent="12" name="author">
+      <Position>3</Position>
+      <Comment>作者</Comment>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="37" parent="12" name="fromwhere">
+      <Position>4</Position>
+      <Comment>来源</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="38" parent="12" name="time">
+      <Position>5</Position>
+      <Comment>修改日期</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="39" parent="12" name="clickcount">
+      <Position>6</Position>
+      <Comment>访问量</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="40" parent="12" name="isdelete">
+      <Position>7</Position>
+      <Comment>是否删除</Comment>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="41" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>iid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="42" parent="13" name="pid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="13" name="pname">
+      <Position>2</Position>
+      <Comment>名称</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="13" name="pcate">
+      <Position>3</Position>
+      <Comment>分类id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="13" name="pfrom">
+      <Position>4</Position>
+      <Comment>来源工作室id</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="46" parent="13" name="pinfo">
+      <Position>5</Position>
+      <Comment>产品介绍id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="13" name="isdelete">
+      <Position>6</Position>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="48" parent="13" name="time">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="49" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>pid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="14" name="iid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="14" name="content">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="14" name="author">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="14" name="clickcount">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="54" parent="14" name="isdelete">
+      <Position>5</Position>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="55" parent="14" name="time">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="56" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>iid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="57" parent="15" name="resid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="58" parent="15" name="path">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="15" name="size">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="15" name="type">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="15" name="isdelete">
+      <Position>5</Position>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="62" parent="15" name="time">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="63" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>resid</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

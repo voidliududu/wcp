@@ -1,0 +1,227 @@
+@font-face {
+    font-family: cartoon;
+    src:url('font/cartoon.ttf');
+}
+
+body{
+    text-align:center;
+    margin: 0 auto;
+    padding:0;
+    overflow-x: hidden;
+    /*background-image: url("img/1.jpg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
+    /*-webkit-filter: blur(15px);*/
+    /*-moz-filter: blur(15px);*/
+    /*-o-filter: blur(15px);*/
+    /*-ms-filter: blur(15px);*/
+    /*filter: blur(15px);*/
+}
+#whole{
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    width: 1366px;
+}
+#container{
+    background-image: url('img/0.jpg');
+    /*margin: 0 auto;*/
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    /*line-height: 600px;*/
+    /*float: left;*/
+    position: fixed;
+    z-index: 0;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    -webkit-filter: blur(15px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+}
+#header{
+    width: 100%;
+    /*height: 120px;*/
+    /*top: 520px;*/
+    z-index: 9;
+    position: absolute;
+    text-align: center;
+
+    /*background-color: black;*/
+}
+#head{
+    top: 0;
+    /*position: absolute;*/
+    height: 100px;
+    width: 1300px;
+    display: inline-block;
+    /*background-color: yellow;*/
+}
+#head ul{
+    padding:0;
+
+}
+#head ul li{
+    font-family: cartoon;
+
+    cursor:pointer;
+    color: white;
+    font-size: 26px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 25px;
+
+    padding:0;
+    /*float: left;*/
+    display: inline-block;
+    list-style: none;
+}
+/*a{*/
+    /*text-decoration:none;*/
+/*}*/
+#body{
+    left: 80px;
+    position: absolute;
+    padding: 0;
+    top: 130px;
+    height: 400px;
+}
+#bLeft{
+    position: absolute;
+    float: left;
+    height: 400px;
+    width: 120px;
+    cursor:pointer;
+    /*background-color: green;*/
+}
+#central{
+    position: absolute;
+    left: 120px;
+    float: left;
+    height: 400px;
+}
+.le{
+    border: 10px solid white;
+    width: 580px;
+    height: 380px;
+    position: absolute;
+    float: left;
+    /*background-color: blue;*/
+}
+#ri{
+    position: absolute;
+    left: 600px;;
+    float: left;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    -webkit-filter: blur(15px);
+       -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+
+    -khtml-opacity: 0.85;
+    filter:alpha(Opacity=85);
+    -moz-opacity:0.85;
+    opacity: 0.85;
+}
+.text{
+    font-family: cartoon;
+    font-size: 17px;
+    height: 350px;
+    width: 260px;
+    position:absolute;
+    left: 620px;
+    top: 25px;
+    word-wrap:break-word ;
+    /*background-color: white;*/
+    border-radius: 5px;
+}
+#bRight{
+    left: 1020px;
+    position: absolute;
+    float: left;
+
+    /*background-color: grey;*/
+    height:400px;
+    width: 120px;
+    cursor:pointer;
+}
+.Iright{
+    -moz-transform:scaleX(-1);
+    -webkit-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+    /*IE*/
+    filter:FlipH;
+}
+
+#bLeft,#bRight{
+    -khtml-opacity: 0.8;
+    filter:alpha(Opacity=80);
+    -moz-opacity:0.8;
+    opacity: 0.8;
+}
+#footer{
+    width: 100%;
+    height: 120px;
+    top: 600px;
+    z-index: 9;
+    position: absolute;
+    text-align: center;
+    background-color: black;
+}
+#foot{
+    /*background-color: whitesmoke;*/
+    position: absolute;
+    margin:0 auto;
+    height: 120px;
+    width: 1366px;
+    overflow: hidden;
+}
+#foot ul{
+    /*background-color: yellow;*/
+    left: 80px;
+    height: 120px;
+    width: 1366px;
+    margin: 0 auto;
+    position: absolute;
+    padding:0;
+    /*margin-top:5px;*/
+}
+#foot ul li{
+    /*background-color: red;*/
+    list-style: none;
+    width: 150px;
+    height: 120px;
+    float: left;
+    margin-left: 45px;
+    margin-right: 45px;
+}
+.img{
+    margin-top: 20px;
+    width: 130px;
+    height: 80px;
+    -khtml-opacity: 0.7;
+    filter:alpha(Opacity=70);
+    -moz-opacity:0.7;
+    opacity: 0.7;
+    display: inline-block;
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+}
+.active{
+    -webkit-filter: blur(0);
+    -moz-filter: blur(0);
+    -o-filter: blur(0);
+    -ms-filter: blur(0);
+    filter: blur(0);
+}

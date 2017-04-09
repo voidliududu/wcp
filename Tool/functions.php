@@ -27,29 +27,31 @@ function fail()
     header('Location: '.WEBROOT.'/admin.php');
 }
 function file_upload($name,$type){
-    if(isset($HTTP_POST_FILES[$name])){
-        $file = &$HTTP_POST_FILES[$name];
+    if(isset($_FILES[$name])){
+        $file = &$_FILES[$name];
         if(MAX_FILE_SIZE < $file['size']){
-            die('文件太大');
+            die(json_encode(array('state' => 100001)));       //文件太大
         }
         if(!in_array($file['type'],UPTYPES[$type])){
-            die('文件类型非法');
+            die(json_encode(array('state' => 100002)));  //文件类型非法
         }
         $filename = $file['tmp_name'];
         $filesize = getimagesize($filename);
         $pinfo = pathinfo($file['name']);
         $ftype = $pinfo['extension'];
-        $destination = UPLOAD_DIR['img'].sha1(time()*time()).$ftype;
+        $destination = UPLOAD_DIR['img'].sha1(time()*time()).'.'.$ftype;
+        echo FILE_ROOT.$destination;
         if(file_exists($destination)) {
-            die('同名文件已存在');
+            die(json_encode(array('state' => 100003)));  //die('同名文件已存在');
         }
-        if(!move_uploaded_file($filename,$destination)){
-            die('移动文件出错');
+        if(!move_uploaded_file($filename,FILE_ROOT.$destination)){
+            die(json_encode(array('state' => 100004)));  //die('移动文件出错');
         }else {
             $arr = array(
                 'path' => $destination,
                 'size' => $filesize,
                 'type' => $ftype,
+                'isdelete' => 0,
                 'time' => time()
             );
             $res = Resource::getInstance();
@@ -59,6 +61,7 @@ function file_upload($name,$type){
         return null;
     }
 }
+
 function getCateInfo()
 {
 

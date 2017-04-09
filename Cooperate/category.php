@@ -8,8 +8,8 @@
 /*
  * 通过测试
  * */
-/*$_GET['m'] = 4;
-$_GET['id'] = 7;*/
+$_GET['m'] = 4;
+$_GET['id'] = 7;
 //require_once '../Tool/functions.php';
 check_login();
 if(!isset($_GET['m'])){
@@ -26,6 +26,7 @@ switch ($_GET['m']){
         $id = $_GET['id'] or fail();
         $cate =Cate::getInstance();
         $cate->change($id,$info) or fail();
+        echo json_encode(array('state' => 0));
         break;
     case 3:
         $id = $_GET['id'] or fail();
@@ -38,16 +39,28 @@ switch ($_GET['m']){
         if(isset($_GET['id'])) {
             $id = $_GET['id'];
             if (!isset($_GET['num'])) {
-                echo json_encode($cate->get($id));
+                echo json_encode(getInfo($id));
             } else {
                 $num = $_GET['num'];
-                echo json_encode($cate->get($id, $num));
+                echo json_encode(getInfo($id,$num));
             }
         }else{
-            echo json_encode($cate->get());
+            echo json_encode(getInfo());
         }
         break;
     default:
-        $cate = Cate::getInstance();
-        var_dump($cate->get());
+        echo json_encode(getInfo(1,10));
+}
+function getInfo($id=null,$num=1){
+    $cate = Cate::getInstance();
+    $res = Resource::getInstance();
+    $infoarr = $cate->get($id,$num);
+    foreach ($infoarr as &$info){
+       $flag = $info['cateimg'];
+       if($flag){
+           $r = $res->get($flag);
+           $info['cateimg'] = $r[0]['path'];
+       }
+    }
+    return $infoarr;
 }
