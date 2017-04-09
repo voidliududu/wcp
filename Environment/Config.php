@@ -17,7 +17,10 @@ define('DBCONFIG',array(
 ));
 define('PSW','root');
 define('WEBROOT','localhost');
-define('UPLOAD_DIR',WEBROOT.'/Resourse/uploadimg/');
+define('UPLOAD_DIR',array(
+    'img' => WEBROOT.'/Resource/uploadimg/'
+
+));
 define('UPDYPES',array(
     'img' =>array(
         'image/jpg',
@@ -25,3 +28,4 @@ define('UPDYPES',array(
         'image/png'
     ),
 ));
+define('MAX_FILE_SIZE',1000000);

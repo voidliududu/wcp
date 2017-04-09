@@ -8,8 +8,8 @@
 /*
  * 通过测试
  * */
-$_GET['m'] = 4;
-$_GET['id'] = 7;
+/*$_GET['m'] = 4;
+$_GET['id'] = 7;*/
 //require_once '../Tool/functions.php';
 check_login();
 if(!isset($_GET['m'])){

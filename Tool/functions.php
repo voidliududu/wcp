@@ -26,24 +26,45 @@ function fail()
 {
     header('Location: '.WEBROOT.'/admin.php');
 }
-function getCateInfo()
-{
-    if(isset($HTTP_POST_FILES['img'])){
-        $file = &$HTTP_POST_FILES['img'];
+function file_upload($name,$type){
+    if(isset($HTTP_POST_FILES[$name])){
+        $file = &$HTTP_POST_FILES[$name];
         if(MAX_FILE_SIZE < $file['size']){
             die('文件太大');
         }
-        if(!in_array($file['type'],UPTYPES['img'])){
+        if(!in_array($file['type'],UPTYPES[$type])){
             die('文件类型非法');
         }
         $filename = $file['tmp_name'];
         $filesize = getimagesize($filename);
         $pinfo = pathinfo($file['name']);
         $ftype = $pinfo['extension'];
+        $destination = UPLOAD_DIR['img'].sha1(time()*time()).$ftype;
+        if(file_exists($destination)) {
+            die('同名文件已存在');
+        }
+        if(!move_uploaded_file($filename,$destination)){
+            die('移动文件出错');
+        }else {
+            $arr = array(
+                'path' => $destination,
+                'size' => $filesize,
+                'type' => $ftype,
+                'time' => time()
+            );
+            $res = Resource::getInstance();
+            return $res->add($arr);
+        }
+    }else{
+        return null;
     }
+}
+function getCateInfo()
+{
+
     isset($_POST['name'])?($name = $_POST['name']):fail();
     isset($_POST['info'])?($cateinfo = $_POST['info']):fail();
-    isset($_POST['img'])?($cateimg = $_POST['img']):fail();
+    $cateimg = file_upload('img','img');
     $time = time();
     return array(
         'catename'    =>   $name,
@@ -104,5 +125,4 @@ function getProInfo()
         'img'      =>    $img,
         'time'     =>    $time
     );
-
 }
