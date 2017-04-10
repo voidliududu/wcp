@@ -42,7 +42,7 @@ class Studio
     {
         if ($id != NULL) {
             $f = $id + $num;
-            $res = $this->con->Select('department')->Where('deptid >= ? and dept < ? and isdelete = 0', array($id,$f))->FetchAll();
+            $res = $this->con->Select('department')->Where('deptid >= ? and deptid < ? and isdelete = 0', array($id,$f))->FetchAll();
         } else {
             $res = $this->con->Select('department')->FetchAll();
         }

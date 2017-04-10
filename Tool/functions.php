@@ -79,8 +79,9 @@ function getCateInfo()
 function getDepartment()
 {
     isset($_POST['name'])?($deptname = $_POST['name']):fail();
-    isset($_POST['brand'])?($brand = $_POST['brand']):fail();
+    //isset($_POST['brand'])?($brand = $_POST['brand']):fail();
     isset($_POST['updept'])?($updept = $_POST['updept']):$updept = null;
+    $brand = (int)file_upload('brand','img');
     $time = time();
     return array(
         'deptname'    =>    $deptname,

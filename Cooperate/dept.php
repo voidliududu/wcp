@@ -41,7 +41,12 @@ switch ($_GET['m']){
                 $info = getDepartment();
                 $id = $_GET['id'] or fail();
                 $department =Studio::getInstance();
+                $inf = $department->get($id);
+                $imgid = $inf[0]['brand'];
+                $res = Resource::getInstance();
+                $res->delete($imgid);
                 $department->change($id,$info);
+                echo json_encode(array('state' => 0));
                 break;
             case 2:                                //更改部门介绍
                 $info = getDeptInfo();
