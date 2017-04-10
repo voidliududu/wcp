@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>微产品工作室管理后台</title>
+    <link href="adminCSS.css" rel="stylesheet" media="screen">
+    <!--<link href="bootstrap.min.css" rel="stylesheet" type="text/css">-->
+    <!--<script src="jquery-1.11.3.min.js"></script>-->
+    <script type="text/javascript" rel="script" src="jquery-1.10.1.js"></script>
+    <script type="text/javascript" rel="script" src="jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="adminJS.js"></script>
+
+
+</head>
+<body style="min-width: 1280px;font-family: 'Microsoft YaHei',sans-serif;">
+<div class="container" style="width: 100%;padding: 0">
+
+    <!--标头-->
+    <header class="head-bar" style="">
+        <img class="logo" src="profile.png" style="width: 60px;height: 60px" />
+    </header>
+
+    <!--下方内容-->
+    <div class="flex-container">
+
+        <!--左边功能栏-->
+        <section class="left">
+            <div id = "title">
+                <span><img class="img-admin" src="" /></span>
+                <span class="title-admin">管理</span>
+            </div>
+
+            <!--左方导航-->
+            <nav class="navbar ">
+
+                <div class="container-fluid">
+
+                        <ul class="navbar-nav">
+
+                            <!--工作室管理-->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="studio-manage" onclick="function drop(){}">工作室管理</a>
+                                <ul class="dropdown-menu" id="studio-dropmenu-ul">
+                                    <li><a href="#">添加</a> </li>
+                                    <li><a href="#">删除</a> </li>
+                                    <li><a href="#">更改</a> </li>
+                                </ul>
+                            </li>
+
+                            <!--分类管理-->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="cate-manage">分类管理</a>
+                                <ul class="dropdown-menu" id="cate-dropmenu-ul">
+                                    <li><a href="#">添加分类</a> </li>
+                                    <li><a href="#">删除分类</a> </li>
+                                    <li><a href="#">更改分类</a> </li>
+                                </ul>
+                            </li>
+
+                            <!--产品管理-->
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="product-manage">产品管理</a>
+                                <ul class="dropdown-menu" id="product-dropmenu-ul">
+                                    <li><a href="#">添加</a> </li>
+                                    <li><a href="#">删除</a> </li>
+                                    <li><a href="#">更改</a> </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
+                </div>
+
+
+
+            </nav>
+
+
+
+        </section>
+
+        <!--右边内容栏-->
+        <section class="right">
+
+            <!--工作室管理-->
+            <section id="admin-studio"  style="" class="manage-section">
+                <!--工作室标头-->
+                <div class="admin-head-bar">
+                    <span class="admin-title-icon"><img src=""></span>
+                    <span class="admin-title">工作室</span>
+                    <span class="add"><img src=""></span>
+                </div>
+                <!--工作室列表-->
+                <div class="studio-list manage-list" style="">
+                    <table class="studio-list-table">
+                        <tr><td>中南大学新媒体工作室</td></tr>
+                        <tr><td>“土木青年人”工作站</td></tr>
+                        <tr><td>“管公子”——漫画站</td></tr>
+                        <tr><td>“同徽”软件站Lab-ease</td></tr>
+                        <tr><td>“Weef”软件站</td></tr>
+                        <tr><td>“Beatbox”微平台</td></tr>
+                        <tr><td>“小鲸鱼”软件站</td></tr>
+                        <tr><td>“M-ART”艺术站</td></tr>
+                        <tr><td>“云麓谷”新媒体工作室</td></tr>
+                        <tr><td>“智宸”工作站</td></tr>
+                        <tr><td>“开拓”工作站</td></tr>
+                        <tr><td>“季录”工作站</td></tr>
+                        <tr><td>研究生创新园</td></tr>
+                        <tr><td>“萱传化语”工作站</td></tr>
+                    </table>
+                </div>
+                <!--工作室信息-->
+                <div class="studio-info manage-info" style="display: none">
+                    <table class="studio-info-body">
+                        <img src="http://wcp.csu.edu.cn//upload/images/20141222/61591419193567401.jpg" class = "present-pic"/>
+                        <tr><td>工作室名：</td></tr>
+                        <tr><td>所属部门：</td></tr>
+                        <tr><td>工作室介绍：</td></tr>
+                        <tr><td>创建时间：</td></tr>
+                        <tr><td>贡献产品：</td></tr>
+                        <tr><td>排行：</td></tr>
+                        <tr><td>点击数：</td></tr>
+
+                    </table>
+                </div>
+            </section>
+
+            <!--分类管理-->
+            <section id="admin-product-cate" class="manage-section" style="display: none">
+                <!--分类管理标头-->
+                <div class="admin-head-bar">
+                    <span class="admin-title-icon"></span>
+                    <span class="admin-title">分类</span>
+                    <span class="add"></span>
+                </div>
+                <!--分类列表-->
+                <!--点击某一具体分类转至该分类的产品列表-->
+                <div class="product-cate-list manage-list">
+                    <table class="product-cate-list-table">
+                        <tr><td>微电影</td></tr>
+                        <tr><td>App</td></tr>
+                        <tr><td>微漫画</td></tr>
+                        <tr><td>音乐MV</td></tr>
+                        <tr><td>微杂志</td></tr>
+                        <tr><td>微活动</td></tr>
+                    </table>
+                </div>
+
+            </section>
+
+            <!--产品管理-->
+            <section id="admin-product" class="manage-section" style="display: none">
+                <!--产品管理标头-->
+                <div class="admin-head-bar">
+                    <span class="admin-title-icon"></span>
+                    <span class="admin-title">产品</span>
+                    <span class="add"></span>
+                </div>
+                <!--产品列表-->
+                <div class="product-list manage-list">
+                    <table class="product-list">
+                        <tr><td>啦啦啦啦啦啦</td></tr>
+                        <tr><td>啦啦啦啦啦啦</td></tr>
+                        <tr><td>啦啦啦啦啦啦</td></tr>
+                        <tr><td>啦啦啦啦啦啦</td></tr>
+                        <tr><td>啦啦啦啦啦啦</td></tr>
+                        <tr><td>啦啦啦啦啦啦</td></tr>
+                        <tr><td>啦啦啦啦啦啦</td></tr>
+                        <tr><td>啦啦啦啦啦啦</td></tr>
+                    </table>
+                </div>
+                <!--产品信息-->
+                <div class="product-info manage-info">
+                    <table class="product-info-body">
+                        <img src="http://wcp.csu.edu.cn//upload/images/20141222/61591419193567401.jpg" class = "studio-present-pic" style="float: right;height: 280px;width:360px ;margin-right: 20px"/>
+                        <tr><td>产品：</td></tr>
+                        <tr><td>产品介绍：</td></tr>
+                        <tr><td>来源：</td></tr>
+                        <tr><td>所属分类：</td></tr>
+                        <tr><td>创建时间：</td></tr>
+                        <tr><td>点击量：</td></tr>
+                    </table>
+                </div>
+            </section>
+
+        </section>
+
+    </div  >
+
+</div>
+</body>
+</html>
+

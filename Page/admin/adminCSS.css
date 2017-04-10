@@ -1,0 +1,95 @@
+/*标头*/
+.head-bar{
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0 10px 10px;
+    margin-bottom: 20px;
+}
+
+/*左方功能栏*/
+.left{
+    width: 220px;
+    float: left;
+    /*margin-right: 20px;*/
+    background-color: #d9d9d9;
+    padding: 10px;
+    font-size: 30px;
+}
+/*左边导航栏*/
+.navbar{
+    width: 220px;
+    height: 600px;
+}
+.navbar-nav{
+    margin-top: 25px;
+}
+/*.dropdown-menu{*/
+    /*visibility: 0;*/
+    /*transition: visibility 0.5s;*/
+/*}*/
+/*.dropdown-menu:hover{*/
+    /*visibility: 1;*/
+/*}*/
+/*主菜单*/
+.dropdown{
+    line-height: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    list-style: disc;
+}
+.dropdown a{
+    color: #000;
+    text-decoration: underline;
+}
+/*下拉菜单*/
+.dropdown-menu li{
+    list-style: none;
+    margin: 5px;
+    margin-left: 0;
+}
+.dropdown-menu a{
+    color: #000;
+    text-decoration: none;
+}
+
+/*右方内容栏*/
+.right{
+   padding: 10px;
+    margin-left: 300px;
+    background-color: #d9d9d9;
+}
+
+/*管理大块*/
+.manage-section{
+
+}
+/*管理标头*/
+.admin-head-bar{
+
+}
+/*管理列表*/
+.manage-list{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.manage-list tr{
+    line-height: 40px;
+    font-size: 30px;
+
+}
+/*管理信息*/
+.manage-info{
+    padding: 30px;
+}
+
+.manage-info table tr{
+    line-height: 50px;
+}
+/*各代表图片*/
+.present-pic{
+    float: right;
+    height: 280px;
+    width:360px ;
+    margin-right: 20px;
+}
