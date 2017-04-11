@@ -27,7 +27,7 @@ function fail()
    /* echo __LINE__;
     header('Location: '.WEBROOT.'/admin.php');*/
 }
-function file_upload($name,$type){
+function file_upload(string $name,string $type){
     if(isset($_FILES[$name])){
         $file = &$_FILES[$name];
         if(MAX_FILE_SIZE < $file['size']){

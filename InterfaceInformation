@@ -2,7 +2,8 @@
 
     WEBROOT 为网站根目录
     中括号中的内容为可变值
-
+    注意：访问接口时尽量使用绝对路径
+         部分接口尚未列出，待我慢慢完善
 
 
 
@@ -11,7 +12,7 @@
             接口：http://WEBROOT/Cooperate/category.php?m=4&id=[i]&num=[n]
             说明：[i]为分类id，可选值，缺省则获得所有分类
                  [n]为要查询的个数，依赖于id，从id为[i]的位置向后返回n个分类，可选值，默认取一条
-            返回值：json
+            返回值：json数组/false
                 [{"cateid":7,   分类id
                 "catename":"\u5fae\u5f71\u97f3",    分类名
                 "cateinfo":"\u8fd9\u662f\u5fae\u5f71\u97f3\u7684\u4fee\u6539\u4ecb\u7ecd",  分类介绍
@@ -57,7 +58,7 @@
             接口：http://WEBROOT/Cooprate/dept.php?m=4&id=[i]&num=[n]
             说明：[i]为工作室id，可选值，缺省则获得所有工作室
                  [n]为要查询的个数，依赖于id，从id为[i]的位置向后返回n个工作室，可选值，默认取一条
-            返回值：json
+            返回值：json数组/false
                 [{"deptid":5,       工作室id
                 "deptname":"\u5fae\u7535\u5f71\u5de5\u4f5c\u7ad9",   工作室名
                 "brand":"\/wcp\/Resource\/uploadimg\/9416bccb6e5dbae1dcf98b41df703d5980e64d28.jpg",   工作室标志图片
@@ -90,6 +91,16 @@
                         $_POST['from']       来源
                  [i]   部门或部门介绍id
             返回值：json
+                 {"state":[n]}
+                    [n] =        0     执行成功
+                            100001     文件太大
+                            100002     文件类型非法
+                            100003     存在同名文件
+                            100004     移动文件出错
+        添加工作室
+            接口：http://WEBROOT/Cooprate/dept.php?m=1
+            说明：post数据：
+
 
 
 
