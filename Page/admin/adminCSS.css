@@ -5,16 +5,36 @@
     color: #fff;
     padding: 10px 0 10px 10px;
     margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+}
+.admin-title,.title-admin{
+    font-size: 24px;
+}
+.left,.right{
+    height: 680px;
 }
 
 /*左方功能栏*/
 .left{
-    width: 220px;
+    width: 250px;
     float: left;
     /*margin-right: 20px;*/
-    background-color: #d9d9d9;
+    background-color: #fff0b9;
     padding: 10px;
-    font-size: 30px;
+    position: fixed;
+    top: 120px;
+    left: -220px;
+    transition: left 0.2s;
+
+}
+.left:hover{
+    left: 0;
+}
+.left-arrow{
+    font-size: 50px;
+    color: #d9d9d9;
+    cursor: pointer;
 }
 /*左边导航栏*/
 .navbar{
@@ -24,40 +44,50 @@
 .navbar-nav{
     margin-top: 25px;
 }
-/*.dropdown-menu{*/
-    /*visibility: 0;*/
-    /*transition: visibility 0.5s;*/
-/*}*/
-/*.dropdown-menu:hover{*/
-    /*visibility: 1;*/
-/*}*/
 /*主菜单*/
-.dropdown{
+.dropdown-li{
     line-height: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
     list-style: disc;
 }
-.dropdown a{
+.dropdown-li a{
     color: #000;
-    text-decoration: underline;
+    text-decoration: none;
+    font-size: 20px;
 }
 /*下拉菜单*/
-.dropdown-menu li{
+.dropdown-menu-ul li{
     list-style: none;
     margin: 5px;
     margin-left: 0;
 }
-.dropdown-menu a{
+.dropdown-menu-ul a{
     color: #000;
     text-decoration: none;
+    font-size: 18px;
 }
+.dropdown-li a:hover{
+    text-decoration: none;
+    color: #000;
+}
+.dropdown-menu-ul a:hover{
+    text-decoration: none;
+    color: #000;
+}
+.click-right{
+    cursor: pointer;
+}
+
 
 /*右方内容栏*/
 .right{
    padding: 10px;
-    margin-left: 300px;
+    width: 1000px;
+    margin: 0 auto;
+    /*margin-left: 400px;*/
     background-color: #d9d9d9;
+    margin-top: 120px;
 }
 
 /*管理大块*/
@@ -70,21 +100,54 @@
 }
 /*管理列表*/
 .manage-list{
-    margin-top: 20px;
-    margin-left: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+    /*margin-left: 20px;*/
+    width: 98%;
+    background-color: #fff;
+    padding: 5px;
+    /*border: 5px solid #269abc;*/
+    /*box-sizing: border-box;*/
+
 }
 .manage-list tr{
     line-height: 40px;
     font-size: 30px;
 
 }
+.manage-list tr td{
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+.manage-list tr th{
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+}
+.manage-list tr th:last-child{
+    text-align: right;
+}
+.manage-list tr td:first-child{
+    width: 600px;
+    text-align: center;
+}
+.manage-list tr td{
+    width: 180px;
+    text-align: right;
+}
 /*管理信息*/
 .manage-info{
-    padding: 30px;
+    padding: 10px;
+    background-color: #fff;
+    height: 610px;
 }
 
 .manage-info table tr{
     line-height: 50px;
+}
+.manage-info{
+    font-size: 20px;
 }
 /*各代表图片*/
 .present-pic{
@@ -93,3 +156,102 @@
     width:360px ;
     margin-right: 20px;
 }
+/*添加*/
+.add{
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 610px;
+
+}
+.add-box{
+    margin: 0 auto;
+    width: 680px;
+}
+.add-text{
+    font-size: 16px;
+    margin: 15px 0 15px 0;
+}
+.add-input{
+    margin-left: 10px;
+    width: 600px;
+    padding: 5px;
+}
+.add-pic{
+    margin-left: 10px;
+    font-size: 20px;
+    color: #d9d9d9;
+    cursor: pointer;
+}
+.add-pic-tip{
+    margin-left: 10px;
+    font-size: 14px;
+    color: #c9c9c9;
+}
+.add-pic-pre{
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+    border: 1px solid #d9d9d9;
+    padding: 2px;
+    box-sizing: border-box;
+}
+.add-introd{
+    width: 680px;
+    height: 300px;
+    resize: none;
+    padding: 10px;
+}
+.add-choice{
+    width: 80px;
+    margin-left: 10px;
+}
+.add-choice option{
+    font-size: 14px;
+    margin: 2px;
+}
+.check-add{
+    float: right;
+    width: 80px;
+    padding: 5px 0 5px 0;
+    background-color: #d9d9d9;
+    color: #1b6d85;
+    border: none;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+}
+.check-add:hover{
+    background-color: #bbbbbb;
+    color: #fff;
+}
+.multi-choice{
+    visibility: hidden;
+}
+label{
+    margin-right: 5px;
+}
+.multi-choice + label{
+    background-color: white;
+    border-radius: 5px;
+    border:1px solid #d3d3d3;
+    width:20px;
+    height:20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+}
+.multi-choice:checked + label{
+    background-color: #eee;
+}
+.multi-choice:checked + label:after{
+    content:"\2714";
+}
+
+
+
