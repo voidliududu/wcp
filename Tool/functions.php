@@ -27,7 +27,7 @@ function fail()
    /* echo __LINE__;
     header('Location: '.WEBROOT.'/admin.php');*/
 }
-function file_upload($name,$type){
+function file_upload(string $name,string $type){
     if(isset($_FILES[$name])){
         $file = &$_FILES[$name];
         if(MAX_FILE_SIZE < $file['size']){
@@ -79,8 +79,9 @@ function getCateInfo()
 function getDepartment()
 {
     isset($_POST['name'])?($deptname = $_POST['name']):fail();
-    isset($_POST['brand'])?($brand = $_POST['brand']):fail();
+    //isset($_POST['brand'])?($brand = $_POST['brand']):fail();
     isset($_POST['updept'])?($updept = $_POST['updept']):$updept = null;
+    $brand = (int)file_upload('brand','img');
     $time = time();
     return array(
         'deptname'    =>    $deptname,

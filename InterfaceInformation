@@ -2,7 +2,8 @@
 
     WEBROOT 为网站根目录
     中括号中的内容为可变值
-
+    注意：访问接口时尽量使用绝对路径
+         部分接口尚未列出，待我慢慢完善
 
 
 
@@ -11,13 +12,13 @@
             接口：http://WEBROOT/Cooperate/category.php?m=4&id=[i]&num=[n]
             说明：[i]为分类id，可选值，缺省则获得所有分类
                  [n]为要查询的个数，依赖于id，从id为[i]的位置向后返回n个分类，可选值，默认取一条
-            返回值：json
+            返回值：json数组/false
                 [{"cateid":7,   分类id
                 "catename":"\u5fae\u5f71\u97f3",    分类名
                 "cateinfo":"\u8fd9\u662f\u5fae\u5f71\u97f3\u7684\u4fee\u6539\u4ecb\u7ecd",  分类介绍
                 "cateimg":"..\/www\/ww\/www",   分类图片连接
                 "isdelete":0,
-                "clickcount":0,     点击量
+                "clickcount":0,         点击量
                 "time":1491229798}]     创建时间戳
         更改分类：
             接口：http：//WEBROOT/Cooperate/category.php?m=2&id=[i]
@@ -57,6 +58,49 @@
             接口：http://WEBROOT/Cooprate/dept.php?m=4&id=[i]&num=[n]
             说明：[i]为工作室id，可选值，缺省则获得所有工作室
                  [n]为要查询的个数，依赖于id，从id为[i]的位置向后返回n个工作室，可选值，默认取一条
+            返回值：json数组/false
+                [{"deptid":5,       工作室id
+                "deptname":"\u5fae\u7535\u5f71\u5de5\u4f5c\u7ad9",   工作室名
+                "brand":"\/wcp\/Resource\/uploadimg\/9416bccb6e5dbae1dcf98b41df703d5980e64d28.jpg",   工作室标志图片
+                "updept":null,              所属部门
+                "rank":null,              排行
+                "contribution":null,       贡献
+                "time":1491274727,             创建时间
+                "infoid":5,                    详细信息id
+                "isdelete":0},                  是否已删除
+                {"deptid":6,
+                "deptname":"\u5fae\u7535\u5f71\u5de5\u4f5c\u7ad9",
+                "brand":null,
+                "updept":null,
+                "rank":null,
+                "contribution":null,
+                "time":1491274842,
+                "infoid":6,
+                "isdelete":0}]
+        更改工作室
+            接口：http://WEBROOT/Cooprate/dept,php?m=2&n=[n]&id=[i]
+            说明：[n]=1  更改部门信息
+                    post数据：
+                        $_POST['name']   工作室名
+                        $_FILE['brand']   标志图片
+                        $_POST['updept']   上级部门（可选）
+                 [n]=2  更改部门介绍
+                    post数据：
+                        $_POST['content']   内容
+                        $_POST['author']     作者
+                        $_POST['from']       来源
+                 [i]   部门或部门介绍id
+            返回值：json
+                 {"state":[n]}
+                    [n] =        0     执行成功
+                            100001     文件太大
+                            100002     文件类型非法
+                            100003     存在同名文件
+                            100004     移动文件出错
+        添加工作室
+            接口：http://WEBROOT/Cooprate/dept.php?m=1
+            说明：post数据：
+
 
 
 
