@@ -105,6 +105,7 @@ body{
     height: 400px;
 }
 .le{
+    overflow: hidden;
     border: 10px solid white;
     width: 580px;
     height: 380px;
