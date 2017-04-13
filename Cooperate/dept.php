@@ -27,6 +27,7 @@ switch ($_GET['m']){
         $deptinfo = getDeptInfo();
         $dept= Department::getInstance();
         $dept->add($id,$deptinfo) or fail();
+        echo json_encode(array('status' => 0));
         break;
     case 2:
         /*$info = getCateInfo();
@@ -75,6 +76,16 @@ switch ($_GET['m']){
             }
         }else{
             echo json_encode(getInfo());
+        }
+        break;
+    case 5:
+        if(isset($_GET['deptid'])){
+            $id = $_GET['deptid'];
+            $depart = Department::getInstance();
+            $info = $depart->get($id);
+            echo json_encode($info);
+        }else{
+            echo false;
         }
         break;
     default:

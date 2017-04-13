@@ -27,13 +27,13 @@ switch ($_GET['m']){
             fail();
         }
         switch ($_GET['n']){
-            case 1:                                //更改部门信息
+            case 1:                                //更改产品信息
                 $info = getProduct();
                 $id = $_GET['id'];
                 $store=Store::getInstance();
                 $store->change($id,$info);
                 break;
-            case 2:                                //更改部门介绍
+            case 2:                                //更改产品介绍
                 $info =getProInfo();
                 $id = $_GET['id'];
                 $product=Product::getInstance();

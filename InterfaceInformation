@@ -77,6 +77,24 @@
                 "time":1491274842,
                 "infoid":6,
                 "isdelete":0}]
+        查询工作室详细信息
+            接口：http://WEBROOT/Cooprate/dept.php?m=5&deptid=[i]
+            说明：[i]为部门信息id
+            返回值：json数组/false
+                [{"iid":1,                   信息id;
+                "content":"\u8fd9\u662f\u5bf9\u5fae\u7535\u5f71\u7684\u6574\u4f53\u4ecb\u7ecd\u8fd9\u662f\u5bf9\u5fae\u7535\u5f71\u7684\u6574    文章内容
+                \u4f53\u4ecb\u7ecd\u8fd9\u662f\u5bf9\u5fae\u7535\u5f71\u7684\u6574\u4f53\u4ecb\u7ecd\u8fd9\u662f\u5bf9\u5fae\u7535\u5f71\u7684
+                \u6574\u4f53\u4ecb\u7ecd\u8fd9\u662f\u5bf9\u5fae\u7535\u5f71\u7684\u6574\u4f53\u4ecb\u7ecd\u8fd9\u662f\u5bf9\u5fae\u7535\u5f71
+                \u7684\u6574\u4f53\u4ecb\u7ecd\u8fd9\u662f\u5bf9\u5fae\u7535\u5f71\u7684\u6574\u4f53\u4ecb\u7ecd\u8fd9\u662f\u5bf9\u5fae\u7535
+                \u5f71\u7684\u6574\u4f53\u4ecb\u8fd9\u662f\u5bf9\u5fae\u7535\u5f71\u7684\u6574\u4f53\u4ecb\u7ecd\u8fd9\u662f\u5bf9\u5fae\u7535
+                \u5f71\u7684\u6574\u4f53\u4ecb\u7ecd\u8fd9\u662f\u5bf9\u5fae\u7535\u5f71\u7684\u6574\u4f53\u4ecb\u7ecd\u8fd9\u662f\u5bf9\u5fae
+                \u7535\u5f71\u7684\u6574\u4f53\u4ecb\u7ecd\u8fd9\u662f\u5bf9\u5fae\u7535\u5f71\u7684\u6574\u4f53\u4ecb\u7ecd\u8fd9\u662f\u5bf9
+                \u5fae\u7535\u5f71\u7684\u6574\u4f53\u4ecb\u7ecd",
+                "author":"mr",                     作者
+                "fromwhere":null,                  来源
+                "time":3333,                        时间戳
+                "clickcount":null,                 点击量
+                "isdelete":0}]                      是否删除
         更改工作室
             接口：http://WEBROOT/Cooprate/dept,php?m=2&n=[n]&id=[i]
             说明：[n]=1  更改部门信息
@@ -100,6 +118,28 @@
         添加工作室
             接口：http://WEBROOT/Cooprate/dept.php?m=1
             说明：post数据：
+                    $_POST['name']   工作室名
+                    $_FILE['brand']   标志图片
+                    $_POST['updept']   上级部门（可选）
+                    $_POST['content']   介绍内容
+                    $_POST['author']    作者
+                    $_POST['from']     来源
+            返回值：json
+                {"state":[n]}
+                    [n] =        0     执行成功
+                            100001     文件太大
+                            100002     文件类型非法
+                            100003     存在同名文件
+                            100004     移动文件出错
+        删除工作室
+            接口：http://WEBROOT/Cooprate/dept.php?m=3&id=[i]
+            说明：[i]为要删除的工作室的id
+            返回值：json
+                {"state":0}        执行成功
+    产品管理：
+        查询产品：
+            分类查询：
+
 
 
 

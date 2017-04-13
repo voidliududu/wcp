@@ -42,8 +42,8 @@ class Department
             return false;
         }
     }
-    public function get($id,$num){
-        $res = $this->con->Select('deptinfo')->Where('iid = ? and isdelete = 0',$id);
+    public function get($id){
+        $res = $this->con->Select('deptinfo')->Where('iid = ? and isdelete = 0',$id)->FetchAll();
         if(!empty($res)){
             return $res;
         }else{
