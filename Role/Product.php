@@ -16,8 +16,8 @@ class Product
     }
     public static function getInstance()
     {
-        if(!(self::$_instance instanceof Studio)){
-            self::$_instance = new Studio();
+        if(!(self::$_instance instanceof product)){
+            self::$_instance = new product();
         }
         return self::$_instance;
     }
@@ -43,7 +43,7 @@ class Product
         }
     }
     public function get($id){
-        $res = $this->con->Select('productinfo')->Where('iid = ? and isdelete = 0',$id);
+        $res = $this->con->Select('productinfo')->Where('iid = ? and isdelete = 0',$id)->FetchRow();
         if(!empty($res)){
             return $res;
         }else{

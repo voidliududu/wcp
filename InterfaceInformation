@@ -139,7 +139,42 @@
     产品管理：
         查询产品：
             分类查询：
-
+                接口：http://WEBROOT/Cooprate/product.php?m=4&t=1&c=[id]&n=[num]
+                说明：[id]为分类的id
+                     [num]为所需的数量
+                返回值：json数组/false
+                    [{"pid":1,                    产品id
+                    "pname":"demo",              产品名
+                    "pcate":7,                   产品分类id
+                    "pfrom":6,                   产品来源id
+                    "pinfo":1,                   产品信息id
+                    "isdelete":0,                是否删除
+                    "time":1492275003,           创建时间
+                    "iid":1,                     产品信息id
+                    "content":"the introduction of the product",    内容
+                    "author":"a",                                  作者
+                    "clickcount":null},                            点击量
+                    {"pid":2,
+                    "pname":"ddd",
+                    "pcate":7,
+                    "pfrom":null,
+                    "pinfo":2,
+                    "isdelete":0,
+                    "time":444444444,
+                    "iid":2,
+                    "content":"syutwsewjhwrjsahtt",
+                    "author":"sehtwshhh",
+                    "clickcount":0}]
+            分工作室查询：
+                接口：http://WEBROOT/Cooprate/product.php?m=4&t=2&c=[id]&n=[num]
+                说明：[id]为工作室的id
+                     [num]为所需的数量
+                返回值：同上
+            按id查询：
+                 接口：http://WEBROOT/Cooprate/product.php?m=4&t=3&c=[id]&n=[num]
+                 说明：[id]为id
+                      [num]为所需的数量
+                 返回值：同上
 
 
 
