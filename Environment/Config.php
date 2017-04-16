@@ -27,6 +27,9 @@ define('UPTYPES',array(
         'image/jpeg',
         'image/png'
     ),
+    'vedio' =>array(
+        ''
+    )
 ));
 define('MAX_FILE_SIZE',1000000);
 define('FILE_ROOT','/var/www/html');

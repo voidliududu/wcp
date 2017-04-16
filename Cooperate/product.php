@@ -78,8 +78,7 @@ switch ($_GET['m']){
         break;
         //TODO 这里需要改
     default:
-        $Store= Store::getInstance();
-        echo $Store->get();
+        break;
 }
 function get($index,$id,$num=1)
 {
