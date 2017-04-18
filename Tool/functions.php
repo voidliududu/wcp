@@ -109,11 +109,13 @@ function getProduct()
     isset($_POST['name'])?($pname= $_POST['name']):fail();
     isset($_POST['cate'])?($pcate = $_POST['cate']):fail();
     isset($_POST['from'])?($pfrom= $_POST['from']):fail();
+    $pimg= (int)file_upload('img','img');
     $time = time();
     return array(
         'pname'    =>    $pname,
-        'pcate'    =>    $pname,
+        'pcate'    =>    $pcate,
         'pfrom'    =>    $pfrom,
+        'pimg'     =>    $pimg,
         'time'     =>    $time
     );
 }
@@ -121,12 +123,12 @@ function getProInfo()
 {
     isset($_POST['content'])?($content= $_POST['content']):fail();
     isset($_POST['author'])?($author= $_POST['author']):fail();
-    isset($_POST['img'])?($img= $_POST['img']):fail();
+    isset($_POST['res'])?($res= $_POST['res']):fail();
     $time = time();
     return array(
         'content'  =>    $content,
         'author'   =>    $author,
-        'img'      =>    $img,
+        'media'      =>    $res,
         'time'     =>    $time
     );
 }

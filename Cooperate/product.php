@@ -5,6 +5,7 @@
  * Date: 17-4-3
  * Time: 下午12:51
  */
+error_reporting(11);
 require_once '../include.php';
 //check_login();
 if(!isset($_GET['m'])){
@@ -18,6 +19,7 @@ switch ($_GET['m']){
         $proinfo = getProInfo();
         $product= Product::getInstance();
         $product->add($id,$proinfo) or fail();
+        echo json_encode(array('state' => 0));
         break;
     case 2:
         /*$info = getCateInfo();
@@ -32,13 +34,19 @@ switch ($_GET['m']){
                 $info = getProduct();
                 $id = $_GET['id'];
                 $store=Store::getInstance();
+                $temp = $store->getById($id);
+                $imgid = $temp[0]['pimg'];
+                $res = Resource::getInstance();
+                $res->delete($imgid);
                 $store->change($id,$info);
+                echo json_encode(array('state' => 0));
                 break;
             case 2:                                //更改产品介绍
                 $info =getProInfo();
                 $id = $_GET['id'];
                 $product=Product::getInstance();
                 $product->change($id,$info);
+                echo json_encode(array('state' => 0));
                 break;
             default:
                 fail();
@@ -46,7 +54,11 @@ switch ($_GET['m']){
         break;
     case 3:
         $id = $_GET['id'] or fail();
-        $product= Store::getInstance();
+        $product = Store::getInstance();
+        $temp = $product->getById($id);
+        $imgid = $temp[0]['pimg'];
+        $res = Resource::getInstance();
+        $res->delete($imgid);
         $product->delete($id) or fail();
         break;
     //TODO 记得返回数据
@@ -86,10 +98,16 @@ function get($index,$id,$num=1)
         case 'cate':
             $product = Store::getInstance();
             $info = Product::getInstance();
+            $res = Resource::getInstance();
             $pro = $product->getByCate($id,$num);
             if($pro){
-                foreach($pro as $proi => $proitem) {
+                foreach($pro as $proi => &$proitem) {
                     $infoid = $proitem['pinfo'];
+                    $imgid = $proitem['pimg'];
+                    if($imgid){
+                        $img = $res->get($imgid);
+                        $proitem['pimg'] = $img[0]['path'];
+                    }
                     $infoc = $info->get($infoid);
                     if ($infoc) {
                         $temp[] = array_merge($proitem, $infoc);
@@ -103,11 +121,15 @@ function get($index,$id,$num=1)
         case 'depart':
             $product = Store::getInstance();
             $info = Product::getInstance();
+            $res = Resource::getInstance();
             $pro = $product->getByDepart($id,$num);
             if($pro){
                 foreach($pro as $proi => $proitem) {
                     $infoid = $proitem['pinfo'];
+                    $imgid = $proitem['pimg'];
+                    $img = $res->get($imgid);
                     $infoc = $info->get($infoid);
+                    $proitem['pimg'] = $img[0]['path'];
                     if ($infoc) {
                         $temp[] = array_merge($proitem, $infoc);
                     }
@@ -120,11 +142,15 @@ function get($index,$id,$num=1)
         case 'id':
             $product = Store::getInstance();
             $info = Product::getInstance();
+            $res = Resource::getInstance();
             $pro = $product->getById($id,$num);
             if($pro){
                 foreach($pro as $proi => $proitem) {
                     $infoid = $proitem['pinfo'];
+                    $imgid = $proitem['pimg'];
+                    $img = $res->get($imgid);
                     $infoc = $info->get($infoid);
+                    $proitem['pimg'] = $img[0]['path'];
                     if ($infoc) {
                         $temp[] = array_merge($proitem, $infoc);
                     }

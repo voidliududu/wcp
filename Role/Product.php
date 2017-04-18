@@ -25,7 +25,7 @@ class Product
     {
         $id = $this->con->Insert('productinfo',$array)->LastId();
         $stu = Store::getInstance();
-        $flag = $stu->change($store,array('productinfo' => $id));
+        $flag = $stu->change($store,array('pinfo' => $id));
         return $flag;
     }
     public function change($id, array $array)

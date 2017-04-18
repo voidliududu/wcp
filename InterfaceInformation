@@ -148,11 +148,13 @@
                     "pcate":7,                   产品分类id
                     "pfrom":6,                   产品来源id
                     "pinfo":1,                   产品信息id
+                    "pimg":wwww/ww               产品图片链接
                     "isdelete":0,                是否删除
                     "time":1492275003,           创建时间
                     "iid":1,                     产品信息id
                     "content":"the introduction of the product",    内容
                     "author":"a",                                  作者
+                    "media":"www/dd"                                产品媒体链接（视频）
                     "clickcount":null},                            点击量
                     {"pid":2,
                     "pname":"ddd",
@@ -175,8 +177,51 @@
                  说明：[id]为id
                       [num]为所需的数量
                  返回值：同上
-
-
-
-
-
+        修改产品：
+            修改产品概览：
+                接口：http://WEBROOT/Cooprate/product.php?m=2&n=1&id=[i]
+                说明：[i]为要更改的产品id
+                    post数据：
+                        $_POST['name']            产品名
+                        $_POST['cate']            分类id
+                        $_POST['from']            来源工作室
+                        $_FILE['img']             图片
+                返回值：json
+                    {"state":[n]}
+                    [n] =        0     执行成功
+                            100001     文件太大
+                            100002     文件类型非法
+                            100003     存在同名文件
+                            100004     移动文件出错
+            修改产品信息：
+                接口：http://WEBROOT/Cooprate/product.php?m=2&n=2&id=[i]
+                说明：[i]为产品信息id
+                    post数据：
+                        $_POST['content']            产品介绍
+                        $_POST['author']             作者
+                        $_POST['res']                资源链接
+                返回值：json
+                    {"state":0}
+        删除产品：
+            接口：http://WEBROOT/Cooprate/product.php?m=3&id=[i]
+            说明：[i]为产品id
+            返回值：json
+                {"state":0}
+        添加产品：
+            接口：http://WEBROOT/Cooprate/product.php?m=1
+            说明：
+                post数据：
+                    $_POST['name']                 产品名
+                    $_POST['cate']                 产品分类id
+                    $_POST['from']                 来源id
+                    $_POST['content']              产品介绍
+                    $_POST['author']               作者
+                    $_POST['res']                  资源链接
+                    $_FILE['img']                  概览图片
+            返回值：json
+                {"state":[n]}
+                [n] =        0     执行成功
+                        100001     文件太大
+                        100002     文件类型非法
+                        100003     存在同名文件
+                        100004     移动文件出错

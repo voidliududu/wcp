@@ -54,6 +54,7 @@ switch ($_GET['m']){
                 $id = $_GET['id'] or fail();
                 $deptinfo = Department::getInstance();
                 $deptinfo->change($id,$info);
+                echo json_encode(array('state' => 0));
                 break;
             default:
                 fail();
