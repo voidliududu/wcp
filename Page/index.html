@@ -1,60 +1,54 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>star</title>
-    <link href="buju.css" rel="stylesheet" media="screen">
-    <script src="jquery-1.11.1.min.js"></script>
-    <script src="buju.js"></script>
-</head>
-<body>
-<div id="container"></div>
-<div id="header">
-    <div id="head">
-        <ul>
-            <li>中南LOGO</li>
-            <li>微工作室</li>
-            <li>微工作室</li>
-            <li>微工作室</li>
-            <li>微工作室</li>
-        </ul>
-    </div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html lang="zh-CN">
 
-<div id="whole">
-    <div id="body">
-        <div id="bLeft">
-            <div style="position: absolute;right: 20px;top: 120px" id="p"><img src="img/6.jpg"></div>
-        </div>
-        <div id="central" >
-            <div class="le" ><img src="img/0.jpg" style="height: 380px;width: 580px;"></div>
-            <div id="ri"></div>
-            <div class="text" style="display: block">To further explore the nature of language, we naturally come to the question of what language is for. This unit deepens our understanding of the basics of language by offering refreshing ideas about language functions, which pave the way for the investigation of language in use, language evolution, language acquisition, and other important issues in linguistics</div>
-            <div class="text" style="display: none">Hundreds of South Koreans who live near the future deployment site of the U.S. THAAD missile defense system staged a protest in Seoul Wednesday.数百名居住在美国萨德导弹防御系统计划部署地点附近的韩国民众周三在首尔举行抗议数百名居住在美国萨德导弹防御系统计划部署地点附近的韩国民众周三在首尔举行抗议数百名居住在美国萨德导弹防御系统计划部署地点附近的韩国民众周三在首尔举行抗议。</div>
-            <div class="text" style="display: none">Gimcheon Mayor Park Bo-saeng told the protesters that he has tried to dissuade provincial leaders and defense ministry officials from deploying the Terminal High Altitude Area Defense (THAAD) system near his city of 13,000 people, but his pleas fell on deaf ears.金泉市市长朴宝生对抗议者说，他试图说服省级官员和国防部官员，不要在他的城市附近部署末端高空防御体系统（THAAD，简称“萨德”），但没人理睬他的请求。金泉市有13000居民。</div>
-            <div class="text" style="display: none">Protests over the summer forced the South Korean government to move the planned THAAD location away from one area in Seongju County that was 1.5 kilometers from a population center.今年夏天爆发的抗议迫使韩国政府改变了原计划在星洲郡部署萨德的地点，那个地点距离星洲郡一处人口聚集区仅1.5公里之遥。</div>
-            <div class="text" style="display: none">The new site, selected in September, is the Lotte Skyhill Country Club golf course, which is in a more rural part of Seongju County, and eight kilometers away from the city of Gimcheon, in the southern end of the Korean Peninsula.9月选出了新的部署地点，位于在星洲郡远郊的乐天天山乡村俱乐部高尔夫球场。这个地点距离金泉市8公里，地处朝鲜半岛的最南端。</div>
-        </div>
-        <div id="bRight">
-            <div style="position: absolute;left: 20px;top: 120px" id="n"><img src="img/6.jpg" class="Iright"></div>
-        </div>
-    </div>
+<head>
+
+    <title>流星雨</title>
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <meta http-equiv="content-language" content="zh-CN">
+
+    <style type="text/css">
+
+        body {margin:0;padding:0;background-color:#000000;font-size:0;overflow:hidden}
+
+        div {margin:0;padding:0;position:absolute;font-size:0;overflow:hidden}
+
+        canvas{background-color:#000000;overflow:hidden}
+
+    </style>
+
+    <link href="css/index.css" rel="stylesheet" media="screen">
+
+</head>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.rotate.min.js"></script>
+
+<script src="js/indexCanvas.js"></script>
+<script src="js/index.js"></script>
+
+<body onload="start()" onresize="resize()" onorientationchange="resize()" onmousedown="context.fillStyle='rgba(0,0,0,'+opacity+')'" onmouseup="context.fillStyle='rgb(0,0,0)'">
+
+<canvas id="starfield" style="background-color:#000000"></canvas>
+
+<div id="adsense" style="position:absolute;background-color:transparent;display:none">
+
 </div>
-<div id="footer" >
-    <div id="foot">
-        <div id="PRE" style="cursor:pointer;float: left"><img src="img/6.jpg" style="width: 50px;height: 120px"></div>
-        <ul style="float: left" id="longPic">
-            <li><img src="img/0.jpg" class=" active img" style="width: 150px;height: 100px; margin-top: 10px;opacity: 1;"></li>
-            <li><img src="img/1.jpg" class="img"></li>
-            <li><img src="img/2.jpg" class="img"></li>
-            <li><img src="img/3.jpg" class="img"></li>
-            <li><img src="img/4.jpg" class="img"></li>
-        </ul>
-        <div id="NEX" style="cursor:pointer;float: right"><img src="img/6.jpg" style="width: 50px;height: 120px" class="Iright"></div>
-    </div>
+<div style="width:100%;position: absolute;z-index:99;height: 80px;top:30px;text-align: center">
+    <img id="title" src="img/title.png" style=";position:relative"/>
 </div>
+<div style="width:100%;position: absolute;z-index:99;top:110px;text-align: center">
+    <img class="product" src="img/moive.png">
+    <img class="product" src="img/app.png">
+    <br>
+    <img class="product" src="img/cartoon.png">
+    <img class="product" src="img/music.png">
+    <br>
+    <img class="product" src="img/magazine.png">
+    <img class="product" src="img/activity.png">
+</div>
+<img id="earth" src="img/earth.png" style="position: fixed;z-index:99;top:80%;width:100%"/>
 </body>
+
 </html>
