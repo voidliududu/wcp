@@ -1,0 +1,86 @@
+/*左边导航*/
+ul{
+    list-style: none;
+}
+li{
+    cursor: pointer;
+}
+.first-list{
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+.first-list li{
+    font-size: 24px;
+    margin-top: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.first-list li:first-child{
+    margin-top: 0;
+}
+
+.second-list li{
+    font-size: 20px;
+    margin-top: 8px;
+    border: none;
+}
+.third-list li{
+    font-size: 18px;
+    margin-top: 5px;
+    border: none;
+}
+li.active{
+    color: red;
+}
+
+/*中间部门*/
+table{
+    padding: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+.first-tr{
+    text-align: center;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    padding: 10px;
+    height: 40px;
+}
+.right table tr td,#operate{
+    width: 20%;
+    text-align: center;
+}
+.right table tr td:last-child{
+    text-align: left;
+    padding-left: 10px;
+}
+.right table tr td:nth-child(4){
+    text-align: right;
+    padding-right: 10px;
+
+}
+.right table tr{
+   padding: 5px;
+}
+.right table tr{
+    height: 40px;
+}
+.head-table tr td{
+    border: 1px solid #000;
+    border-left: none;
+    border-right: none;
+}
+.body-table{
+    border: 1px solid #000;
+    margin-top: 20px;
+}
+.body-table tr td:nth-child(4),.body-table tr td:nth-child(5){
+    cursor: pointer;
+}
+
+/*.right table tr td:nth-child(1),.right table tr td:nth-child(2),.right table tr td:nth-child(3){*/
+    /*cursor: auto;*/
+/*}*/
+
