@@ -7,5 +7,5 @@ body{
 .product{
     width:15%;
     margin:20px;
-
+    cursor: pointer;
 }
