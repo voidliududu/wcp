@@ -1,0 +1,229 @@
+a:hover{
+    text-decoration: none!important;
+}
+/*左边导航*/
+ul{
+    list-style: none;
+}
+li{
+    cursor: pointer;
+}
+.first-list{
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    /*height: 780px;*/
+}
+.first-list li{
+    font-size: 24px;
+    margin-top: 20px;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.first-list li:first-child{
+    margin-top: 0;
+}
+.second-list li{
+    font-size: 20px;
+    margin-top: 8px;
+    border: none;
+}
+.third-list li{
+    font-size: 18px;
+    margin-top: 5px;
+    border: none;
+}
+
+.left ul li a{
+    margin-left: 0;
+    color: #000;
+    transition: margin-left 0.4s,color 0.4s;
+}
+.left ul li a:hover{
+    margin-left: 20px;
+    color: #FF771B;
+}
+.left ul li a.active{
+    color: red;
+}
+.left ul li a.active:hover{
+    color: red;
+}
+
+
+/*管理信息*/
+.manage-info{
+    padding: 10px;
+    background-color: #fff;
+    height: 610px;
+}
+
+.manage-info table tr{
+    line-height: 50px;
+}
+.manage-info{
+    font-size: 20px;
+}
+/*各代表图片*/
+.present-pic{
+    float: right;
+    height: 280px;
+    width:360px ;
+    margin-right: 20px;
+}
+/*添加*/
+.add{
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    height: 610px;
+
+}
+.add-box{
+    margin: 0 auto;
+    width: 680px;
+}
+.add-text{
+    font-size: 16px;
+    margin: 15px 0 15px 0;
+}
+.add-input{
+    margin-left: 10px;
+    width: 600px;
+    padding: 5px;
+    color: #919191;
+}
+.add-pic{
+    margin-left: 10px;
+    font-size: 20px;
+    color: #d9d9d9;
+    cursor: pointer;
+}
+.add-pic-tip{
+    margin-left: 10px;
+    font-size: 14px;
+    color: #c9c9c9;
+}
+.add-pic-pre{
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+    border: 1px solid #d9d9d9;
+    padding: 2px;
+    box-sizing: border-box;
+}
+.add-introd{
+    width: 680px;
+    height: 300px;
+    resize: none;
+    padding: 10px;
+}
+.add-choice{
+    width: 80px;
+    margin-left: 10px;
+}
+.add-choice option{
+    font-size: 14px;
+    margin: 2px;
+}
+.check-add{
+    float: right;
+    width: 80px;
+    padding: 5px 0 5px 0;
+    background-color: #d9d9d9;
+    color: #1b6d85;
+    border: none;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+    display: none;
+}
+.check-add:hover{
+    background-color: #bbbbbb;
+    color: #fff;
+}
+.multi-choice{
+    visibility: hidden;
+}
+label{
+    margin-right: 5px;
+}
+.multi-choice + label{
+    background-color: white;
+    border-radius: 5px;
+    border:1px solid #d3d3d3;
+    width:20px;
+    height:20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+}
+.multi-choice:checked + label{
+    background-color: #eee;
+}
+.multi-choice:checked + label:after{
+    content:"\2714";
+}
+
+
+
+
+
+
+/*中间部门*/
+table{
+    padding: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+.head-table{
+    margin-top: 20px;
+}
+.first-tr{
+    text-align: center;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    padding: 10px;
+    height: 40px;
+}
+.right table tr td,#operate{
+    width: 20%;
+    text-align: center;
+}
+.right table tr td:last-child{
+    text-align: left;
+    padding-left: 10px;
+}
+.right table tr td:nth-child(4){
+    text-align: right;
+    padding-right: 10px;
+
+}
+.right table tr{
+   padding: 5px;
+}
+.right table tr{
+    height: 40px;
+}
+.head-table tr td{
+    border: 1px solid #000;
+    border-left: none;
+    border-right: none;
+}
+.body-table{
+    border: 1px solid #000;
+    margin-top: 20px;
+}
+.body-table tr td:nth-child(4),.body-table tr td:nth-child(5),.body-table tr td:nth-child(2){
+    cursor: pointer;
+}
+
+/*.right table tr td:nth-child(1),.right table tr td:nth-child(2),.right table tr td:nth-child(3){*/
+    /*cursor: auto;*/
+/*}*/
+

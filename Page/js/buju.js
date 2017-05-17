@@ -46,24 +46,25 @@ $(function () {
     });
     $('#n').click(function () {
         move('next');
-    })
+    });
 
 //----------------------------------------大翻页--------------------------------------------------------
     var p = 1;
     function ajax(obj, fun) {
         $(obj).click(function () {
-            // $(obj).attr('num',p);
-            // if (obj == '#NEX'){
-            //     p+=5 ;
-            // }else if(obj == '#PRE'){
-            //     p-=5;
-            // }
+            $(obj).attr('num',p);
+            if (obj == '#NEX'){
+                p+=5 ;
+            }else if(obj == '#PRE'){
+                p-=5;
+            }
             $.ajax({
                 type: 'GET',
                 url: 'http://localhost/wcp/Cooperate/category.php?t='+new Date().getTime(),
                 dataType: 'json',
+                async:false,
                 data: {
-                    // 'i': i,
+                    'i': i,
                     'm': 4,
                     'id': 7,
                     'num': 5
@@ -77,9 +78,11 @@ $(function () {
     }
     var sImg = $('.img');
     ajax('#PRE', function (response) {
+        alert(response[3].cateinfo);
         // alert('http://localhost'+response[0].cateimg);
-        pic = [];
+        // pic = [];
         pic = ['http://localhost'+response[0].cateimg,'http://localhost'+response[1].cateimg,'http://localhost'+response[2].cateimg,'http://localhost'+response[3].cateimg,'http://localhost'+response[4].cateimg]
+        // $('.le').html(pic);
         sImg.eq(0).attr('src', pic[0]);
         sImg.eq(1).attr('src', pic[1]);
         sImg.eq(2).attr('src', pic[2]);
@@ -89,7 +92,7 @@ $(function () {
         $('#container').css('backgroundImage','url('+pic[NOW]+')');
     });
     ajax('#NEX', function (response) {
-        pic = [];
+        // pic = [];
         pic = ['http://localhost'+response[0].cateimg,'http://localhost'+response[1].cateimg,'http://localhost'+response[2].cateimg,'http://localhost'+response[3].cateimg,'http://localhost'+response[4].cateimg]
         sImg.eq(0).attr('src','http://localhost'+response[0].cateimg);
         sImg.eq(1).attr('src','http://localhost'+response[1].cateimg);

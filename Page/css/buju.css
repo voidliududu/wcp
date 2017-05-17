@@ -24,7 +24,7 @@ body{
     width: 1366px;
 }
 #container{
-    background-image: url('img/0.jpg');
+    background-image: url("http://localhost/wcp/page/img/0.jpg");
     /*margin: 0 auto;*/
     height: 100%;
     width: 100%;
@@ -173,13 +173,13 @@ body{
     height: 120px;
     top: 600px;
     z-index: 9;
-    position: absolute;
+    position: relative;
     text-align: center;
     background-color: black;
 }
 #foot{
     /*background-color: whitesmoke;*/
-    position: absolute;
+    /*position: absolute;*/
     margin:0 auto;
     height: 120px;
     width: 1366px;
@@ -187,11 +187,11 @@ body{
 }
 #foot ul{
     /*background-color: yellow;*/
-    left: 80px;
-    height: 120px;
+    /*left: 80px;*/
+    /*height: 120px;*/
     width: 1366px;
     margin: 0 auto;
-    position: absolute;
+    /*position: absolute;*/
     padding:0;
     /*margin-top:5px;*/
 }
@@ -201,7 +201,7 @@ body{
     width: 150px;
     height: 120px;
     float: left;
-    margin-left: 45px;
+    margin-left: 50px;
     margin-right: 45px;
 }
 .img{
