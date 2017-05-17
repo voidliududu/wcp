@@ -12,6 +12,7 @@
     <script type="text/javascript" rel="script" src="jquery-1.10.1.js"></script>
     <script type="text/javascript" rel="script" src="jquery-1.11.3.min.js"></script>
     <script type="text/javascript" rel="script" src="adminJS.js"></script>
+    <script type="text/javascript" rel="script" src="adminJS_display.js"></script>
     <!--<script type="type/javascript" rel="script" src="adminJS.js"></script>-->
 
     <!--<link href="m">-->
@@ -31,19 +32,19 @@
             <ul class="second-list">
                 <li><a>分类</a>
                     <ul class="third-list">
-                        <li><a>全部</a></li>
-                        <li><a>微电影</a></li>
-                        <li><a>app</a></li>
-                        <li><a>微漫画</a></li>
-                        <li><a>音乐MV</a></li>
-                        <li><a>微杂志</a></li>
-                        <li><a>微活动</a></li>
-                        <li><a>微投票</a></li>
+                        <li><a id="all-product">全部</a></li>
+                        <li><a id="movie-product">微电影</a></li>
+                        <li><a id="app-product">app</a></li>
+                        <li><a id="cartoon-product">微漫画</a></li>
+                        <li><a id="music-product">音乐MV</a></li>
+                        <li><a id="magazine-product">微杂志</a></li>
+                        <li><a id="activity-product">微活动</a></li>
+                        <li><a id="vote-product">微投票</a></li>
                     </ul>
                 </li>
                 <li><a>操作</a>
                     <ul class="third-list">
-                        <li><a>添加产品</a></li>
+                        <li><a id="add-product">添加产品</a></li>
                     </ul>
                 </li>
             </ul>
@@ -71,9 +72,9 @@
             <table class="body-table">
                 <tr>
                     <td>1</td>
-                    <td>小弟弟工作室</td>
+                    <td id="stdio1">小弟弟工作室（只有这个可以点）</td>
                     <td>升华网</td>
-                    <td id="studio-change">修改</td>
+                    <td class="studio-change">修改</td>
                     <td>删除</td>
                 </tr>
                 <tr>
@@ -143,6 +144,7 @@
     </section>
 
     <!--分类管理-->
+    <!--这个不知道是干啥的  -->
     <section id="admin-product-cate" class="manage-section" style="display: none">
         <!--分类列表-->
         <!--点击某一具体分类转至该分类的产品列表-->
@@ -156,7 +158,6 @@
                 <tr><td>微活动</td></tr>
             </table>
         </div>
-        <!--添加类型-->
         <div id="cate-add" class="studio-add add" style="display: none">
             <div class="add-box">
                 <div class="add-text">新建类名:<input placeholder="请输入新建类名" class="add-input"/></div>
@@ -167,13 +168,13 @@
                 <button class="check-add">确认添加</button>
             </div>
         </div>
-
     </section>
 
     <!--产品管理-->
     <section id="admin-product" class="manage-section" style="display: none">
         <!--产品列表-->
         <div id="product-list" class="product-list" style="display: none">
+           <!--    先把这个列表注释了
             <table class="product-list">
                 <tr><td>啦啦啦啦啦啦</td></tr>
                 <tr><td>啦啦啦啦啦啦</td></tr>
@@ -183,6 +184,66 @@
                 <tr><td>啦啦啦啦啦啦</td></tr>
                 <tr><td>啦啦啦啦啦啦</td></tr>
                 <tr><td>啦啦啦啦啦啦</td></tr>
+            </table>
+            -->
+            <table class="head-table">
+                <tr class="first-tr" style="margin: 10px;border: 1px solid #000">
+                    <td>产品ID</td>
+                    <td>产品名</td>
+                    <td>工作室</td>
+                    <td>产品类型</td>
+                    <td colspan="2" id="operate2" style="width: 40%">操作</td>
+                </tr>
+            </table>
+            <table class="body-table">
+                <tr>
+                    <td>1</td>
+                    <td id="product1">小弟弟（只有这个可以点）</td>
+                    <td stdio="stdio1">小弟弟工作室</td>        <!-- 这个stdio的属性是用来点击进入工作室的-->
+                    <td>微电影</td>
+                    <td class="product-change">修改</td>
+                    <td>删除</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td id="product2">小弟弟</td>
+                    <td stdio="stdio1">小弟弟工作室</td><!-- 这个stdio的属性是用来点击进入工作室的-->
+                    <td>app</td>
+                    <td class="product-change">修改</td>
+                    <td>删除</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td id="product3">小弟弟）</td>
+                    <td stdio="stdio1">小弟弟工作室</td><!-- 这个stdio的属性是用来点击进入工作室的-->
+                    <td>微漫画</td>
+                    <td class="product-change">修改</td>
+                    <td>删除</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td id="product4">小弟弟</td>
+                    <td stdio="stdio1">小弟弟工作室</td><!-- 这个stdio的属性是用来点击进入工作室的-->
+                    <td>音乐MV</td>
+                    <td class="product-change">修改</td>
+                    <td>删除</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td id="product5">小弟弟</td>
+                    <td stdio="stdio1">小弟弟工作室</td><!-- 这个stdio的属性是用来点击进入工作室的-->
+                    <td>微杂志</td>
+                    <td class="product-change">修改</td>
+                    <td>删除</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td id="product5">小弟弟</td>
+                    <td stdio="stdio1">小弟弟工作室</td><!-- 这个stdio的属性是用来点击进入工作室的-->
+                    <td>微活动</td>
+                    <td class="product-change">修改</td>
+                    <td>删除</td>
+                </tr>
             </table>
         </div>
         <!--产品信息-->
