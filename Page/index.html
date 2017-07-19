@@ -10,45 +10,204 @@
 
     <style type="text/css">
 
-        body {margin:0;padding:0;background-color:#000000;font-size:0;overflow:hidden}
+        body {background-color:rgb(240,240,245);}
 
-        div {margin:0;padding:0;position:absolute;font-size:0;overflow:hidden}
-
-        canvas{background-color:#000000;overflow:hidden}
+        canvas{background-color:rgb(240,240,245);overflow:hidden}
 
     </style>
 
     <link href="css/index.css" rel="stylesheet" media="screen">
 
 </head>
+<link href="css/index2.css" rel="stylesheet" media="screen">
 
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/jquery.rotate.min.js"></script>
+<script src="js/jquery.color-2.1.0.min.js"></script>
 
 <script src="js/indexCanvas.js"></script>
 <script src="js/index.js"></script>
 
-<body onload="start()" onresize="resize()" onorientationchange="resize()" onmousedown="context.fillStyle='rgba(0,0,0,'+opacity+')'" onmouseup="context.fillStyle='rgb(0,0,0)'">
+<body onload="start()" onresize="resize()" onorientationchange="resize()" onmousedown="context.fillStyle='rgba(240,240,245,'+opacity+')'" onmouseup="context.fillStyle='rgb(240,240,245)'">
 
 <canvas id="starfield" style="background-color:#000000"></canvas>
 
 <div id="adsense" style="position:absolute;background-color:transparent;display:none">
 
 </div>
-<div style="width:100%;position: absolute;z-index:99;height: 80px;top:30px;text-align: center">
-    <img id="title" src="img/title.png" style=";position:relative"/>
+<div id="Index">
+    <div id="cell">
+        <div id="c_line1">
+            <div id="c_l1_row1"></div>
+            <div id="c_l1_row2"></div>
+            <div id="c_l1_row3"></div>
+            <div id="c_l1_row4"></div>
+            <div id="c_l1_row5"></div>
+        </div>
+        <div id="c_line2">
+            <div id="c_l2_row1"></div>
+            <div id="c_l2_row2"></div>
+            <div id="c_l2_row3"></div>
+        </div>
+        <div id="c_line3">
+            <div id="c_l3_row1"></div>
+            <div id="c_l3_row2"></div>
+            <div id="c_l3_row3"></div>
+            <div id="c_l3_row4"></div>
+            <div id="c_l3_row5"></div>
+        </div>
+    </div>
 </div>
-<div style="width:100%;position: absolute;z-index:99;top:110px;text-align: center">
-    <img class="product" src="img/moive.png" id="moive">
-    <img class="product" src="img/app.png" id="app">
-    <br>
-    <img class="product" src="img/cartoon.png" id="cartoon">
-    <img class="product" src="img/music.png" id="music">
-    <br>
-    <img class="product" src="img/magazine.png" id="magazine">
-    <img class="product" src="img/activity.png" id="activity">
+<div id="all" style="display: none;">
+    <div id="left">
+        <div id="l_head">
+            <br/>
+            <div id="l_h_png"><img id="l_h_p_img"  src="img/titlePng.png"/></div>
+            <div id="l_h_title">中南大学微产品创新工作室</div>
+        </div>
+        <div id="l_body">
+            <div id="l_b_left">
+                <div style="vertical-align: middle"><img id="l_b_l_leftA" src="img/arrow.png" /></div>
+            </div>
+            <div id="l_b_middle">
+                <div id="l_b_m_1" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_2" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_3" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_4" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_5" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_6" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_7" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_8" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_9" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_10" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_11" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_12" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_13" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_14" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_15" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_16" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+            </div>
+            <div id="l_b_right">
+                <div style="vertical-align: middle"><img id="l_b_l_rightA" src="img/arrow.png"></div>
+            </div>
+        </div>
+        <div id="l_foot">
+            <br><br><br>
+            Copyright©2001-2017 中南大学微产品创意工作室 版权所有
+            <br>
+            湖南长沙岳麓区麓山南路932号 410083
+            <br>
+            联系方式:0731-88877617
+            <br>
+        </div>
+    </div>
+    <div id="right">
+        <div id="r_1" class="nav">
+            <img class="n_n_n" src="img/index/IconIndex.png">
+            <div class="n_nav">
+            </div>
+        </div>
+        <div id="r_8" class="nav">
+            <img class="n_n_n" src="img/index/IconStudio.png">
+            <div class="n_nav"></div>
+        </div>
+        <div id="r_2" class="nav">
+            <img class="n_n_n" src="img/index/IconMusic.png">
+            <div class="n_nav">
+            </div>
+        </div>
+        <div id="r_3" class="nav">
+            <img class="n_n_n" src="img/index/IconMovie.png">
+            <div class="n_nav">
+            </div>
+        </div>
+        <div id="r_4" class="nav">
+            <img class="n_n_n" src="img/index/IconCartoon.png">
+            <div class="n_nav">
+            </div>
+        </div>
+        <div id="r_5" class="nav">
+            <img class="n_n_n" src="img/index/IconAPP.png">
+            <div class="n_nav">
+            </div>
+        </div>
+        <div id="r_6" class="nav">
+            <img class="n_n_n" src="img/index/IconMag.png">
+            <div class="n_nav">
+            </div>
+        </div>
+        <div id="r_7" class="nav">
+            <img class="n_n_n" src="img/index/IconAct.png">
+            <div class="n_nav">
+            </div>
+        </div>
+    </div>
 </div>
-<img id="earth" src="img/earth.png" style="position: fixed;z-index:99;top:85%;width:100%;left:0;"/>
+
 </body>
 
 </html>
