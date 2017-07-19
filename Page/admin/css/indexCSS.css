@@ -1,0 +1,108 @@
+/*顶栏*/
+#headline{
+    height: 100px;
+    background-color: #132e41;
+    top: 0;
+    padding: 10px 0 10px 30px;
+}
+#administratorImg{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: #0c4a71;
+    float: left;
+    margin-right: 40px;
+}
+#administratorImg img{
+    width: 80px;
+    height: 80px;
+}
+#adminInfo #user_name{
+    font-size: 20px;
+    color: #ffffff;
+}
+.quit_word{
+    font-size: 16px;
+    color: #3182b6;
+    cursor: pointer;
+}
+.quit_word:hover{
+    text-decoration: underline;
+}
+
+/*列表以及内容*/
+#main{
+    height: auto;
+}
+
+/*左列表*/
+/*列表*/
+.active{
+    background-color: #5eacd2;
+}
+#left_line .glyphicon{
+    float: right;
+}
+#left_line{
+    /*min-width: 300px;*/
+    width: 14%;
+    min-height: 900px;
+    background-color: #597397;
+    color: #ffffff;
+    float: left;
+}
+.main_ul,.sub_ul,.three_ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.main_ul li,.sub_ul li,.three_ul li{
+    border-bottom: 1px solid #425671;
+    padding: 20px;
+    padding-left: 60px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color .3s;
+}
+.main_ul li {
+    padding-left: 40px;
+    font-size: 20px;
+}
+.sub_ul li{
+    background-color: #485d7a;
+}
+.three_ul li{
+    background-color: #425671;
+    border-bottom: 1px solid #35475f;
+}
+/*列表下方信息*/
+#some_info{
+    height: 500px;
+    padding: 20px;
+    text-align: center;
+}
+#some_word{
+    font-size: 20px;
+    color: #ffffff;
+}
+#some_word:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+.main_ul li:hover,.sub_ul li:hover,.three_ul li:hover{
+    background-color: #5eacd2;
+}
+
+/*主体*/
+#main_part{
+    background-color: #ffffff;
+    width: 86%;
+    min-height: 900px;
+    float: right;
+    border: 40px solid #eaeef7;
+    box-sizing: border-box;
+    padding: 40px;
+}
+
+

@@ -2,288 +2,201 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>微产品工作室后台</title>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
-    <link href="indexCSS.css" rel="stylesheet" media="screen">
-    <link href="bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/indexCSS.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script type="text/javascript" rel="script" src="jquery-1.10.1.js"></script>
-    <script type="text/javascript" rel="script" src="jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" rel="script" src="adminJS.js"></script>
-    <script type="text/javascript" rel="script" src="adminJS_display.js"></script>
-    <!--<script type="type/javascript" rel="script" src="adminJS.js"></script>-->
-
-    <!--<link href="m">-->
+    <script type="text/javascript" rel="script" src="js/jquery-1.10.1.js"></script>
+    <script type="text/javascript" rel="script" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" rel="script" src="js/adminJS.js"></script>
+    <script type="text/javascript" rel="script" src="js/adminJS_display.js"></script>
 </head>
-<body style="height: 100%;font-family:  'Microsoft Yahei', '微软雅黑', SimHei, '黑体', 'Hiragino Sans GB', STHeiTi, sans-serif;margin: 0 auto">
+<body style="font-family: 'Microsoft YaHei UI', sans-serif;width: 100%;background-color: #eaeef7" >
 
 
-<div class="left" style="float:left;width: 300px;border-right: 1px solid #000;padding: 10px;padding-top: 0;padding-bottom: 0">
-    <ul class="first-list" style="">
-        <li><a>微工作室</a>
-            <ul class="second-list">
-                <li><a class="active" id="all-studio">全部工作室</a></li>
-                <li><a id="add-studio">添加工作室</a></li>
-            </ul>
-        </li>
-        <li><a>微产品</a>
-            <ul class="second-list">
-                <li><a>分类</a>
-                    <ul class="third-list">
-                        <li><a id="all-product">全部</a></li>
-                        <li><a id="movie-product">微电影</a></li>
-                        <li><a id="app-product">app</a></li>
-                        <li><a id="cartoon-product">微漫画</a></li>
-                        <li><a id="music-product">音乐MV</a></li>
-                        <li><a id="magazine-product">微杂志</a></li>
-                        <li><a id="activity-product">微活动</a></li>
-                        <li><a id="vote-product">微投票</a></li>
+<!--顶栏-->
+    <div id="headline">
+        <div id="administratorImg">
+            <img src="img/logo.png">
+        </div>
+        <div id="adminInfo">
+            <p id="user_name">管理员</p>
+            <p class="quit_word">退出</p>
+        </div>
+    </div>
+
+
+    <div id="main">
+        <!--左侧栏-->
+        <div id="left_line">
+            <!--列表-->
+            <div id="list">
+                <ul class="main_ul">
+                    <li class="active">功能介绍</li>
+                    <li id="we_studio">微工作室
+                        <span class="glyphicon glyphicon-chevron-up"></span>
+                        <span class="glyphicon glyphicon-chevron-down" style="display: none"></span>
+                    </li>
+                </ul>
+                <ul class="sub_ul" id="studio_toggle">
+                    <li id="all_studio">全部工作室</li>
+                    <li id="add_studio">添加工作室</li>
+                </ul>
+                <ul class="main_ul">
+                    <li id="we_product">微产品
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                    <span class="glyphicon glyphicon-chevron-down" style="display: none"></span>
+                </ul>
+                <div id="product_toggle">
+                    <ul class="sub_ul">
+                        <li id="classify">分类
+                        <span class="glyphicon glyphicon-chevron-up"></span>
+                        <span class="glyphicon glyphicon-chevron-down" style="display: none"></span>
                     </ul>
-                </li>
-                <li><a>操作</a>
-                    <ul class="third-list">
-                        <li><a id="add-product">添加产品</a></li>
+                    <ul class="three_ul" id="classify_toggle">
+                        <li id="all_product">全部</li>
+                        <li id="we_movie">微电影</li>
+                        <li id="we_app">app</li>
+                        <li id="we_cartoon">微漫画</li>
+                        <li id="we_mv">音乐MV</li>
+                        <li id="we_magazine">微杂志</li>
+                        <li id="we_activity">微活动</li>
+                        <li id="we_vote">微投票</li>
                     </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</div>
-
-
-
-<div class="right" style="margin-top:50px;margin-left:400px;width: 800px;min-height:780px ;border:1px solid #000;padding: 10px;margin-bottom: 50px;box-sizing: border-box;margin-right: 20px">
-
-    <!--工作室管理-->
-    <section id="admin-studio"  style="display: block" class="manage-section">
-
-        <!--工作室列表-->
-        <div id="studio-list" class="right-first-list" style="">
-            <table class="head-table">
-                <tr class="first-tr" style="margin: 10px;border: 1px solid #000">
-                    <td>工作室ID</td>
-                    <td>工作室名</td>
-                    <td>工作室所属部门</td>
-                    <td colspan="2" id="operate" style="width: 40%">操作</td>
-                </tr>
-            </table>
-            <table class="body-table">
-                <tr>
-                    <td>1</td>
-                    <td id="stdio1">小弟弟工作室（只有这个可以点）</td>
-                    <td>升华网</td>
-                    <td class="studio-change">修改</td>
-                    <td>删除</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>小弟弟工作室</td>
-                    <td>升华网</td>
-                    <td>修改</td>
-                    <td>删除</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>小弟弟工作室</td>
-                    <td>升华网</td>
-                    <td>修改</td>
-                    <td>删除</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>小弟弟工作室</td>
-                    <td>升华网</td>
-                    <td>修改</td>
-                    <td>删除</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>小弟弟工作室</td>
-                    <td>升华网</td>
-                    <td>修改</td>
-                    <td>删除</td>
-                </tr>
-            </table>
-        </div>
-        <!--工作室信息-->
-        <div id="studio-info" class="studio-info manage-info" style="display: none">
-            <table class="studio-info-body">
-                <img src="http://wcp.csu.edu.cn//upload/images/20141222/61591419193567401.jpg" class = "present-pic"/>
-                <tr><td>工作室名：</td></tr>
-                <tr><td>所属部门：</td></tr>
-                <tr><td>工作室介绍：</td></tr>
-                <tr><td>创建时间：</td></tr>
-                <tr><td>贡献产品：</td></tr>
-                <tr><td>排行：</td></tr>
-                <tr><td>点击数：</td></tr>
-            </table>
-        </div>
-        <!--添加工作室-->
-        <div id="studio-add" class="cate-add add" style="display: none">
-            <div class="add-box">
-                <div class="add-text">工作室名:<input placeholder="请输入工作室名" class="add-input"/></div>
-                <div class="add-text">图片:<span class="glyphicon glyphicon-picture add-pic"></span><span class="add-pic-tip">点击添加图片</span>
-                    <img src="profile.png" class="add-pic-pre"></div>
-                <div class="add-text">工作室介绍:</div>
-                <textarea class="add-introd"></textarea>
-                <div class="add-text">所属部门:
-                    <select class="add-choice">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
+                    <ul class="sub_ul">
+                        <li id="operation">操作
+                        <span class="glyphicon glyphicon-chevron-up"></span>
+                        <span class="glyphicon glyphicon-chevron-down" style="display: none"></span>
+                    </ul>
+                    <ul class="three_ul" id="operation_toggle">
+                        <li id="add_product">添加产品</li>
+                    </ul>
                 </div>
-                <button id="studio-add-check" class="check-add">确认添加</button>
-                <button id="studio-change-check" class="check-add">确认修改</button>
             </div>
-
-        </div>
-
-    </section>
-
-    <!--分类管理-->
-    <!--这个不知道是干啥的  -->
-    <section id="admin-product-cate" class="manage-section" style="display: none">
-        <!--分类列表-->
-        <!--点击某一具体分类转至该分类的产品列表-->
-        <div id="cate-list" class="product-cate-list" style="display: none">
-            <table class="product-cate-list-table body-table">
-                <tr><td>微电影</td></tr>
-                <tr><td>App</td></tr>
-                <tr><td>微漫画</td></tr>
-                <tr><td>音乐MV</td></tr>
-                <tr><td>微杂志</td></tr>
-                <tr><td>微活动</td></tr>
-            </table>
-        </div>
-        <div id="cate-add" class="studio-add add" style="display: none">
-            <div class="add-box">
-                <div class="add-text">新建类名:<input placeholder="请输入新建类名" class="add-input"/></div>
-                <div class="add-text">图片:<span class="glyphicon glyphicon-picture add-pic"></span><span class="add-pic-tip">点击添加图片</span>
-                    <img src="profile.png" class="add-pic-pre"></div>
-                <div class="add-text">新建类型介绍:</div>
-                <textarea class="add-introd"></textarea>
-                <button class="check-add">确认添加</button>
+            <!--底下附属信息-->
+            <div id="some_info">
+                <a id="some_word">
+                    lallalallallalal
+                </a>
             </div>
         </div>
-    </section>
 
-    <!--产品管理-->
-    <section id="admin-product" class="manage-section" style="display: none">
-        <!--产品列表-->
-        <div id="product-list" class="product-list" style="display: none">
-           <!--    先把这个列表注释了
-            <table class="product-list">
-                <tr><td>啦啦啦啦啦啦</td></tr>
-                <tr><td>啦啦啦啦啦啦</td></tr>
-                <tr><td>啦啦啦啦啦啦</td></tr>
-                <tr><td>啦啦啦啦啦啦</td></tr>
-                <tr><td>啦啦啦啦啦啦</td></tr>
-                <tr><td>啦啦啦啦啦啦</td></tr>
-                <tr><td>啦啦啦啦啦啦</td></tr>
-                <tr><td>啦啦啦啦啦啦</td></tr>
-            </table>
-            -->
-            <table class="head-table">
-                <tr class="first-tr" style="margin: 10px;border: 1px solid #000">
-                    <td>产品ID</td>
-                    <td>产品名</td>
-                    <td>工作室</td>
-                    <td>产品类型</td>
-                    <td colspan="2" id="operate2" style="width: 40%">操作</td>
-                </tr>
-            </table>
-            <table class="body-table">
-                <tr>
-                    <td>1</td>
-                    <td id="product1">小弟弟（只有这个可以点）</td>
-                    <td stdio="stdio1">小弟弟工作室</td>        <!-- 这个stdio的属性是用来点击进入工作室的-->
-                    <td>微电影</td>
-                    <td class="product-change">修改</td>
-                    <td>删除</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td id="product2">小弟弟</td>
-                    <td stdio="stdio1">小弟弟工作室</td><!-- 这个stdio的属性是用来点击进入工作室的-->
-                    <td>app</td>
-                    <td class="product-change">修改</td>
-                    <td>删除</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td id="product3">小弟弟）</td>
-                    <td stdio="stdio1">小弟弟工作室</td><!-- 这个stdio的属性是用来点击进入工作室的-->
-                    <td>微漫画</td>
-                    <td class="product-change">修改</td>
-                    <td>删除</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td id="product4">小弟弟</td>
-                    <td stdio="stdio1">小弟弟工作室</td><!-- 这个stdio的属性是用来点击进入工作室的-->
-                    <td>音乐MV</td>
-                    <td class="product-change">修改</td>
-                    <td>删除</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td id="product5">小弟弟</td>
-                    <td stdio="stdio1">小弟弟工作室</td><!-- 这个stdio的属性是用来点击进入工作室的-->
-                    <td>微杂志</td>
-                    <td class="product-change">修改</td>
-                    <td>删除</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td id="product6">小弟弟</td>
-                    <td stdio="stdio1">小弟弟工作室</td><!-- 这个stdio的属性是用来点击进入工作室的-->
-                    <td>微活动</td>
-                    <td class="product-change">修改</td>
-                    <td>删除</td>
-                </tr>
-            </table>
-        </div>
-        <!--产品信息-->
-        <div id="product-info" class="product-info manage-info" style="display: none">
-            <table class="product-info-body">
-                <img src="http://wcp.csu.edu.cn//upload/images/20141222/61591419193567401.jpg" class = "studio-present-pic" style="float: right;height: 280px;width:360px ;margin-right: 20px"/>
-                <tr><td>产品：</td></tr>
-                <tr><td>产品介绍：</td></tr>
-                <tr><td>来源：</td></tr>
-                <tr><td>所属分类：</td></tr>
-                <tr><td>创建时间：</td></tr>
-                <tr><td>点击量：</td></tr>
-            </table>
-        </div>
-        <!--添加产品-->
-        <div id="product-add" class="product-add add" style="display: none">
-            <div class="add-box">
-                <div class="add-text">产品名:<input placeholder="请输入产品名" class="add-input"/></div>
-                <div class="add-text">图片:<span class="glyphicon glyphicon-picture add-pic"></span><span class="add-pic-tip">点击添加图片</span>
-                    <img src="profile.png" class="add-pic-pre"></div>
-                <div class="add-text">来源:
-                    <input type="checkbox" class="multi-choice" id="origin1"><label for="origin1"></label>1
-                    <input type="checkbox" class="multi-choice" id="origin2"><label for="origin2"></label>2
-                    <input type="checkbox" class="multi-choice" id="origin3"><label for="origin3"></label>3
-                </div>
-                <div class="add-text">新建类型介绍:</div>
-                <textarea class="add-introd" style="height: 250px"></textarea>
-                <div class="add-text">所属分类:
-                    <input type="checkbox" class="multi-choice" id="cate1"><label for="cate1"></label>1
-                    <input type="checkbox" class="multi-choice" id="cate2"><label for="cate2"></label>2
-                    <input type="checkbox" class="multi-choice" id="cate3"><label for="cate3"></label>3
-                    <input type="checkbox" class="multi-choice" id="cate4"><label for="cate4"></label>4
-                    <input type="checkbox" class="multi-choice" id="cate5"><label for="cate5"></label>5
-                    <input type="checkbox" class="multi-choice" id="cate6"><label for="cate6"></label>6
-                </div>
-                <button class="check-add">确认添加</button>
+        <!--主体-->
+        <div id="main_part">
+            <!--功能介绍-->
+            <div id="function_intro">
+
             </div>
-        </div>
-    </section>
 
-</div>
+
+            <!--微工作室-->
+
+            <!--全部工作室-->
+            <div id="all_studio_page">
+                <!--工作室列表-->
+                <div id="studio-list">
+
+                    <table id="studio_table">
+
+                        <tr>
+                            <th>工作室ID</th>
+                            <th>工作室名</th>
+                            <th>工作室所属部门</th>
+                            <th colspan="2">操作</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>小弟弟工作室</td>
+                            <td>升华网</td>
+                            <td>修改</td>
+                            <td>删除</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>小弟弟工作室</td>
+                            <td>升华网</td>
+                            <td>修改</td>
+                            <td>删除</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>小弟弟工作室</td>
+                            <td>升华网</td>
+                            <td>修改</td>
+                            <td>删除</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>小弟弟工作室</td>
+                            <td>升华网</td>
+                            <td>修改</td>
+                            <td>删除</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>小弟弟工作室</td>
+                            <td>升华网</td>
+                            <td>修改</td>
+                            <td>删除</td>
+                        </tr>
+
+                    </table>
+
+
+
+                    <table>
+                        <tr>
+                            <td>1</td>
+                            <td>小弟弟工作室</td>
+                            <td>升华网</td>
+                            <td>修改</td>
+                            <td>删除</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>小弟弟工作室</td>
+                            <td>升华网</td>
+                            <td>修改</td>
+                            <td>删除</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>小弟弟工作室</td>
+                            <td>升华网</td>
+                            <td>修改</td>
+                            <td>删除</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>小弟弟工作室</td>
+                            <td>升华网</td>
+                            <td>修改</td>
+                            <td>删除</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>小弟弟工作室</td>
+                            <td>升华网</td>
+                            <td>修改</td>
+                            <td>删除</td>
+                        </tr>
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
 </body>
 </html>
