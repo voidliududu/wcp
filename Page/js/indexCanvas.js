@@ -125,9 +125,9 @@ function init()
 
     context=starfield.getContext('2d');
 
-    context.fillStyle='rgb(0,0,0)';
+    context.fillStyle='rgb(240,240,245)';
 
-    context.strokeStyle='rgb(255,255,255)';
+    context.strokeStyle='rgb(255,0,0)';
 
     var adsense=$i('adsense');
 
@@ -259,7 +259,7 @@ function key_manager(evt)
 
         case 13:
 
-            context.fillStyle='rgba(0,0,0,'+opacity+')';
+            context.fillStyle='rgb(240,240,245,'+opacity+')';
 
             break;
 
@@ -279,7 +279,7 @@ function release()
 
         case 13:
 
-            context.fillStyle='rgb(0,0,0)';
+            context.fillStyle='rgb(240,240,245)';
 
             break;
 
