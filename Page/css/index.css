@@ -9,3 +9,25 @@ body{
     margin:20px;
     cursor: pointer;
 }
+#Move {
+    margin-top: 100px;
+    width: 100px;
+    height: 400px;
+    /*background-color: black;*/
+    /*margin: 100px auto;*/
+    position: relative;
+    overflow: hidden;
+}
+#Move ul{
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+#Move ul li{
+    list-style: none;
+    /*float: left;*/
+    width: 100px;
+    height: 100px;
+
+}
