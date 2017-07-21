@@ -105,4 +105,133 @@
     padding: 40px;
 }
 
+.page_head{
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #485d7a;
+}
 
+#studio_table{
+    text-align: center;
+    width: 100%;
+    border: 1px solid #e1e2e6;
+}
+#studio_table th{
+    text-align: center;
+    font-size: 20px;
+    background-color: #f0f1f5;
+    font-weight: normal;
+    border: 1px solid #e1e2e6;
+    padding: 20px 0;
+}
+#studio_table tr td{
+    border: 1px solid #e1e2e6;
+    padding: 15px 0;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+
+/*添加工作室*/
+.cate_add{
+    width: 100%;
+    border: 1px dashed #e1e2e6;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.add_text{
+    font-size: 20px;
+    margin: 20px 0;
+}
+.add_input{
+    padding: 5px 10px;
+    color: #425671;
+    border: 1px solid #e1e2e6;
+    box-sizing: border-box;
+    margin-left: 20px;
+    width: 50%;
+}
+.add_pic_tip{
+    color: #909195;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.add_pic_pre{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #e1e2e6;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.add_intro{
+    resize: none;
+    width:100%;
+    padding: 10px;
+    height: 300px;
+    border: 1px solid #e1e2e6;
+    box-sizing: border-box;
+}
+.add_choice{
+    margin-left: 20px;
+    width: 80px;border: 1px solid #e1e2e6;
+    padding: 5px;
+    color: #425671;
+}
+.add_choice ul{
+    list-style: none;
+    padding: 0;
+}
+.check_add{
+    width: 120px;
+    height: 50px;
+    border-radius: 2px;
+    border: none;
+    background-color: #5eacd2;
+    color: #ffffff;
+    transition: background-color .3s;
+    float: right;
+    font-size: 20px;
+}
+.check_add:hover{
+    background-color: #e1e2e6;
+    color: #597397;
+}
+
+/*工作室信息*/
+.info_show{
+    width: 100%;
+    padding: 20px;
+    border: 1px dashed #e1e2e6;
+    box-sizing: border-box;
+    background-color: #f0f1f5;
+}
+.info_text{
+    font-size: 20px;
+    color: #425671;
+    margin: 10px 0;
+}
+.info_img{
+    height: 100px;
+}
+.studio_intro p{
+    font-size: 18px;
+    color: #192533;
+    text-indent: 2em;
+    line-height: 2;
+}
+
+
+.clearfix{
+    clear: both;
+}
+.pointer{
+    cursor: pointer;
+}
+.pointer:hover{
+    color: #718dac;
+    background-color: #f0f1f5;
+}
+
+.pagination{
+    float: right;
+}

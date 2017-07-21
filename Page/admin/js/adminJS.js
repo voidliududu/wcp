@@ -1,4 +1,5 @@
 $(function () {
+    // 收起展开列表
     $('#we_studio').on('click',function () {
         $('#studio_toggle').toggle(1000);
         $('#we_studio span').toggle();
@@ -14,6 +15,7 @@ $(function () {
     $('#operation').on('click',function () {
         $('#operation_toggle').toggle(1000);
         $('#operation span').toggle();
-    })
+    });
 });
+
 
