@@ -13,6 +13,9 @@
     <script type="text/javascript" rel="script" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" rel="script" src="js/adminJS.js"></script>
     <script type="text/javascript" rel="script" src="js/adminJS_display.js"></script>
+    <!--时间选择器-->
+    <link rel="stylesheet" href="css/pikaday.css">
+    <link rel="stylesheet" href="css/site.css">
 </head>
 <body style="font-family: 'Microsoft YaHei UI', sans-serif;width: 100%;background-color: #eaeef7" >
 
@@ -92,10 +95,11 @@
             </div>
 
 
+
             <!--微工作室-->
 
             <!--全部工作室-->
-            <div id="all_studio_page" style="display: none;">
+            <div id="all_studio_page" style="display: none">
                 <!--工作室列表-->
                 <header class="page_head"><span class="glyphicon glyphicon-link"></span> 全部工作室</header>
                 <div id="studio-list">
@@ -240,87 +244,100 @@
 
             </div>
 
+
+
             <!--微产品-->
 
             <!--全部微产品-->
-            <div id="all_product_page">
-                <!--工作室列表-->
+            <div id="all_product_page" style="display: none">
+                <!--微产品列表-->
                 <header class="page_head"><span class="glyphicon glyphicon-link"></span> 全部微产品</header>
                 <div id="product-list">
                     <table id="product_table">
                         <tr>
-                            <th>工作室ID</th>
-                            <th>工作室名</th>
-                            <th>工作室所属部门</th>
+                            <th>产品ID</th>
+                            <th>产品名</th>
+                            <th>所属工作室</th>
+                            <th>产品类型</th>
                             <th colspan="2">操作</th>
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td class="pointer" id="studio1">小弟弟工作室</td>
-                            <td>升华网</td>
-                            <td class="pointer" id="change1">修改</td>
-                            <td class="pointer" id="delete1">删除</td>
+                            <td class="pointer"  id="product1">小弟弟</td>
+                            <td>小弟弟工作室</td>
+                            <td>微电影</td>
+                            <td class="pointer" id="pro_change1">修改</td>
+                            <td class="pointer" id="pro_delete1">删除</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td class="pointer" id="studio2">小弟弟工作室</td>
-                            <td>升华网</td>
+                            <td>2</td>
+                            <td class="pointer">小弟弟</td>
+                            <td>小弟弟工作室</td>
+                            <td>微电影</td>
                             <td class="pointer">修改</td>
                             <td class="pointer">删除</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td class="pointer" id="studio3">小弟弟工作室</td>
-                            <td>升华网</td>
+                            <td>3</td>
+                            <td class="pointer">小弟弟</td>
+                            <td>小弟弟工作室</td>
+                            <td>微电影</td>
                             <td class="pointer">修改</td>
                             <td class="pointer">删除</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td class="pointer" id="studio4">小弟弟工作室</td>
-                            <td>升华网</td>
+                            <td>4</td>
+                            <td class="pointer">小弟弟</td>
+                            <td>小弟弟工作室</td>
+                            <td>微电影</td>
                             <td class="pointer">修改</td>
                             <td class="pointer">删除</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td class="pointer" id="studio5">小弟弟工作室</td>
-                            <td>升华网</td>
+                            <td>5</td>
+                            <td class="pointer">小弟弟</td>
+                            <td>小弟弟工作室</td>
+                            <td>微电影</td>
                             <td class="pointer">修改</td>
                             <td class="pointer">删除</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td class="pointer" id="studio6">小弟弟工作室</td>
-                            <td>升华网</td>
+                            <td>6</td>
+                            <td class="pointer">小弟弟</td>
+                            <td>小弟弟工作室</td>
+                            <td>微电影</td>
                             <td class="pointer">修改</td>
                             <td class="pointer">删除</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td class="pointer" id="studio7">小弟弟工作室</td>
-                            <td>升华网</td>
+                            <td>7</td>
+                            <td class="pointer">小弟弟</td>
+                            <td>小弟弟工作室</td>
+                            <td>微电影</td>
                             <td class="pointer">修改</td>
                             <td class="pointer">删除</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td class="pointer" id="studio8">小弟弟工作室</td>
-                            <td>升华网</td>
+                            <td>8</td>
+                            <td class="pointer">小弟弟</td>
+                            <td>小弟弟工作室</td>
+                            <td>微电影</td>
                             <td class="pointer">修改</td>
                             <td class="pointer">删除</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td class="pointer" id="studio9">小弟弟工作室</td>
-                            <td>升华网</td>
+                            <td>9</td>
+                            <td class="pointer">小弟弟</td>
+                            <td>小弟弟工作室</td>
+                            <td>微电影</td>
                             <td class="pointer">修改</td>
                             <td class="pointer">删除</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td class="pointer" id="studio10">小弟弟工作室</td>
-                            <td>升华网</td>
+                            <td>10</td>
+                            <td class="pointer">小弟弟</td>
+                            <td>小弟弟工作室</td>
+                            <td>微电影</td>
                             <td class="pointer">修改</td>
                             <td class="pointer">删除</td>
                         </tr>
@@ -342,6 +359,62 @@
                 </div>
             </div>
 
+            <!--某个微产品具体信息-->
+            <div class="product_info_page" id="product1_info" style="display: none">
+                <header class="page_head"><span class="glyphicon glyphicon-file"></span>product1 </header>
+                <!--微产品信息-->
+                <div class="info_show">
+                    <div class="info_text">产品:小弟弟</div>
+                    <div class="info_text">代表图片:<img src="img/profile.png" class="info_img"> </div>
+                    <div class="info_text">产品介绍:</div>
+                    <div class="product_intro">
+                        <p>蚂蚁工作室成立于2001年5月，是由一群追求创业的爱好者共同发起成立的。成立之初，其宗旨定位为“求实，创新，开拓”，
+                            社团业务主要有广告策划和中介代理。在广告策划方面，多通过报纸、海报、媒体等进行全方位的广告宣传。工作室分工方面，
+                            社团由室长负责工作室的总体规划，下设创作组、活动组、外联组和财务组四个部门，各部门相互发展，相互交流，
+                            共同探索前进之路。工作室一直注重绘画技巧和创意的融合与运用，之后逐渐以制作校园海报为工作重心，
+                            并且在03年工作室引进了商业海报制作技术，力求使校园海报的创作能够精益求精，以期丰富同学们的精神文化生活
+                        </p>
+                    </div>
+                    <div class="info_text">来源:网络</div>
+                    <div class="info_text">所属分类:微电影</div>
+                    <div class="info_text">创建时间:2017.7.22</div>
+                    <div class="info_text">点击量:666</div>
+                </div>
+            </div>
+
+            <!--添加和修改微产品-->
+            <div id="add_product_page" style="display: none">
+                <header class="page_head add_product"><span class="glyphicon glyphicon-plus"></span>添加微产品 </header>
+                <header class="page_head change_product"><span class="glyphicon glyphicon-edit"></span>修改微产品信息 </header>
+                <!--添加微产品内容填写-->
+                <div id="product_add" class="cate_add add">
+                    <div class="add_text">产品名:<span class="glyphicon glyphicon-pencil"></span>
+                        <input placeholder="请输入微产品名" class="add_input"/>
+                    </div>
+                    <div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
+                        <span class="add_pic_tip">点击添加图片</span>
+                        <img src="img/profile.png" class="add_pic_pre">
+                    </div>
+                    <div class="add_text">微产品介绍:<span class="glyphicon glyphicon-tag"></span> </div>
+                    <textarea class="add_intro"></textarea>
+                    <div class="add_text">来源:<span class="glyphicon glyphicon-pushpin"></span>
+                        <input placeholder="请输入来源" class="add_input"/>
+                    </div>
+                    <div class="add_text">所属分类:<span class="glyphicon glyphicon-th-large"></span>
+                        <input placeholder="请输入所属分类" class="add_input"/>
+                    </div>
+                    <div class="add_text">创建时间:<span class="glyphicon glyphicon-calendar"></span>
+                        <input type="text" id="datepicker" class="add_input"/>
+                    </div>
+                    <button id="product_add_check" class="check_add">确认添加</button>
+                    <button id="product_change_check" class="check_add" style="display: none">确认修改</button>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+
+
+
         </div>
 
 
@@ -349,6 +422,25 @@
     </div>
 
 
+<script src="js/require.js"></script>
+<script>
+    require.config({
+        baseUrl: 'js',
+        // To get timely, correct error triggers in IE, force a define/shim exports check.
+        enforceDefine: true
+    });
+    require(['pikaday'], function(Pikaday)
+    {
+        var picker = new Pikaday(
+            {
+                field: document.getElementById('datepicker'),
+                firstDay: 1,
+                minDate: new Date('2000-01-01'),
+                maxDate: new Date('2020-12-31'),
+                yearRange: [2000,2020]
+            });
+    });
 
+</script>
 </body>
 </html>
