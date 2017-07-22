@@ -352,8 +352,6 @@ function resize()
     cursor_y=y;
 
     init();
-
-    console.log(x);
 }
 
 document.onmousemove=move;

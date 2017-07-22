@@ -1,33 +1,152 @@
-body{
-    margin: 0 auto;
+#Index{
+    margin:0 auto;
     padding:0;
-    overflow-x: hidden;
-}
-
-.product{
-    width:15%;
-    margin:20px;
-    cursor: pointer;
-}
-#Move {
-    margin-top: 100px;
-    width: 100px;
-    height: 400px;
-    /*background-color: black;*/
-    /*margin: 100px auto;*/
-    position: relative;
-    overflow: hidden;
-}
-#Move ul{
-    padding: 0;
     position: absolute;
-    left: 0;
-    top:0;
+    width:100%;
+    height:100%;
+    min-width: 1080px;
+    min-height: 600px;
 }
-#Move ul li{
-    list-style: none;
-    /*float: left;*/
-    width: 100px;
-    height: 100px;
 
+#cell{
+    width:100%;
+    height:100%;
+    min-width: 1080px;
+    min-height: 600px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.headBlank{
+    width:100%;
+    height:10%;
+    min-width: 1080px;
+    min-height: 60px;
+}
+
+.bodyBlank{
+    width:100%;
+    height:5%;
+    min-width: 1080px;
+    min-height: 30px;
+}
+
+.cell{
+    width: 100%;
+    min-width: 1080px;
+    height:20%;
+    min-height: 120px;
+    /*background-color: #4cae4c;*/
+
+}
+
+.c_left{
+    width:15%;
+    height:100%;
+    min-height: 120px;
+    min-width: 162px;
+    float: left;
+    /*background-color: white;*/
+}
+
+.c_row{
+    position: relative;
+    width: 10%;
+    min-width: 108px;
+    height:100%;
+    min-height: 120px;
+    float: left;
+    /*background-color: #4cae4c;*/
+}
+
+.c_blank{
+    width: 5%;
+    min-width: 54px;
+    height:100%;
+    min-height: 120px;
+    float: left;
+    /*background-color: white;*/
+}
+
+.c_right{
+    width:15%;
+    height:100%;
+    min-height: 120px;
+    min-width: 162px;
+    float: left;
+    /*background-color: white;*/
+}
+
+#c_l2_row2{
+    width:50%;
+    min-width: 432px;
+    height:100%;
+    min-height: 120px;
+    float: left;
+    vertical-align: middle;
+    font-size: 3.2vmax;
+    font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    color: #13227a;
+    /*background-color: #4cae4c;*/
+}
+
+.c_row2{
+    font-size: 1.6vmax;
+    letter-spacing:0.2vmax;
+    font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    background-color: white;
+    color: #13227a;
+}
+
+.c_r_img{
+    position: absolute;
+    z-index:100;
+    width:100%;
+    height:100%;
+}
+
+.c_r1_bg{
+    position: absolute;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    z-index:99;
+    top:-5%;
+    left:-50%;
+    width:150%;
+    height: 110%;
+}
+
+.c_r2_bg{
+    position: absolute;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    z-index:99;
+    top:-5%;
+    width:150%;
+    height: 110%;
+}
+
+.c_r3_bg{
+    position: absolute;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    z-index:99;
+    left:-5%;
+    width:110%;
+    height: 150%;
+}
+
+.c_r_i_pic{
+    display: inline-block;
+    vertical-align: middle;
+    width: 65%;
 }
