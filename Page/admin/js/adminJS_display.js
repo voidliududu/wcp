@@ -4,6 +4,8 @@ $(function () {
     // 所有工作室
     $('#all_studio').on('click',function () {
         // 页面显隐
+        $('#index_page').css('display','none');
+
         $('#all_studio_page').css('display','block');
         $('#all_product_page').css('display','none');
 
@@ -16,7 +18,7 @@ $(function () {
 
 
         // 列表选项背景色
-        $('#func_intro').removeClass('active');
+        $('#index').removeClass('active');
         $('#all_studio').css('background-color','#5eacd2');
         $('#add_studio').css('background-color','#425671');
         $('#all_product').css('background-color','#425671');
@@ -28,6 +30,8 @@ $(function () {
     // 所有微产品
     $('#all_product').on('click',function () {
         // 页面显隐
+        $('#index_page').css('display','none');
+
         $('#all_product_page').css('display','block');
         $('#all_studio_page').css('display','none');
 
@@ -49,6 +53,8 @@ $(function () {
     // 添加工作室
     $('#add_studio').on('click',function () {
         // 页面显隐
+        $('#index_page').css('display','none');
+
         $('#add_studio_page').css('display','block');
         $('#add_product_page').css('display','none');
 
@@ -77,6 +83,8 @@ $(function () {
     // 添加微产品
     $('#add_product').on('click',function () {
         // 页面显隐
+        $('#index_page').css('display','none');
+
         $('#add_product_page').css('display','block');
         $('#add_studio_page').css('display','none');
 
@@ -99,7 +107,7 @@ $(function () {
         $('#add_studio').css('background-color','#425671');
         $('#all_studio').css('background-color','#425671');
         $('#all_product').css('background-color','#425671');
-        
+
     });
 
     // 修改工作室信息
