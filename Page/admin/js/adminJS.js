@@ -16,6 +16,26 @@ $(function () {
         $('#operation_toggle').toggle(1000);
         $('#operation span').toggle();
     });
+
+    $('#studio_add_check').on('click',function () {
+        children = $(this).parent().children();
+        stdioName = $(children[0]).children('.add_input').val();
+        stdioIntro = $(children[3]).val();
+        stdioBranch = $(children[4]).children('.add_input').val();
+        $.ajax({
+            url : 'http://localhost/wcp/Cooperate/dept.php?m=1',
+            data : {
+                name : stdioName ,
+                brand : '' ,
+                updept : stdioBranch ,
+                content : stdioIntro
+            },
+            success:function (result) {
+                console.log(result);
+            }
+        })
+
+    })
 });
 
 
