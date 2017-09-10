@@ -26,16 +26,17 @@
 <script src="js/jquery.color-2.1.0.min.js"></script>
 
 <script src="js/indexCanvas.js"></script>
+<script src="js/define.js"></script>
 <script src="js/index.js"></script>
 <!--<script src="js/Move.js"></script>-->
 
-<body onload="start()" onresize="resize()" onorientationchange="resize()" onmousedown="context.fillStyle='rgba(240,240,245,'+opacity+')'" onmouseup="context.fillStyle='rgb(240,240,245)'">
+<body id="body" onload="start()" onresize="resize()" onorientationchange="resize()" onmousedown="context.fillStyle='rgba(240,240,245,'+opacity+')'" onmouseup="context.fillStyle='rgb(240,240,245)'">
 
 <canvas id="starfield" style="background-color:rgb(240,240,245)"></canvas>
 <div id="adsense" style="position:absolute;background-color:transparent;display:none">
 
 </div>
-<div id="Index">
+<div id="Index" style="display: block">
     <div id="cell">
         <div class="headBlank"></div>
         <div id="c_line1" class="cell">
@@ -43,9 +44,9 @@
             <div id="c_l1_row1" class="c_row">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" onmouseout="cell_pic_out(this)" class="c_r_i_pic" src="img/index/BigGear.png">
+                    <img class="c_r_i_pic gear" src="img/index/BigGear.png">
                 </div>
-                <div class="c_r1_bg" ></div>
+                <!--<div class="c_r1_bg"  onmouseout="cell_pic_out(this)"></div>-->
             </div>
             <div class="c_blank"></div>
             <div id="c_l1_row2" class="c_row c_row2">
@@ -66,9 +67,9 @@
             <div id="c_l1_row5" class="c_row">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" onmouseout="cell_pic_out(this)" class="c_r_i_pic" src="img/index/BigGear.png">
+                    <img class="c_r_i_pic gear2" src="img/index/BigGear.png">
                 </div>
-                <div class="c_r2_bg" ></div>
+                <!--<div class="c_r2_bg" onmouseout="cell_pic_out(this)"></div>-->
             </div>
             <div class="c_right"></div>
         </div>
@@ -78,9 +79,14 @@
             <div id="c_l2_row1" class="c_row">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" onmouseout="cell_pic_out(this)" class="c_r_i_pic" src="img/index/BigMag.png">
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_mag" src="img/index/BigMag.png">
                 </div>
-                <div class="c_r1_bg" ></div>
+                <div class="c_r1_bg" onmouseout="cell_pic_out(this)" >
+                    <div class="c_r1_bg_left">
+                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">微<br>杂<br>志</div>
+                    </div>
+                </div>
             </div>
             <div id="c_l2_row2">
                 <span style="height:100%;display: inline-block;vertical-align: middle"></span>
@@ -89,9 +95,14 @@
             <div id="c_l2_row3" class="c_row">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" onmouseout="cell_pic_out(this)" class="c_r_i_pic" src="img/index/BigMusic.png">
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_music" src="img/index/BigMusic.png">
                 </div>
-                <div class="c_r2_bg" ></div>
+                <div class="c_r2_bg"  onmouseout="cell_pic_out(this)">
+                    <div class="c_r1_bg_right">
+                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">微<br>音<br>乐</div>
+                    </div>
+                </div>
             </div>
             <div class="c_right"></div>
         </div>
@@ -101,41 +112,66 @@
             <div id="c_l3_row1" class="c_row c_row3">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" onmouseout="cell_pic_out(this)" class="c_r_i_pic" src="img/index/BigAct.png">
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_act" src="img/index/BigAct.png">
                 </div>
-                <div class="c_r3_bg" ></div>
+                <div class="c_r3_bg"  onmouseout="cell_pic_out(this)">
+                    <div class="c_r1_bg_bottom">
+                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">微活动</div>
+                    </div>
+                </div>
             </div>
             <div class="c_blank"></div>
             <div id="c_l3_row2" class="c_row c_row3">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" onmouseout="cell_pic_out(this)" class="c_r_i_pic" src="img/index/BigApp.png">
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_app" src="img/index/BigApp.png">
                 </div>
-                <div class="c_r3_bg" ></div>
+                <div class="c_r3_bg"  onmouseout="cell_pic_out(this)" >
+                    <div class="c_r1_bg_bottom">
+                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">APP</div>
+                    </div>
+                </div>
             </div>
             <div class="c_blank"></div>
             <div id="c_l3_row3" class="c_row c_row3">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" onmouseout="cell_pic_out(this)" class="c_r_i_pic" src="img/index/BigMoive.png">
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_movie" src="img/index/BigMoive.png">
                 </div>
-                <div class="c_r3_bg" ></div>
+                <div class="c_r3_bg" onmouseout="cell_pic_out(this)" >
+                    <div class="c_r1_bg_bottom">
+                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">微电影</div>
+                    </div>
+                </div>
             </div>
             <div class="c_blank"></div>
             <div id="c_l3_row4" class="c_row c_row3">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" onmouseout="cell_pic_out(this)" class="c_r_i_pic" src="img/index/BigCartoon.png">
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_cartoon" src="img/index/BigCartoon.png">
                 </div>
-                <div class="c_r3_bg" ></div>
+                <div class="c_r3_bg"  onmouseout="cell_pic_out(this)">
+                    <div class="c_r1_bg_bottom">
+                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">微漫画</div>
+                    </div>
+                </div>
             </div>
             <div class="c_blank"></div>
             <div id="c_l3_row5" class="c_row c_row3">
                 <div class="c_r_img">
                     <span style="height:100%;display: inline-block;vertical-align: middle"></span>
-                    <img onmouseover="cell_pic_over(this)" onmouseout="cell_pic_out(this)" class="c_r_i_pic" src="img/index/BigStdio.png">
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_studio" src="img/index/BigStdio.png">
                 </div>
-                <div class="c_r3_bg" ></div>
+                <div class="c_r3_bg"  onmouseout="cell_pic_out(this)">
+                    <div class="c_r1_bg_bottom">
+                        <div style="width:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">微工作室</div>
+                    </div>
+                </div>
             </div>
             <div class="c_right"></div>
         </div>
@@ -188,51 +224,7 @@
                         <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
                     </div>
                 </div>
-                <div id="l_b_m_8" class="pic">
-                    <div class="p_pic">
-                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
-                    </div>
-                </div>
-                <div id="l_b_m_9" class="pic">
-                    <div class="p_pic">
-                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
-                    </div>
-                </div>
-                <div id="l_b_m_10" class="pic">
-                    <div class="p_pic">
-                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
-                    </div>
-                </div>
-                <div id="l_b_m_11" class="pic">
-                    <div class="p_pic">
-                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
-                    </div>
-                </div>
-                <div id="l_b_m_12" class="pic">
-                    <div class="p_pic">
-                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
-                    </div>
-                </div>
-                <div id="l_b_m_13" class="pic">
-                    <div class="p_pic">
-                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
-                    </div>
-                </div>
-                <div id="l_b_m_14" class="pic">
-                    <div class="p_pic">
-                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
-                    </div>
-                </div>
-                <div id="l_b_m_15" class="pic">
-                    <div class="p_pic">
-                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
-                    </div>
-                </div>
-                <div id="l_b_m_16" class="pic">
-                    <div class="p_pic">
-                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
-                    </div>
-                </div>
+
             </div>
             <div id="l_b_right">
                 <div style="vertical-align: middle"><img id="l_b_l_rightA" src="img/arrow.png"></div>
