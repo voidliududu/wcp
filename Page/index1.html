@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> <html lang="zh-CN">
+
+<head>
+
+    <title>中南大学微产品创新工作室</title>
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <meta http-equiv="content-language" content="zh-CN">
+
+    <style type="text/css">
+
+        body {background-color:rgb(240,240,245);}
+
+        canvas{background-color:rgb(240,240,245);overflow:hidden}
+
+    </style>
+
+    <link href="css/index.css" rel="stylesheet" media="screen">
+    <link href="css/index2.css" rel="stylesheet" media="screen">
+</head>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.rotate.min.js"></script>
+<script src="js/jquery.color-2.1.0.min.js"></script>
+
+<script src="js/indexCanvas.js"></script>
+<script src="js/define.js"></script>
+<script src="js/index.js"></script>
+<!--<script src="js/Move.js"></script>-->
+
+<body id="body" onload="start()" onresize="resize()" onorientationchange="resize()" onmousedown="context.fillStyle='rgba(240,240,245,'+opacity+')'" onmouseup="context.fillStyle='rgb(240,240,245)'">
+
+<canvas id="starfield" style="background-color:rgb(240,240,245)"></canvas>
+<div id="adsense" style="position:absolute;background-color:transparent;display:none">
+
+</div>
+<div id="Index" style="display: block">
+    <div id="cell">
+        <div class="headBlank"></div>
+        <div id="c_line1" class="cell">
+            <div class="c_left"></div>
+            <div id="c_l1_row1" class="c_row">
+                <div class="c_r_img">
+                    <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                    <img class="c_r_i_pic gear" src="img/index/BigGear.png">
+                </div>
+                <!--<div class="c_r1_bg"  onmouseout="cell_pic_out(this)"></div>-->
+            </div>
+            <div class="c_blank"></div>
+            <div id="c_l1_row2" class="c_row c_row2">
+                <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                <div style="display: inline-block;vertical-align: middle">队伍<br>介绍</div>
+            </div>
+            <div class="c_blank"></div>
+            <div id="c_l1_row3" class="c_row c_row2">
+                <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                <div style="display: inline-block;vertical-align: middle">工作室<br>介绍</div>
+            </div>
+            <div class="c_blank"></div>
+            <div id="c_l1_row4" class="c_row c_row2">
+                <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                <div style="display: inline-block;vertical-align: middle">实施<br>成效</div>
+            </div>
+            <div class="c_blank"></div>
+            <div id="c_l1_row5" class="c_row">
+                <div class="c_r_img">
+                    <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                    <img class="c_r_i_pic gear2" src="img/index/BigGear.png">
+                </div>
+                <!--<div class="c_r2_bg" onmouseout="cell_pic_out(this)"></div>-->
+            </div>
+            <div class="c_right"></div>
+        </div>
+        <div class="bodyBlank"></div>
+        <div id="c_line2" class="cell">
+            <div class="c_left"></div>
+            <div id="c_l2_row1" class="c_row">
+                <div class="c_r_img">
+                    <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_mag" src="img/index/BigMag.png">
+                </div>
+                <div class="c_r1_bg" onmouseout="cell_pic_out(this)" >
+                    <div class="c_r1_bg_left">
+                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">微<br>杂<br>志</div>
+                    </div>
+                </div>
+            </div>
+            <div id="c_l2_row2">
+                <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                <div onmouseover="cell_title_over(this)" onmouseout="cell_title_out(this)" style="display: inline-block;vertical-align: middle">中南大学微产品创意工作室</div>
+            </div>
+            <div id="c_l2_row3" class="c_row">
+                <div class="c_r_img">
+                    <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_music" src="img/index/BigMusic.png">
+                </div>
+                <div class="c_r2_bg"  onmouseout="cell_pic_out(this)">
+                    <div class="c_r1_bg_right">
+                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">微<br>音<br>乐</div>
+                    </div>
+                </div>
+            </div>
+            <div class="c_right"></div>
+        </div>
+        <div class="bodyBlank"></div>
+        <div id="c_line3" class="cell">
+            <div class="c_left"></div>
+            <div id="c_l3_row1" class="c_row c_row3">
+                <div class="c_r_img">
+                    <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_act" src="img/index/BigAct.png">
+                </div>
+                <div class="c_r3_bg"  onmouseout="cell_pic_out(this)">
+                    <div class="c_r1_bg_bottom">
+                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">微活动</div>
+                    </div>
+                </div>
+            </div>
+            <div class="c_blank"></div>
+            <div id="c_l3_row2" class="c_row c_row3">
+                <div class="c_r_img">
+                    <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_app" src="img/index/BigApp.png">
+                </div>
+                <div class="c_r3_bg"  onmouseout="cell_pic_out(this)" >
+                    <div class="c_r1_bg_bottom">
+                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">APP</div>
+                    </div>
+                </div>
+            </div>
+            <div class="c_blank"></div>
+            <div id="c_l3_row3" class="c_row c_row3">
+                <div class="c_r_img">
+                    <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_movie" src="img/index/BigMoive.png">
+                </div>
+                <div class="c_r3_bg" onmouseout="cell_pic_out(this)" >
+                    <div class="c_r1_bg_bottom">
+                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">微电影</div>
+                    </div>
+                </div>
+            </div>
+            <div class="c_blank"></div>
+            <div id="c_l3_row4" class="c_row c_row3">
+                <div class="c_r_img">
+                    <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_cartoon" src="img/index/BigCartoon.png">
+                </div>
+                <div class="c_r3_bg"  onmouseout="cell_pic_out(this)">
+                    <div class="c_r1_bg_bottom">
+                        <div style="height:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">微漫画</div>
+                    </div>
+                </div>
+            </div>
+            <div class="c_blank"></div>
+            <div id="c_l3_row5" class="c_row c_row3">
+                <div class="c_r_img">
+                    <span style="height:100%;display: inline-block;vertical-align: middle"></span>
+                    <img onmouseover="cell_pic_over(this)" class="c_r_i_pic" id="c_r_i_studio" src="img/index/BigStdio.png">
+                </div>
+                <div class="c_r3_bg"  onmouseout="cell_pic_out(this)">
+                    <div class="c_r1_bg_bottom">
+                        <div style="width:100%;display: inline-block;vertical-align: middle"></div>
+                        <div class="c_r1_bg_font">微工作室</div>
+                    </div>
+                </div>
+            </div>
+            <div class="c_right"></div>
+        </div>
+    </div>
+</div>
+<div id="all" style="display: none;">
+    <div id="left">
+        <div id="l_head">
+            <br/>
+            <div id="l_h_png"><img id="l_h_p_img"  src="img/titlePng.png"/></div>
+            <div id="l_h_title">中南大学微产品创新工作室</div>
+        </div>
+        <div id="l_body">
+            <div id="l_b_left">
+                <div style="vertical-align: middle"><img id="l_b_l_leftA" src="img/arrow.png" /></div>
+            </div>
+            <div id="l_b_middle">
+                <div id="l_b_m_1" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_2" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_3" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_4" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_5" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_6" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+                <div id="l_b_m_7" class="pic">
+                    <div class="p_pic">
+                        <span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="img/studio/jilu.png">
+                    </div>
+                </div>
+
+            </div>
+            <div id="l_b_right">
+                <div style="vertical-align: middle"><img id="l_b_l_rightA" src="img/arrow.png"></div>
+            </div>
+        </div>
+        <div id="l_foot">
+            <br><br><br>
+            Copyright©2001-2017 中南大学微产品创意工作室 版权所有
+            <br>
+            湖南长沙岳麓区麓山南路932号 410083
+            <br>
+            联系方式:0731-88877617
+            <br>
+        </div>
+    </div>
+    <div id="right">
+        <div id="r_1" class="nav">
+            <img class="n_n_n" src="img/index/IconIndex.png">
+            <div class="n_nav">
+            </div>
+        </div>
+        <div id="r_8" class="nav">
+            <img class="n_n_n" src="img/index/IconStudio.png">
+            <div class="n_nav"></div>
+        </div>
+        <div id="r_2" class="nav">
+            <img class="n_n_n" src="img/index/IconMusic.png">
+            <div class="n_nav">
+            </div>
+        </div>
+        <div id="r_3" class="nav">
+            <img class="n_n_n" src="img/index/IconMovie.png">
+            <div class="n_nav">
+            </div>
+        </div>
+        <div id="r_4" class="nav">
+            <img class="n_n_n" src="img/index/IconCartoon.png">
+            <div class="n_nav">
+            </div>
+        </div>
+        <div id="r_5" class="nav">
+            <img class="n_n_n" src="img/index/IconAPP.png">
+            <div class="n_nav">
+            </div>
+        </div>
+        <div id="r_6" class="nav">
+            <img class="n_n_n" src="img/index/IconMag.png">
+            <div class="n_nav">
+            </div>
+        </div>
+        <div id="r_7" class="nav">
+            <img class="n_n_n" src="img/index/IconAct.png">
+            <div class="n_nav">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
