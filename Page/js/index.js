@@ -19,20 +19,20 @@ function cell_pic_over(This){
         $(This).parent().next().animate({
             backgroundColor: 'white'
         }, 200);
-    if($(This).parent().next().children().children('.c_r1_bg_font').css('display') == 'none')
-        $(This).parent().next().children().children('.c_r1_bg_font').css('display','inline-block').animate({
-            color:'#13227a'
-        },200)
+    // if($(This).parent().next().children().children('.c_r1_bg_font').css('display') == 'none')
+    //     $(This).parent().next().children().children('.c_r1_bg_font').css('display','inline-block').animate({
+    //         color:'#13227a'
+    //     },200)
 }
 function cell_pic_out(This){
     if($(This).css('background-color') != 'rgba(0, 0, 0, 0)'){
         $(This).animate({
             backgroundColor:'transparent'
         },100);
-    if($(This).children().children('.c_r1_bg_font').css('display') == 'inline-block')
-        $(This).children().children('.c_r1_bg_font').animate({
-            color:'transparent'
-         },200).css('display','none')
+    // if($(This).children().children('.c_r1_bg_font').css('display') == 'inline-block')
+    //     $(This).children().children('.c_r1_bg_font').animate({
+    //         color:'transparent'
+    //      },200).css('display','none')
     }
 }
 function cell_title_over(This){

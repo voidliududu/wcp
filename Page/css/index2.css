@@ -54,6 +54,7 @@ body{
     display: inline-block;
 }
 #l_b_left{
+
     height:100%;
     width:5%;
     /*background-color: black;*/
@@ -103,6 +104,18 @@ body{
         /*border-radius: 10px;*/
         /*-moz-border-radius: 10px;*/
         /*-webkit-border-radius: 10px;*/
+}
+.p_title{
+    text-align: center;
+    font-size: 1.6vmax;
+    width:70%;
+    margin-left:15%;
+    -khtml-opacity: 0.70;
+    filter:alpha(Opacity=70);
+    -moz-opacity:0.70;
+    opacity: 0.70;
+    /*background-color: #b6d7f4;*/
+
 }
 .p_p_p{
     height:100%;

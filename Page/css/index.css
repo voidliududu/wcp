@@ -139,11 +139,8 @@
 .c_r1_bg_font {
     text-align: center;
     font-size: 1.8vmax;
-    display: none;
     vertical-align: middle;
-    color:transparent;
-    cursor: pointer;
-
+    display: inline-block;
 }
 .c_r2_bg{
     position: absolute;
