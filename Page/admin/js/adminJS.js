@@ -24,6 +24,8 @@ $(function () {
         stdioBranch = $(children[4]).children('.add_input').val();
         $.ajax({
             url : 'http://localhost/wcp/Cooperate//dept.php?m=1',
+            async : true,
+            cache : true,
             data : {
                 name : stdioName ,
                 brand : '' ,
