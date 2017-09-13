@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微产品工作室后台登录</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="css/indexCSS.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body style="font-family: 'Microsoft YaHei UI', sans-serif;width: 100%;background-color: #eaeef7" >
+
+<!--顶栏-->
+<div id="headline">
+    <div id="administratorImg">
+        <img src="img/logo.png">
+    </div>
+</div>
+
+<div id="main" class="login">
+    <!--左侧栏-->
+    <div id="left_line">
+        <!--列表-->
+        <div id="list">
+            <ul class="main_ul active">
+                <li>登录</li>
+            </ul>
+        </div>
+        <!--底下附属信息-->
+        <div id="some_info">
+            <a id="some_word">
+                底下附属信息
+            </a>
+        </div>
+    </div>
+
+    <!--主体-->
+    <div id="main_part">
+        <div id="login_box">
+            <div class="login_title"><span>LOG IN</span></div>
+            <form id="loginForm">
+                <div class="login_line">
+                    <span>E-MAIL</span>
+                    <input type="text" class="form-control" id="email">
+                </div>
+                <div class="login_line">
+                    <span>PASSWORD</span><span id="forgetPwd" class="login_tip">forget&nbsp;&nbsp;password</span>
+                    <input type="password" class="form-control" id="pwd">
+                    <span class="glyphicon glyphicon-eye-open" id="seePwd"></span>
+                </div>
+            </form>
+            <button type="submit" id="loginBtn">LOG&nbsp;&nbsp;IN</button><br/>
+            <span id="no_account" class="login_tip">I&nbsp;&nbsp;don't&nbsp;&nbsp;have&nbsp;&nbsp;an&nbsp;&nbsp;account</span>
+        </div>
+        <div class="login_background">
+            <img src="img/background.png">
+        </div>
+    </div>
+
+
+
+</div>
+
+</body>
+</html>

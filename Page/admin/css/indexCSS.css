@@ -245,3 +245,64 @@
 .pagination{
     float: right;
 }
+
+
+
+/*登录*/
+#login_box{
+    height: 400px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 100px;
+    box-shadow: 0 0 40px #5b5b5b;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    text-align: center;
+    position: relative;
+    z-index: 9999;
+}
+.login_title{
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}
+#loginForm{
+    margin: 30px 0;
+}
+.login_line{
+    margin: 40px 0;
+    text-align: left;
+}
+#forgetPwd{
+    float: right;
+}
+#seePwd{
+    float: right;
+    margin-top: -28px;
+    margin-right: 10px;
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+}
+#loginBtn{
+    padding: 10px 50px;
+    border: none;
+    background-color: #f98232;
+    border-radius: 2px;
+    margin:0 auto;
+    color: #ffffff;
+}
+.login_tip{
+    color: #ff5c5b;
+    font-size: 12px;
+    font-style: italic;
+    cursor: pointer;
+}
+.login_background{
+    position: relative;
+    bottom: 0;
+    width: 70%;
+}
+.login_background img{
+    width: 100%;
+}
