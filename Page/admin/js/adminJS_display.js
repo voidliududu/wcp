@@ -77,6 +77,9 @@ function ajax_control(result,reason){
                 '<div class="info_text">所属分类:'+result.pcate+'</div>'+
                 '<div class="info_text">创建时间:'+result.time+'</div>'+
                 '<div class="info_text">点击量:'+result.clickcount+'</div>'+
+                '<button class="btn btn-primary" id="disagree">不通过</button>' +
+                '<button class="btn btn-primary" id="agree">通过</button>' +
+                '<div class="clearfix"></div>'+
                 '</div>';
                 $('#product1_info').html(str);
                 url = '';
@@ -114,8 +117,13 @@ function ajax_control(result,reason){
                 '<div class="studio_intro" id="studio_intro">'+
 
                 '</div>'+
-                '<div class="info_text">所属部门:'+result.updept+'</div>'+
-                '</div>';
+                '<div class="info_text">所属部门:'+result.updept+'</div>' +
+                '<button class="btn btn-primary" id="disagree">不通过</button>' +
+                ' <button class="btn btn-primary" id="agree">通过</button>' +
+                ' <div class="clearfix"></div>'+
+                '</div>' +
+                '<div id="stu_disagree_reason" style="display: none"> <span>不通过理由</span><br/> <textarea class="disagree_reason form-control"/> ' +
+                '<button type="submit" class="btn btn-primary" id="stu_disagree_sub">提交</button><div class="clearfix"></div> </div>';
                  $('#studio1_info').html(str);
                 url = '';
                 ajax(url,'get_studio_one_detail');
@@ -124,7 +132,11 @@ function ajax_control(result,reason){
             str = result.content;
             $('#studio_intro').html(str);
         }
-    }
+    };
+    // 审核不通过
+    $('#disagree').on('click',function () {
+        $('#stu_disagree_reason').show(500);
+    });
 }
 
 // 功能切换
@@ -256,6 +268,12 @@ $(function () {
         ajax(url,'get_studio_one');
     })
 
+    .on('click','.stu_check',function () {
+        list_show('studio1_info');
+        url = '';
+        ajax(url,'get_studio_one');
+    })
+
     // 删除工作室信息
     .on('click','.stu_delete',function () {
         if(confirm("你确定要删除吗？")){
@@ -291,6 +309,11 @@ $(function () {
         url = '';
         ajax(url,'get_product_one');
     })
+        .on('click','.pro_check',function () {
+            list_show('product1_info');
+            url = '';
+            ajax(url,'get_product_one');
+        })
 
     // 删除微产品信息
     .on('click','.pro_delete',function () {
@@ -300,4 +323,5 @@ $(function () {
             }
         }
     });
+
 });
