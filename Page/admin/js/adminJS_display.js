@@ -129,20 +129,14 @@ function ajax_control(result,reason){
 
 // 功能切换
 $(function () {
+    //首页
+    $('#index_page').on('click',function(){
+
+    });
+
     // 所有工作室
     $('#all_studio').on('click',function () {
-        // 页面显隐
-        $('#index_page').css('display','none');
-
-        $('#all_studio_page').css('display','block');
-        $('#all_product_page').css('display','none');
-
-        $('#add_studio_page').css('display','none');
-        $('#add_product_page').css('display','none');
-
-        $('.product_info_page').css('display','none');
-        $('.studio_info_page').css('display','none');
-
+        list_show('all_studio_page');
         // 列表选项背景色
         listColor_change('all_studio');
         url = '';
@@ -248,7 +242,7 @@ $(function () {
 
         stu_name = $(this).prev().prev().text();
         stu_branch = $(this).prev().text();
-
+        ajax(url,'change_studio_one');
     })
 
     // 查看工作室信息
@@ -270,6 +264,7 @@ $(function () {
             }
         }
     });
+
     // 修改微产品信息
     $('#product_table').on('click','.pro_change',function () {
         // 页面显隐
