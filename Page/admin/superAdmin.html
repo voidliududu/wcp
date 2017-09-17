@@ -29,7 +29,8 @@
         <img src="img/logo.png">
     </div>
     <div id="adminInfo">
-        <p>你好，超级管理员</p>
+        <p>你好，XXX工作室</p>
+        <p class="quit_word">退出</p>
     </div>
 </div>
 
@@ -41,14 +42,8 @@
         <div id="list">
             <ul class="main_ul">
                 <li id="index" class="active">首页</li>
-                <li id="we_studio">我的工作室
-                    <span class="glyphicon glyphicon-chevron-down"></span>
-                    <span class="glyphicon glyphicon-chevron-up" style="display: none"></span>
+                <li id="we_my_studio">我的工作室
                 </li>
-            </ul>
-            <ul class="sub_ul" id="studio_toggle">
-                <li class="sub_ul_li" id="all_studio">全部工作室</li>
-                <li class="sub_ul_li" id="add_studio">添加工作室</li>
             </ul>
             <ul class="main_ul">
                 <li id="we_product">我的微产品
@@ -101,147 +96,8 @@
             </div>
         </div>
 
-        <!--微工作室-->
-
-        <!--全部工作室-->
-        <div id="all_studio_page" style="display: none">
-            <!--工作室列表-->
-            <header class="page_head"><span class="glyphicon glyphicon-link"></span> 全部工作室</header>
-            <div id="studio-list">
-                <table id="studio_table">
-                    <tr>
-                        <th style="max-width: 50px">工作室ID</th>
-                        <th>工作室名</th>
-                        <th>工作室所属部门</th>
-                        <th colspan="3">操作</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="pointer stu_detail">小弟弟工作室</td>
-                        <td>升华网</td>
-                        <td class="pointer stu_change">修改</td>
-                        <td class="pointer stu_check">审核</td>
-                        <td class="pointer stu_delete">删除</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="pointer stu_detail">小弟弟工作室</td>
-                        <td>升华网</td>
-                        <td class="pointer stu_change">修改</td>
-                        <td class="pointer stu_check">审核</td>
-                        <td class="pointer stu_delete">删除</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="pointer stu_detail">小弟弟工作室</td>
-                        <td>升华网</td>
-                        <td class="pointer stu_change">修改</td>
-                        <td class="pointer stu_check">审核</td>
-                        <td class="pointer stu_delete">删除</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="pointer stu_detail">小弟弟工作室</td>
-                        <td>升华网</td>
-                        <td class="pointer stu_change">修改</td>
-                        <td class="pointer stu_check">审核</td>
-                        <td class="pointer stu_delete">删除</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="pointer stu_detail">小弟弟工作室</td>
-                        <td>升华网</td>
-                        <td class="pointer stu_change">修改</td>
-                        <td class="pointer stu_check">审核</td>
-                        <td class="pointer stu_delete">删除</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="pointer stu_detail">小弟弟工作室</td>
-                        <td>升华网</td>
-                        <td class="pointer stu_change">修改</td>
-                        <td class="pointer stu_check">审核</td>
-                        <td class="pointer stu_delete">删除</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="pointer stu_detail">小弟弟工作室</td>
-                        <td>升华网</td>
-                        <td class="pointer stu_change">修改</td>
-                        <td class="pointer stu_check">审核</td>
-                        <td class="pointer stu_delete">删除</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="pointer stu_detail">小弟弟工作室</td>
-                        <td>升华网</td>
-                        <td class="pointer stu_change">修改</td>
-                        <td class="pointer stu_check">审核</td>
-                        <td class="pointer stu_delete">删除</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="pointer stu_detail">小弟弟工作室</td>
-                        <td>升华网</td>
-                        <td class="pointer stu_change">修改</td>
-                        <td class="pointer stu_check">审核</td>
-                        <td class="pointer stu_delete">删除</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td class="pointer stu_detail">小弟弟工作室</td>
-                        <td>升华网</td>
-                        <td class="pointer stu_change">修改</td>
-                        <td class="pointer stu_check">审核</td>
-                        <td class="pointer stu_delete">删除</td>
-                    </tr>
-                </table>
-            </div>
-            <!--分页-->
-            <div class="Pagination">
-                <ul class="pagination pagination-lg">
-                    <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">...</a> </li>
-                    <li><a href="#">&raquo;</a></li>
-                </ul>
-            </div>
-
-        </div>
-
         <!--某个工作室的具体信息-->
         <div class="studio_info_page" id="studio1_info" style="display: none"></div>
-
-        <!--添加工作室-->
-        <div id="add_studio_page" style="display: none">
-            <header class="page_head add_studio"><span class="glyphicon glyphicon-plus"></span>添加工作室 </header>
-            <header class="page_head change_studio"><span class="glyphicon glyphicon-edit"></span>修改工作室信息 </header>
-            <!--添加工作室内容填写-->
-            <div id="studio_add" class="cate_add add">
-                <div class="add_text">工作室名:<span class="glyphicon glyphicon-pencil"></span>
-                    <input placeholder="请输入工作室名" class="add_input"/>
-                </div>
-                <div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                    <span class="add_pic_tip">点击添加图片</span>
-                    <img src="img/profile.png" class="add_pic_pre">
-                </div>
-                <div class="add_text">工作室介绍:<span class="glyphicon glyphicon-tag"></span> </div>
-                <textarea class="add_intro"></textarea>
-                <div class="add_text">所属部门:<span class="glyphicon glyphicon-pushpin"></span>
-                    <input placeholder="请输入所属部门" class="add_input"/>
-                </div>
-                <button id="studio_add_check" class="check_add">确认添加</button>
-                <button id="studio_change_check" class="check_add" style="display: none">确认修改</button>
-                <div class="clearfix"></div>
-            </div>
-
-        </div>
-
-
 
         <!--微产品-->
 
@@ -254,98 +110,97 @@
                     <tr>
                         <th style="max-width: 50px">产品ID</th>
                         <th>产品名</th>
-                        <th>所属工作室</th>
                         <th>产品类型</th>
                         <th colspan="3">操作</th>
                     </tr>
                     <tr>
                         <td>1</td>
                         <td class="pointer pro_detail">小弟弟</td>
-                        <td>小弟弟工作室</td>
+                        
                         <td>微电影</td>
                         <td class="pointer pro_change">修改</td>
-                        <td class="pointer pro_check">审核</td>
+                        
                         <td class="pointer pro_delete">删除</td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td class="pointer pro_detail">小弟弟</td>
-                        <td>小弟弟工作室</td>
+                        
                         <td>微电影</td>
                         <td class="pointer pro_change">修改</td>
-                        <td class="pointer pro_check">审核</td>
+                        
                         <td class="pointer pro_delete">删除</td>
                     </tr>
                     <tr>
                         <td>3</td>
                         <td class="pointer pro_detail">小弟弟</td>
-                        <td>小弟弟工作室</td>
+                        
                         <td>微电影</td>
                         <td class="pointer pro_change">修改</td>
-                        <td class="pointer pro_check">审核</td>
+                        
                         <td class="pointer pro_delete">删除</td>
                     </tr>
                     <tr>
                         <td>4</td>
                         <td class="pointer pro_detail">小弟弟</td>
-                        <td>小弟弟工作室</td>
+                        
                         <td>微电影</td>
                         <td class="pointer pro_change">修改</td>
-                        <td class="pointer pro_check">审核</td>
+                        
                         <td class="pointer pro_delete">删除</td>
                     </tr>
                     <tr>
                         <td>5</td>
                         <td class="pointer pro_detail">小弟弟</td>
-                        <td>小弟弟工作室</td>
+                        
                         <td>微电影</td>
                         <td class="pointer pro_change">修改</td>
-                        <td class="pointer pro_check">审核</td>
+                        
                         <td class="pointer pro_delete">删除</td>
                     </tr>
                     <tr>
                         <td>6</td>
                         <td class="pointer pro_detail">小弟弟</td>
-                        <td>小弟弟工作室</td>
+                        
                         <td>微电影</td>
                         <td class="pointer pro_change">修改</td>
-                        <td class="pointer pro_check">审核</td>
+                        
                         <td class="pointer pro_delete">删除</td>
                     </tr>
                     <tr>
                         <td>7</td>
                         <td class="pointer pro_detail">小弟弟</td>
-                        <td>小弟弟工作室</td>
+                        
                         <td>微电影</td>
                         <td class="pointer pro_change">修改</td>
-                        <td class="pointer pro_check">审核</td>
+                        
                         <td class="pointer pro_delete">删除</td>
                     </tr>
                     <tr>
                         <td>8</td>
                         <td class="pointer pro_detail">小弟弟</td>
-                        <td>小弟弟工作室</td>
+                        
                         <td>微电影</td>
                         <td class="pointer pro_change">修改</td>
-                        <td class="pointer pro_check">审核</td>
+                        
                         <td class="pointer pro_delete">删除</td>
                     </tr>
                     <tr>
                         <td>9</td>
                         <td class="pointer pro_detail">小弟弟</td>
-                        <td>小弟弟工作室</td>
+                        
                         <td>微电影</td>
                         <td class="pointer pro_change">修改</td>
-                        <td class="pointer pro_check">审核</td>
+                        
                         <td class="pointer pro_delete">删除</td>
                     </tr>
                     <tr>
                         <td>10</td>
                         <td class="pointer pro_detail">小弟弟</td>
-                        <td>小弟弟工作室</td>
+                        
                         <td>微电影</td>
                         <td class="pointer pro_change">修改</td>
-                        <td class="pointer pro_check">审核</td>
+                        
                         <td class="pointer pro_delete">删除</td>
                     </tr>
                 </table>
