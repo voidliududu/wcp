@@ -11,7 +11,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!--时间选择器-->
     <link rel="stylesheet" href="css/pikaday.css">
-    <!--<link rel="stylesheet" href="css/site.css">-->
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script type="text/javascript" rel="script" src="js/jquery-1.10.1.js"></script>
     <script type="text/javascript" rel="script" src="js/jquery-1.11.3.min.js"></script>
@@ -94,6 +93,30 @@
             <div class="background">
                 <img src="img/background.png">
             </div>
+        </div>
+
+        <!--添加工作室-->
+        <div id="add_studio_page" style="display: none">
+            <header class="page_head change_studio"><span class="glyphicon glyphicon-edit"></span>修改工作室信息 </header>
+            <!--添加工作室内容填写-->
+            <div id="studio_add" class="cate_add add">
+                <div class="add_text">工作室名:<span class="glyphicon glyphicon-pencil"></span>
+                    <input placeholder="请输入工作室名" class="add_input"/>
+                </div>
+                <div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
+                    <span class="add_pic_tip">点击添加图片</span>
+                    <img src="img/profile.png" class="add_pic_pre">
+                </div>
+                <div class="add_text">工作室介绍:<span class="glyphicon glyphicon-tag"></span> </div>
+                <textarea class="add_intro"></textarea>
+                <div class="add_text">所属部门:<span class="glyphicon glyphicon-pushpin"></span>
+                    <input placeholder="请输入所属部门" class="add_input"/>
+                </div>
+                <button id="studio_add_check" class="check_add">确认添加</button>
+                <button id="studio_change_check" class="check_add" style="display: none">确认修改</button>
+                <div class="clearfix"></div>
+            </div>
+
         </div>
 
         <!--某个工作室的具体信息-->
