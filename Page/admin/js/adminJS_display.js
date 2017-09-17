@@ -1,6 +1,9 @@
 // 列表选项背景色
 function listColor_change(id){ //5eacd2
     $('#index').removeClass('active');
+    $('#index').css('background-color','#597397');
+
+    $('#we_my_studio').css('background-color','#597397');
     $('#all_product').css('background-color','#425671');
     $('#all_studio').css('background-color','#425671');
     $('#add_studio').css('background-color','#425671');
@@ -24,6 +27,7 @@ function list_show(id){
     $('#add_product_page').css('display','none');
     $('.product_info_page').css('display','none');
     $('.studio_info_page').css('display','none');
+
     $('#'+id).css('display','block');
 }
 
@@ -128,6 +132,23 @@ function ajax_control(result,reason){
                 url = '';
                 ajax(url,'get_studio_one_detail');
         }
+        else if(this.reason == 'get_my_studio'){
+            str = '<header class="page_head"><span class="glyphicon glyphicon-file"></span>studio1 </header>'+
+                '<div class="info_show">'+
+                '<div class="info_text">工作室名:'+result.deptname+'</div>'+
+                '<div class="info_text">代表图片:<img src="'+result.brand+'" class="info_img"> </div>'+
+                '<div class="info_text">工作室介绍:</div>'+
+                '<div class="studio_intro" id="studio_intro">'+
+
+                '</div>'+
+                '<div class="info_text">所属部门:'+result.updept+'</div>' +
+                '<button class="btn btn-primary" id="my_change">修改</button>' +
+                '<div class="clearfix"></div>'+
+                '</div>';
+                $('#studio1_info').html(str);
+            url = '';
+            ajax(url,'get_studio_one_detail');
+        }
         else if(this.reason == 'get_studio_one_detail'){
             str = result.content;
             $('#studio_intro').html(str);
@@ -142,8 +163,22 @@ function ajax_control(result,reason){
 // 功能切换
 $(function () {
     //首页
-    $('#index_page').on('click',function(){
+    $('#index').on('click',function(){
+        list_show('index_page');
 
+        listColor_change('index');
+
+    });
+
+    // 我的工作室
+    $('#we_my_studio').on('click',function () {
+        list_show('studio1_info');
+        // 列表选项背景色
+        listColor_change('we_my_studio');
+        $('#studio_add_check').css('display','none');
+        $('#studio_change_check').css('display','none');
+        url = '';
+        ajax(url,'get_my_studio');
     });
 
     // 所有工作室
@@ -152,7 +187,7 @@ $(function () {
         // 列表选项背景色
         listColor_change('all_studio');
         url = '';
-        ajax(url, 'get_studio');
+        ajax(url, 'get_studio_one');
     });
 
     // 所有微产品

@@ -316,7 +316,7 @@
 }
 
 /*工作室审核*/
-#agree,#disagree,#stu_disagree_sub{
+#agree,#disagree,#stu_disagree_sub,#my_change{
     float: right;
     margin: 10px;
     width: 100px;
