@@ -4,9 +4,10 @@ $(function () {
             NOW = obj.index;
         }
         oIm
-            .css('width', 130+'px')
-            .css('height', 80+'px')
-            .css('marginTop',20+'px')
+            .css('left','20%')
+            .css('width', '60%')
+            .css('height', '70%')
+            .css('top','15%')
             .css('opacity', 0.7)
             .css('filter', 'blur('+1+'px)');
         text.css('display','none');
@@ -25,9 +26,10 @@ $(function () {
         $('.le img').attr('src',pic[NOW]);
         $('#container').css('backgroundImage',"url("+pic[NOW]+")");
         oIm.eq(NOW)
-            .css('width', 150+'px')
-            .css('height', 100+'px')
-            .css('marginTop',10+'px')
+            .css('left','10%')
+            .css('width', '80%')
+            .css('height', '90%')
+            .css('top','5%')
             .css('opacity', 1)
             .css('filter', 'blur('+0+')');
     }

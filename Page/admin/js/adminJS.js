@@ -22,7 +22,6 @@ $(function () {
         stdioName = $(children[0]).children('.add_input').val();
         stdioIntro = $(children[3]).val();
         stdioBranch = $(children[4]).children('.add_input').val();
-         // if()
         $.ajax({
             url : 'http://localhost/wcp/Cooperate//dept.php?m=1',
             async : true,
