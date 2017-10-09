@@ -17,22 +17,15 @@
     width: 80px;
     height: 80px;
 }
-#adminInfo #user_name{
+#adminInfo{
     font-size: 20px;
     color: #ffffff;
+    padding: 10px 5px;
 }
-.quit_word{
-    font-size: 16px;
-    color: #3182b6;
-    cursor: pointer;
-}
-.quit_word:hover{
-    text-decoration: underline;
-}
-
 /*列表以及内容*/
 #main{
     height: auto;
+    min-height: 900px;
 }
 
 /*左列表*/
@@ -109,6 +102,21 @@
     box-sizing: border-box;
     padding: 40px;
 }
+.index_txt{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 36px;
+    font-family: "Microsoft YaHei UI",sans-serif;
+    color: #6b6f72;
+    width: 400px;
+    height: 500px;
+}
+.index_txt span{
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    margin-top: -200px;
+}
 
 .page_head{
     font-size: 24px;
@@ -116,12 +124,12 @@
     color: #485d7a;
 }
 
-#studio_table,#product_table{
+#studio_table,#product_table,#news_table{
     text-align: center;
     width: 100%;
     border: 1px solid #e1e2e6;
 }
-#studio_table th,#product_table th{
+#studio_table th,#product_table th,#news_table th{
     text-align: center;
     font-size: 20px;
     background-color: #f0f1f5;
@@ -129,7 +137,7 @@
     border: 1px solid #e1e2e6;
     padding: 20px 0;
 }
-#studio_table tr td,#product_table tr td{
+#studio_table tr td,#product_table tr td,#news_table tr td{
     border: 1px solid #e1e2e6;
     padding: 15px 0;
     box-sizing: border-box;
@@ -244,4 +252,80 @@
 
 .pagination{
     float: right;
+}
+
+
+
+/*登录*/
+#login_box{
+    height: 400px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 100px;
+    box-shadow: 0 0 40px #5b5b5b;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    text-align: center;
+    position: relative;
+    z-index: 9999;
+}
+.login_title{
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}
+#loginForm{
+    margin: 30px 0;
+}
+.login_line{
+    margin: 40px 0;
+    text-align: left;
+}
+#forgetPwd{
+    float: right;
+}
+#seePwd{
+    float: right;
+    margin-top: -28px;
+    margin-right: 10px;
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+}
+#loginBtn{
+    padding: 10px 50px;
+    border: none;
+    background-color: #f98232;
+    border-radius: 2px;
+    margin:0 auto;
+    color: #ffffff;
+}
+.login_tip{
+    color: #ff5c5b;
+    font-size: 12px;
+    font-style: italic;
+    cursor: pointer;
+}
+.login_background,.background{
+    position: relative;
+    bottom: 0;
+    width: 70%;
+}
+.login_background img,.background img{
+    width: 100%;
+}
+
+/*工作室审核*/
+#agree,#disagree,#stu_disagree_sub,#my_change{
+    float: right;
+    margin: 10px;
+    width: 100px;
+}
+#stu_disagree_reason span{
+    font-size: 24px;
+}
+.disagree_reason{
+    width: 100%;
+    resize: none;
+    height: 200px!important;
 }
