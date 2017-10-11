@@ -329,7 +329,28 @@ $(function () {
     // 修改微产品信息
     $('#product_table').on('click','.pro_change',function () {
         // 页面显隐
-        list_show('add_product_page');
+        oProduct =$(this).prev();
+        if(oProduct.text() == nameZN[0]){
+            list_show('page_main_movie');
+        }
+        else if(oProduct.text() == nameZN[1]){
+            list_show('page_main_music');
+        }
+        else if(oProduct.text() == nameZN[2]){
+            list_show('page_main_app');
+        }
+        else if(oProduct.text() == nameZN[3]){
+            list_show('page_main_cartoon');
+        }
+        else if(oProduct.text() == nameZN[4]){
+            list_show('page_main_mag');
+        }
+        else if(oProduct.text() == nameZN[5]){
+            list_show('page_main_act');
+        }
+        $('#add_product_page').css('display','block');
+        $('#add_product_page_confirm').css('display','none');
+        $('#add_product_page_main').css('display','block');
         // 页面小细节显隐
         $('#product_change_check').css('display','block');
         $('.change_product').css('display','block');
