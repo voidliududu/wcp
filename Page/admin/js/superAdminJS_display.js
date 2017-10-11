@@ -27,6 +27,14 @@ function list_show(id){
     $('#add_product_page').css('display','none');
     $('.product_info_page').css('display','none');
     $('.studio_info_page').css('display','none');
+    $('#add_product_page_confirm').css('display','block');
+    $('#add_product_page_main').css('display','none');
+    $('#page_main_act').css('display','none');
+    $('#page_main_app').css('display','none');
+    $('#page_main_cartoon').css('display','none');
+    $('#page_main_mag').css('display','none');
+    $('#page_main_movie').css('display','none');
+    $('#page_main_music').css('display','none');
 
     $('#'+id).css('display','block');
 }
@@ -359,4 +367,86 @@ $(function () {
         }
     });
 
+    //添加产品时，选择微其中一个产品
+    $('.page_confirm').unbind('click').on('click',function () {
+        $('#add_product_page_confirm').css('display','none');
+        $('#add_product_page_main').css('display','block');
+        id = $(this).attr('id');
+        id = id.split('page_confirm_')[1];
+        // console.log(id);
+        $('#page_main_'+id).css('display','block');
+        //微产品的独特添加页面
+        if(id == 'act'){
+            var i = 1;
+            $('.cate_add').on('click','#act_add',function(){
+                if(i > 9)
+                    return;
+                str =
+                    '<div class="add_main">'+
+                    '<div class="add_text add_title"> (主要内容，最多添加10张图片、10份说明)</div>'+
+                    '<div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>'+
+                    '<span class="add_pic_tip">点击添加图片</span>'+
+                    '<img src="" class="add_pic_pre" id="act_img1">'+
+                    '</div>'+
+                    '<div class="add_text">微产品介绍:<span class="glyphicon glyphicon-tag"></span> </div>'+
+                    '<textarea class="add_intro" id="act_text1"></textarea>'+
+                    '<button class="check_delete act_delete" style="float:left;display: none">删除</button>'+
+                    '</div>'+
+                    '<button id="act_add" class="check_add" style="float:left;margin-left:50px" num='+(i+1)+'>继续添加</button>'+
+                    '</div>';
+                $(this).prev().children('.check_delete').css('display','block');
+                $(this).parent().append(str);
+                $(this).remove();
+                i++;
+            }).on('click','.add_main .check_delete',function(){
+                $(this).parent().remove();
+                i--;
+            })
+        }
+        else if(id == 'app'){
+            var j = 1;
+            $('.cate_add').on('click','#app_add',function(){
+                if(j > 9)
+                    return;
+                str =
+                    '<div class="add_main">'+
+                    '<div class="add_text add_title"> (主要内容，最多添加10张图片、10份说明)</div>'+
+                    '<div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>'+
+                    '<span class="add_pic_tip">点击添加图片</span>'+
+                    '<img src="" class="add_pic_pre" id="act_img1">'+
+                    '</div>'+
+                    '<div class="add_text">微产品介绍:<span class="glyphicon glyphicon-tag"></span> </div>'+
+                    '<textarea class="add_intro" id="act_text1"></textarea>'+
+                    '<button class="check_delete act_delete" style="float:left;display: none">删除</button>'+
+                    '</div>'+
+                    '<button id="app_add" class="check_add" style="float:left;margin-left:50px" num='+(j+1)+'>继续添加</button>'+
+                    '</div>';
+                $(this).prev().children('.check_delete').css('display','block');
+                $(this).parent().append(str);
+                $(this).remove();
+                j++;
+            }).on('click','.add_main .check_delete',function(){
+                $(this).parent().remove();
+                j--;
+            })
+        }
+        else if(id == 'cartoon'){
+            $('.cate_add').on('click','#cartoon_add',function(){
+                str =
+                    '<div class="add_main">'+
+                    '<div class="add_text add_title"> (主要内容，可以添加多个图片)</div>'+
+                    '<div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>'+
+                    '<span class="add_pic_tip">点击添加图片</span>'+
+                    '<img src="" class="add_pic_pre">'+
+                    '</div>'+
+                    '<button class="check_delete" style="float:left;display: none">删除</button>'+
+                    '</div>'+
+                    '<button id="cartoon_add" class="check_add" style="float:left;margin-left:50px">继续添加</button>'
+                $(this).prev().children('.check_delete').css('display','block');
+                $(this).parent().append(str);
+            }).on('click','.add_main .check_delete',function(){
+                $(this).parent().remove();
+            })
+        }
+    });
 });

@@ -124,6 +124,33 @@
     color: #485d7a;
 }
 
+.page_confirm{
+    display: inline-block;
+    /*min-width: 300px;*/
+    /*min-height:160px;*/
+    width: 20%;
+    height:130px;
+    text-align: center;
+    cursor: pointer;
+}
+.page_confirm:hover{
+    background-color: #d3e0f5;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;;
+}
+.page_confirm_img{
+    width:70%;
+    display: inline-block;
+    vertical-align: middle;
+
+}
+.for_middle{
+    display: inline-block;
+    /*min-height:160px;*/
+    height: 100%;
+    vertical-align: middle;
+}
 #studio_table,#product_table,#news_table{
     text-align: center;
     width: 100%;
@@ -153,10 +180,20 @@
     border: 1px dashed #e1e2e6;
     padding: 20px;
     box-sizing: border-box;
+    padding-bottom: 55px;
+    margin-bottom: 5px;
 }
+
 .add_text{
     font-size: 20px;
     margin: 20px 0;
+}
+.add_title{
+    clear:both;
+    margin-top: 80px;
+}
+.add_main{
+    padding-left: 50px;
 }
 .add_input{
     padding: 5px 10px;
@@ -185,7 +222,7 @@
     resize: none;
     width:100%;
     padding: 10px;
-    height: 300px;
+    height: 200px;
     border: 1px solid #e1e2e6;
     box-sizing: border-box;
 }
@@ -199,18 +236,23 @@
     list-style: none;
     padding: 0;
 }
-.check_add{
+.check_add,.check_delete{
     width: 120px;
     height: 50px;
     border-radius: 2px;
     border: none;
-    background-color: #5eacd2;
     color: #ffffff;
     transition: background-color .3s;
     float: right;
     font-size: 20px;
 }
-.check_add:hover{
+.check_add{
+    background-color: #5eacd2;
+}
+.check_delete{
+    background-color: red;
+}
+.check_add:hover,.check_delete:hover{
     background-color: #e1e2e6;
     color: #597397;
 }
