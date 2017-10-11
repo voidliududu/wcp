@@ -252,6 +252,31 @@ $(function () {
         }
     });
 
+    //添加工作室时，点击继续添加
+    var k = 1;
+    $('#studio_add_main').on('click','#studiobut_add',function(){
+        if(k > 9)
+            return;
+        str =
+            '<div class="add_main">'+
+            '<div class="add_text add_title"> (主要内容，最多添加10张图片、10份说明)</div>'+
+            '<div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>'+
+            '<span class="add_pic_tip">点击添加图片</span>'+
+            '<img src="img/profile.png" class="add_pic_pre">'+
+            '</div>'+
+            '<div class="add_text">工作室介绍:<span class="glyphicon glyphicon-tag"></span> </div>'+
+            '<textarea class="add_intro"></textarea>'+
+            '<button class="check_delete" style="float:left;display: none">删除</button>'+
+            '</div>'+
+            '<button id="studiobut_add" class="check_add" style="float:left;margin-left:50px">继续添加</button>';
+        $(this).prev().children('.check_delete').css('display','block');
+        $(this).parent().append(str);
+        $(this).remove();
+        k++;
+    }).on('click','.add_main .check_delete',function(){
+        $(this).parent().remove();
+        k--;
+    });
     //添加产品时，选择微其中一个产品
     $('.page_confirm').unbind('click').on('click',function () {
         $('#add_product_page_confirm').css('display','none');
