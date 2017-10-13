@@ -82,7 +82,8 @@ body{
     -moz-opacity: 0.7;
     -khtml-opacity: 0.7;
 }
-#l_b_middle{
+.l_b_middle{
+    display: none;
     height:100%;
     width:70%;
     /*background-color: #2e6da4;*/

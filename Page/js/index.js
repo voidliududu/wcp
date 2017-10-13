@@ -55,83 +55,41 @@ $(function(){
     },20);
 
     $('.c_r_i_pic').on('click',function () {
-        if($(this).attr('id')){
-            id = ($(this).attr('id').split('c_r_i_')[1]);
-            $('#Index').css('display','none');
-            $('#all').css('display','block');
-            if(id == 'studio')
-                url = 'http://WEBROOT/Cooprate/product.php?m=4&t=1&c='+name.id+']&n=16';
-            else
-                url = 'http://WEBROOT/Cooprate/dept.php?m=4&id=0&num=16'
-            $.ajax({
-                url : url,
-                async : true,
-                cache : true,
-                success : function(result){
-                    str = '';
-                    if(id == 'stdio'){
-                        for(i=0;i<result.length;i++){
-                            str += '<div id="l_b_m_'+result.deptid+'" class="pic">'+
-                                '<div class="p_pic">'+
-                                '<span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="'+result.brand+'">'+
-                                '</div>'+
-                                ' </div>'
-                        }
-                    }
-                    else{
-                        for(i=0;i<result.length;i++){
-                            str += '<div id="l_b_m_'+result.pid+'" class="pic">'+
-                                '<div class="p_pic">'+
-                                '<span style="height:100%;display: inline-block;vertical-align: middle"></span><img onmouseout="hov_pic_out(this)" onmousemove="hov_pic_over(this)" class="p_p_p" src="'+result.pimg+'">'+
-                                '</div>'+
-                                ' </div>'
-                        }
-                    }
-                    $('#l_b_middle').html(str);
-                }
-            })
+        var id = $(this).attr('id').split('c_r_i_')[1];
+        $('#Index').css('display','none');
+        $('.l_b_middle-'+id).css('display','block');
+        $('#all').css('display','block');
+    });
+
+
+    $('#r_index').on('click',function () {
+        $('#Index').css('display','block');
+        $('#all').css('display','none');
+    });
+    $('.nav').on('click',function () {
+        var now = $(this).attr('id').split('r_')[1];
+        $('.l_b_middle').css({'display':'none'});
+        $('.l_b_middle-'+now).css('display','block')
+    });
+    //----------------------------------点击（出现/关闭）产品页-------------------------------------------
+    $('.pic').on('click',function () {
+        var name = $(this).parent().attr('class').substring(22,25);
+        if(name == "wyy"){
+            name = "wdy"
+        }else if(name == "gzs"||name == "app"||name == "whd"){
+            name = "wcp"
         }
-    });
-    $('#r_2').on('click',function () {
-        $('#Index').css('display','none');
         $('.page-bac').css('display','block');
-        $('.wcp-page').css('display','block');
-    });
-    $('#r_8').on('click',function () {
-        $('#Index').css('display','none');
-        $('.page-bac').css('display','block');
-        $('.wcp-page').css('display','block');
-    });
-    $('#r_5').on('click',function () {
-        $('#Index').css('display','none');
-        $('.page-bac').css('display','block');
-        $('.wcp-page').css('display','block');
-    });
-    $('#r_7').on('click',function () {
-        $('#Index').css('display','none');
-        $('.page-bac').css('display','block');
-        $('.wcp-page').css('display','block');
-    });
-    $('#r_3').on('click',function () {
-        $('#Index').css('display','none');
-        $('.page-bac').css('display','block');
-        $('.wdy-page').css('display','block');
-    });
-    $('#r_4').on('click',function () {
-        $('#Index').css('display','none');
-        $('.page-bac').css('display','block');
-        $('.mh-page').css('display','block');
-    });
-    $('#r_6').on('click',function () {
-        $('#Index').css('display','none');
-        $('.page-bac').css('display','block');
-        $('.zz-page').css('display','block');
+        $('.'+name+'-page').css("display","block");
+
     });
     $('.page-close').on('click',function () {
         $('.page-bac').css('display','none');
         $(this).parent().css('display','none');
     })
 });
+
+
 
 window.onresize = function(){
     if(document.getElementById("all").clientHeight > 600 && document.getElementById('all').clientWidth > 1080) {

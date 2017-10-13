@@ -261,7 +261,7 @@ body{
 }
 
 
-.mh-page{
+.wmh-page{
     min-width: 620px;
     min-height: 600px;
     width: 58%;
@@ -303,7 +303,7 @@ body{
 }
 
 
-.zz-page{
+.wzz-page{
     background: #222222;
     position: absolute;
     width: 100%;
@@ -414,11 +414,18 @@ body{
     height: 5%;
 }
 .wdy-page-left-bar-button{
-    background-color: red;
-    width: 50px;
-    height: 100%;
+    color: white;
+    font-size: 14px;
+    line-height: 30px;
+    width: 60px;
+    height: 30px;
     float: right;
     margin-left: 10px;
+}
+.wdy-page-left-bar-button img{
+    float: left;
+    width: 30px;
+    height: 30px;
 }
 .wdy-page-right{
     position: absolute;
