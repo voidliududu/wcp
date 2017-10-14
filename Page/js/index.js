@@ -77,6 +77,7 @@ $(function(){
         $('#b03').css('height','320px');
     });
     //----------------------------------点击（出现/关闭）产品页-------------------------------------------
+    var scrollTop = 0;
     $('.pic').on('click',function () {
         var name = $(this).parent().attr('class').substring(22,25);
         if(name == "wyy"){
@@ -91,21 +92,25 @@ $(function(){
     $('.page-close').on('click',function () {
         $('.page-bac').css('display','none');
         $(this).parent().css('display','none');
+        scrollTop = 0;
     });
-    var scrollTop = 0;
 
     //产品里的滚动条
     $('.scroll').on('mousewheel',function (event,delta) {
-        console.log(scrollTop);
+        height = $(this).children('.height');
+        console.log(height);
+
         if(delta === -1){
-            if(($($(this).children()[1]).height()*$(this).children().length) - $(this).height() +50 > scrollTop)
-                scrollTop +=50;
+            if(height.length == 0)
+                height = $(this);
+            if(($(height.children()[1]).height()*$(height).children().length) - $(this).height() +50 > scrollTop)
+                scrollTop +=100;
             $(this).scrollTop(scrollTop);
         }
         else{
             if(0 > scrollTop)
                 return;
-            scrollTop -=50;
+            scrollTop -=100;
             $(this).scrollTop(scrollTop);
         }
     })
