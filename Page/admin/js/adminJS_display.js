@@ -283,8 +283,21 @@ $(function () {
             '<div class="add_main">'+
             '<div class="add_text add_title"> (主要内容，最多添加10张图片、10份说明)</div>'+
             '<div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>'+
-            '<span class="add_pic_tip">点击添加图片</span>'+
-            '<img src="img/profile.png" class="add_pic_pre">'+
+            '<div style="margin-top:0"><form>'+
+            '<div class="form-group" enctype="multipart/form-data">'+
+            '<div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">'+
+            '<div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">'+
+            '<img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />'+
+            '</div>'+
+            '<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>'+
+            '<div>'+
+            '<span class="btn btn-primary btn-file">'+
+            '<span class="fileinput-new">选择文件</span>'+
+            '<span class="fileinput-exists">换一张</span>'+
+            '<input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>'+
+            '</span>'+
+            '<a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>'+
+            '</div> </div> </div> </form> </div>'+
             '</div>'+
             '<div class="add_text">工作室介绍:<span class="glyphicon glyphicon-tag"></span> </div>'+
             '<textarea class="add_intro"></textarea>'+
@@ -317,8 +330,21 @@ $(function () {
                     '<div class="add_main">'+
                     '<div class="add_text add_title"> (主要内容，最多添加10张图片、10份说明)</div>'+
                     '<div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>'+
-                    '<span class="add_pic_tip">点击添加图片</span>'+
-                    '<img src="" class="add_pic_pre" id="act_img1">'+
+                    '<div style="margin-top:0"><form>'+
+                    '<div class="form-group" enctype="multipart/form-data">'+
+                    '<div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">'+
+                    '<div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">'+
+                    '<img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />'+
+                    '</div>'+
+                    '<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>'+
+                    '<div>'+
+                    '<span class="btn btn-primary btn-file">'+
+                    '<span class="fileinput-new">选择文件</span>'+
+                    '<span class="fileinput-exists">换一张</span>'+
+                    '<input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>'+
+                    '</span>'+
+                    '<a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>'+
+                    '</div> </div> </div> </form> </div>'+
                     '</div>'+
                     '<div class="add_text">微产品介绍:<span class="glyphicon glyphicon-tag"></span> </div>'+
                     '<textarea class="add_intro" id="act_text1"></textarea>'+
@@ -344,8 +370,21 @@ $(function () {
                     '<div class="add_main">'+
                     '<div class="add_text add_title"> (主要内容，最多添加10张图片、10份说明)</div>'+
                     '<div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>'+
-                    '<span class="add_pic_tip">点击添加图片</span>'+
-                    '<img src="" class="add_pic_pre" id="act_img1">'+
+                    '<div style="margin-top:0"><form>'+
+                    '<div class="form-group" enctype="multipart/form-data">'+
+                    '<div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">'+
+                    '<div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">'+
+                    '<img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />'+
+                    '</div>'+
+                    '<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>'+
+                    '<div>'+
+                    '<span class="btn btn-primary btn-file">'+
+                    '<span class="fileinput-new">选择文件</span>'+
+                    '<span class="fileinput-exists">换一张</span>'+
+                    '<input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>'+
+                    '</span>'+
+                    '<a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>'+
+                    '</div> </div> </div> </form> </div>'+
                     '</div>'+
                     '<div class="add_text">微产品介绍:<span class="glyphicon glyphicon-tag"></span> </div>'+
                     '<textarea class="add_intro" id="act_text1"></textarea>'+
@@ -367,8 +406,21 @@ $(function () {
                 str =
                     '<div class="add_main">'+
                     '<div class="add_text add_title"> (主要内容，可以添加多个图片)</div>'+
-                    '<div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>'+
-                    '<span class="add_pic_tip">点击添加图片</span>'+
+                    '<div style="margin-top:0"><form>'+
+                    '<div class="form-group" enctype="multipart/form-data">'+
+                    '<div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">'+
+                    '<div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">'+
+                    '<img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />'+
+                    '</div>'+
+                    '<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>'+
+                    '<div>'+
+                    '<span class="btn btn-primary btn-file">'+
+                    '<span class="fileinput-new">选择文件</span>'+
+                    '<span class="fileinput-exists">换一张</span>'+
+                    '<input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>'+
+                    '</span>'+
+                    '<a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>'+
+                    '</div> </div> </div> </form> </div>'+
                     '<img src="" class="add_pic_pre">'+
                     '</div>'+
                     '<button class="check_delete" style="float:left;display: none">删除</button>'+

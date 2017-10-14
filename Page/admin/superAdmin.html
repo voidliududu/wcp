@@ -7,8 +7,10 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link href="css/indexCSS.css" rel="stylesheet" media="screen">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fileinput.min.css" rel="stylesheet">
+    <link href="css/indexCSS.css" rel="stylesheet" media="screen">
+
     <!--时间选择器-->
     <link rel="stylesheet" href="css/pikaday.css">
     <!--<link rel="stylesheet" href="css/site.css">-->
@@ -18,6 +20,7 @@
     <script type="text/javascript" rel="script" src="../js/define.js"></script>
     <script type="text/javascript" rel="script" src="js/adminJS.js"></script>
     <script type="text/javascript" rel="script" src="js/superAdminJS_display.js"></script>
+    <script src="js/fileinput.min.js"></script>
 
 </head>
 <body style="font-family: 'Microsoft YaHei UI', sans-serif;width: 100%;background-color: #eaeef7" >
@@ -251,8 +254,26 @@
                         <div class="add_main">
                             <div class="add_text add_title"> (主要内容，最多添加10张图片、10份说明)</div>
                             <div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                <span class="add_pic_tip">点击添加图片</span>
-                                <img src="img/profile.png" class="add_pic_pre">
+                                <div style="margin-top:0">
+                                    <form>
+                                        <div class="form-group" enctype='multipart/form-data'>
+                                            <div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">
+                                                <div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">
+                                                    <img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                <div>
+                                            <span class="btn btn-primary btn-file">
+                                                <span class="fileinput-new">选择文件</span>
+                                                <span class="fileinput-exists">换一张</span>
+                                                <input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>
+                                            </span>
+                                                    <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <div class="add_text">工作室介绍:<span class="glyphicon glyphicon-tag"></span> </div>
                             <textarea class="add_intro"></textarea>
@@ -443,14 +464,50 @@
                             </div>
                             <div class="add_text"> (添加一张1280*320像素的图片，您的图片将可能会被展示到首页上)</div>
                             <div class="add_text add_navImg">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                <span class="add_pic_tip">点击添加图片</span>
-                                <img src="" class="add_pic_pre">
+                                <div style="margin-top:0">
+                                    <form>
+                                        <div class="form-group" enctype='multipart/form-data'>
+                                            <div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">
+                                                <div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">
+                                                    <img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                <div>
+                                            <span class="btn btn-primary btn-file">
+                                                <span class="fileinput-new">选择文件</span>
+                                                <span class="fileinput-exists">换一张</span>
+                                                <input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>
+                                            </span>
+                                                    <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <div class="add_main">
                                 <div class="add_text add_title"> (主要内容，最多添加10张图片、10份说明)</div>
                                 <div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                    <span class="add_pic_tip">点击添加图片</span>
-                                    <img src="" class="add_pic_pre" id="act_img1">
+                                    <div style="margin-top:0">
+                                        <form>
+                                            <div class="form-group" enctype='multipart/form-data'>
+                                                <div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">
+                                                    <div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">
+                                                        <img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                    <div>
+                                            <span class="btn btn-primary btn-file">
+                                                <span class="fileinput-new">选择文件</span>
+                                                <span class="fileinput-exists">换一张</span>
+                                                <input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>
+                                            </span>
+                                                        <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                                 <div class="add_text">微产品介绍:<span class="glyphicon glyphicon-tag"></span> </div>
                                 <textarea class="add_intro" id="act_text1"></textarea>
@@ -472,8 +529,26 @@
                             </div>
                             <div class="add_text"> (添加一张1280*320像素的图片，您的图片将可能会被展示到首页上)</div>
                             <div class="add_text add_navImg">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                <span class="add_pic_tip">点击添加图片</span>
-                                <img src="" class="add_pic_pre">
+                                <div style="margin-top:0">
+                                    <form>
+                                        <div class="form-group" enctype='multipart/form-data'>
+                                            <div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">
+                                                <div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">
+                                                    <img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                <div>
+                                            <span class="btn btn-primary btn-file">
+                                                <span class="fileinput-new">选择文件</span>
+                                                <span class="fileinput-exists">换一张</span>
+                                                <input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>
+                                            </span>
+                                                    <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <div class="add_text"> (你可以外接网站或者直接上传APP的安装文件，如果有密码信息，请写到“文件密码里面”)</div>
                             <div class="add_text">文件网站:<span class="glyphicon glyphicon-pushpin"></span>
@@ -489,8 +564,26 @@
                             <div class="add_main">
                                 <div class="add_text add_title"> (主要内容，最多添加10张图片、10份说明)</div>
                                 <div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                    <span class="add_pic_tip">点击添加图片</span>
-                                    <img src="" class="add_pic_pre">
+                                    <div style="margin-top:0">
+                                        <form>
+                                            <div class="form-group" enctype='multipart/form-data'>
+                                                <div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">
+                                                    <div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">
+                                                        <img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                    <div>
+                                            <span class="btn btn-primary btn-file">
+                                                <span class="fileinput-new">选择文件</span>
+                                                <span class="fileinput-exists">换一张</span>
+                                                <input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>
+                                            </span>
+                                                        <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                                 <div class="add_text">微产品介绍:<span class="glyphicon glyphicon-tag"></span> </div>
                                 <textarea class="add_intro"></textarea>
@@ -512,16 +605,52 @@
                             </div>
                             <div class="add_text"> (添加一张1280*320像素的图片，您的图片将可能会被展示到首页上)</div>
                             <div class="add_text add_navImg">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                <span class="add_pic_tip">点击添加图片</span>
-                                <img src="" class="add_pic_pre">
+                                <div style="margin-top:0">
+                                    <form>
+                                        <div class="form-group" enctype='multipart/form-data'>
+                                            <div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">
+                                                <div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">
+                                                    <img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                <div>
+                                            <span class="btn btn-primary btn-file">
+                                                <span class="fileinput-new">选择文件</span>
+                                                <span class="fileinput-exists">换一张</span>
+                                                <input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>
+                                            </span>
+                                                    <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <div class="add_text">漫画介绍:<span class="glyphicon glyphicon-tag"></span> </div>
                             <textarea class="add_intro"></textarea>
                             <div class="add_main">
                                 <div class="add_text add_title"> (主要内容，可以添加多个图片)</div>
                                 <div class="add_text">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                    <span class="add_pic_tip">点击添加图片</span>
-                                    <img src="" class="add_pic_pre">
+                                    <div style="margin-top:0">
+                                        <form>
+                                            <div class="form-group" enctype='multipart/form-data'>
+                                                <div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">
+                                                    <div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">
+                                                        <img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                    <div>
+                                            <span class="btn btn-primary btn-file">
+                                                <span class="fileinput-new">选择文件</span>
+                                                <span class="fileinput-exists">换一张</span>
+                                                <input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>
+                                            </span>
+                                                        <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                                 <button class="check_delete" style="float:left;display: none">删除</button>
                             </div>
@@ -541,8 +670,26 @@
                             </div>
                             <div class="add_text"> (添加一张1280*320像素的图片，您的图片将可能会被展示到首页上)</div>
                             <div class="add_text add_navImg">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                <span class="add_pic_tip">点击添加图片</span>
-                                <img src="" class="add_pic_pre">
+                                <div style="margin-top:0">
+                                    <form>
+                                        <div class="form-group" enctype='multipart/form-data'>
+                                            <div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">
+                                                <div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">
+                                                    <img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                <div>
+                                            <span class="btn btn-primary btn-file">
+                                                <span class="fileinput-new">选择文件</span>
+                                                <span class="fileinput-exists">换一张</span>
+                                                <input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>
+                                            </span>
+                                                    <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <div class="add_text"> (只能上传一份PPT、WORD或PDF文件来展示你的杂志，请您将要展示的信息都显示在杂志上。)</div>
                             <div class="add_text">&nbsp文 件 :<span class="glyphicon glyphicon-picture add_pic"></span>
@@ -564,8 +711,26 @@
                             </div>
                             <div class="add_text"> (添加一张1280*320像素的图片，您的图片将可能会被展示到首页上)</div>
                             <div class="add_text add_navImg">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                <span class="add_pic_tip">点击添加图片</span>
-                                <img src="" class="add_pic_pre">
+                                <div style="margin-top:0">
+                                    <form>
+                                        <div class="form-group" enctype='multipart/form-data'>
+                                            <div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">
+                                                <div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">
+                                                    <img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                <div>
+                                            <span class="btn btn-primary btn-file">
+                                                <span class="fileinput-new">选择文件</span>
+                                                <span class="fileinput-exists">换一张</span>
+                                                <input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>
+                                            </span>
+                                                    <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <div class="add_text"> (你可以外接网站或者直接上传电影文件)</div>
                             <div class="add_text">电影网站:<span class="glyphicon glyphicon-pushpin"></span>
@@ -590,8 +755,26 @@
                             </div>
                             <div class="add_text"> (添加一张1280*320像素的图片，您的图片将可能会被展示到首页上)</div>
                             <div class="add_text add_navImg">图片:<span class="glyphicon glyphicon-picture add_pic"></span>
-                                <span class="add_pic_tip">点击添加图片</span>
-                                <img src="" class="add_pic_pre">
+                                <div style="margin-top:0">
+                                    <form>
+                                        <div class="form-group" enctype='multipart/form-data'>
+                                            <div class="fileinput fileinput-new" data-provides="fileinput"  id="exampleInputUpload">
+                                                <div class="fileinput-new thumbnail" style="width: 200px;height: auto;max-height:150px;">
+                                                    <img style="width: 100%;height: auto;max-height: 140px;" src="img/noimage.png" alt="" />
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+                                                <div>
+                                            <span class="btn btn-primary btn-file">
+                                                <span class="fileinput-new">选择文件</span>
+                                                <span class="fileinput-exists">换一张</span>
+                                                <input type="file" name="pic1" id="picID" accept="image/gif,image/jpeg,image/x-png"/>
+                                            </span>
+                                                    <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <div class="add_text"> (你可以外接网站或者直接上传电影文件)</div>
                             <div class="add_text">音乐网站:<span class="glyphicon glyphicon-pushpin"></span>
