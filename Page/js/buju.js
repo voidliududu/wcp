@@ -1,4 +1,28 @@
 $(function () {
+    scrollTop = 0;
+    $('.bodyScroll').on('mousewheel',function (event,delta) {
+        if(delta === -1){
+            if(800 - $(window).height() -50 > scrollTop )
+                 scrollTop +=50;
+            $('body').scrollTop(scrollTop);
+        }
+        else{
+            if(0 > scrollTop)
+                return;
+            scrollTop -=50;
+            $('body').scrollTop(scrollTop);
+        }
+    });
+    //图片滚动
+    var unslider04 = $('#b03').unslider({
+            dots: true
+        }),
+        data04 = unslider04.data('unslider');
+    $('.unslider-arrow04').click(function() {
+        var fn = this.className.split(' ')[1];
+        data04[fn]();
+    });
+    //
     function move(direction, obj) {
         if (obj) {
             NOW = obj.index;

@@ -7,7 +7,7 @@ body{
     text-align:center;
     margin: 0 auto;
     padding:0;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     /*background-image: url(img/1.jpg);*/
     /*background-repeat: no-repeat;*/
     /*background-size: cover;*/
@@ -21,8 +21,8 @@ body{
 .page-close{
     cursor: pointer;
     z-index: 10;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     position: absolute;
 }
 .wcp-page{
@@ -275,10 +275,10 @@ body{
 }
 .mh-page-close{
     cursor: pointer;
-    z-index: 10;
     width: 50px;
     height: 50px;
     position: fixed;
+    z-index: 100;
     right: 50px;
     top: 0;
 }
@@ -368,7 +368,7 @@ body{
     text-align: center;
 }
 .zz-page-num li img{
-    width: 100%;
+    width: 70%;
     height: 100%;
 }
 .zz-page-num-first img{
@@ -465,3 +465,33 @@ body{
 .wdy-page-right-movie-desc span{
     color: #E0E0E0;
 }
+
+ul, ol { padding: 0;}
+.l_banner { position: relative; overflow: auto; text-align: center;}
+.l_banner li { list-style: none; }
+.l_banner ul li { float: left; }
+#b03 { width: 1280px;left:50%;margin-left: -640px;margin-top: -16px;margin-bottom: 20px;}
+#b03 .dots { position: absolute; left: 0; right: 0; bottom: 20px;}
+#b03 .dots li
+{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    text-indent: -999em;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: .4;
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+}
+#b03 .dots li.active
+{
+    background: #fff;
+    opacity: 1;
+}
+#b03 .arrow { position: absolute; top: 200px;}
+#b03 #al { left: 15px;}
+#b03 #ar { right: 15px;}

@@ -59,17 +59,22 @@ $(function(){
         $('#Index').css('display','none');
         $('.l_b_middle-'+id).css('display','block');
         $('#all').css('display','block');
+        $('#b03').css('height','320px');
+
     });
 
 
     $('#r_index').on('click',function () {
         $('#Index').css('display','block');
         $('#all').css('display','none');
+        $('#b03').css('height','320px');
+
     });
     $('.nav').on('click',function () {
         var now = $(this).attr('id').split('r_')[1];
         $('.l_b_middle').css({'display':'none'});
-        $('.l_b_middle-'+now).css('display','block')
+        $('.l_b_middle-'+now).css('display','block');
+        $('#b03').css('height','320px');
     });
     //----------------------------------点击（出现/关闭）产品页-------------------------------------------
     $('.pic').on('click',function () {
@@ -86,18 +91,35 @@ $(function(){
     $('.page-close').on('click',function () {
         $('.page-bac').css('display','none');
         $(this).parent().css('display','none');
+    });
+    var scrollTop = 0;
+
+    //产品里的滚动条
+    $('.scroll').on('mousewheel',function (event,delta) {
+        console.log(scrollTop);
+        if(delta === -1){
+            if(($($(this).children()[1]).height()*$(this).children().length) - $(this).height() +50 > scrollTop)
+                scrollTop +=50;
+            $(this).scrollTop(scrollTop);
+        }
+        else{
+            if(0 > scrollTop)
+                return;
+            scrollTop -=50;
+            $(this).scrollTop(scrollTop);
+        }
     })
 });
 
 
 
 window.onresize = function(){
-    if(document.getElementById("all").clientHeight > 600 && document.getElementById('all').clientWidth > 1080) {
-        $('body').css('overflow','hidden');
-    }
-    else{
-        $('body').css('overflow','auto');
-    }
+    // if(document.getElementById("all").clientHeight > 600 && document.getElementById('all').clientWidth > 1080) {
+    //     $('body').css('overflow','hidden');
+    // }
+    // else{
+    //     $('body').css('overflow','auto');
+    // }
 
     if($('#Index').css('display') != 'none'){
         if(document.getElementById("Index").clientHeight > 600 && document.getElementById('Index').clientWidth > 1080){

@@ -360,5 +360,7 @@ document.onkeypress=key_manager;
 
 document.onkeyup=release;
 
-document.onmousewheel=mouse_wheel; if(window.addEventListener) window.addEventListener('DOMMouseScroll',mouse_wheel,false);
+document.onmousewheel=mouse_wheel;
+
+if(window.addEventListener) window.addEventListener('DOMMouseScroll',mouse_wheel,false);
 

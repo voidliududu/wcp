@@ -29,6 +29,8 @@
 <script src="js/indexCanvas.js"></script>
 <script src="js/define.js"></script>
 <script src="js/index.js"></script>
+<script src="js/jquery.mousewheel.js"></script>
+<script src="js/unslider.min.js"></script>
 <!--<script src="js/Move.js"></script>-->
 
 <body id="body" onload="start()" onresize="resize()" onorientationchange="resize()" onmousedown="context.fillStyle='rgba(240,240,245,'+opacity+')'" onmouseup="context.fillStyle='rgb(240,240,245)'">
@@ -37,7 +39,7 @@
 <div id="adsense" style="position:absolute;background-color:transparent;display:none">
 
 </div>
-<div id="Index" style="display: block">
+<div id="Index" class="bodyScroll" style="display: block">
     <div id="cell">
         <div class="headBlank"></div>
         <div id="c_line1" class="cell">
@@ -178,14 +180,25 @@
         </div>
     </div>
 </div>
-<div id="all" style="display: none;">
+<div id="all" class="bodyScroll" style="display: none;">
     <div id="left">
         <div id="l_head">
-
             <div id="l_h_png"><img id="l_h_p_img"  src="img/titlePng.png"/></div>
             <div id="l_h_title">中南大学微产品创新工作室</div>
         </div>
-        <div id="l_banner"></div>
+
+            <div class="l_banner" id="b03" >
+                <ul>
+                    <li><img src="img/head-background.jpg" style="width: 100%;height: 320px;z-index:1"></li>
+                    <li><img src="img/head-background.jpg" style="width: 100%;height: 320px;z-index:1"></li>
+                    <li><img src="img/head-background.jpg" style="width: 100%;height: 320px;z-index:1"></li>
+                    <li><img src="img/head-background.jpg" style="width: 100%;height: 320px;z-index:1"></li>
+                    <li><img src="img/head-background.jpg" style="width: 100%;height: 320px;z-index:1"></li>
+                </ul>
+                <!--<a href="javascript:void(0);" class="unslider-arrow04 prev"><img class="arrow" id="al" src="arrowl.png" alt="prev" width="20" height="35"></a>-->
+                <!--<a href="javascript:void(0);" class="unslider-arrow04 next"><img class="arrow" id="ar" src="arrowr.png" alt="next" width="20" height="37"></a>-->
+            </div>
+
         <div id="right">
             <div id="r_index" class="nav">
                 <img class="n_n_n" src="img/index/IconIndex.png">
@@ -418,7 +431,7 @@
             </div>
         </div>
         <div id="l_foot">
-            <!--<br>-->
+            <br>
             Copyright©2001-2017 中南大学微产品创意工作室 版权所有
             <br>
             湖南长沙岳麓区麓山南路932号 410083
@@ -430,6 +443,8 @@
 
 </div>
 <div class="page-bac" style="display: none"></div>
+
+<!--微APP、工作室、微活动用这个div-->
 <div class="wcp-page" style="display: none;z-index:9;">
     <img src="img/close.png" alt="" class="zz-page-close page-close">
     <div id="container"></div>
@@ -460,7 +475,9 @@
         </div>
     </div>
 </div>
-<div class="wmh-page" style="display: none;z-index: 9">
+
+<!--微漫画用这个div-->
+<div class="wmh-page scroll" style="display: none;z-index: 10000">
     <img src="img/close.png" alt="" class="mh-page-close page-close">
     <div class="mh-page-whole">
         <div class="mh-page-one mh-page-com">
@@ -477,13 +494,15 @@
         </div>
     </div>
 </div>
+
+<!--微杂志用这个div-->
 <div class="wzz-page" style="display: none;z-index:9">
     <img src="img/close.png" alt="" class="zz-page-close page-close">
     <div class="zz-page-contain"></div>
     <div class="zz-page-num">
         <ul>
             <li class="zz-page-num-first"><img src="img/last.png" alt=""></li>
-            <li class="zz-page-num-pre"><img src="img/pre.png" alt=""></li>
+            <li class="zz-page-num-pre"><img style="width: 100%" src="img/pre.png" alt=""></li>
             <li><div>1</div></li>
             <li><div>2</div></li>
             <li><div>3</div></li>
@@ -495,6 +514,8 @@
         </ul>
     </div>
 </div>
+
+<!--微音乐 微电影用这个div-->
 <div class="wdy-page" style="display: none;z-index:9">
     <img src="img/close.png" alt="" class="zz-page-close page-close">
     <div class="wdy-page-left">
@@ -507,7 +528,7 @@
         </div>
     </div>
     <div class="wdy-page-right">
-        <div class="wdy-page-right-all">
+        <div class="wdy-page-right-all scroll">
             <div class="wdy-page-right-movie">
                 <img src="img/close.png" alt="">
                 <div class="wdy-page-right-movie-desc">
