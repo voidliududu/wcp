@@ -15,7 +15,7 @@
         canvas{background-color:rgb(240,240,245);overflow:hidden}
 
     </style>
-
+    <link href="css/video-js.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet" media="screen">
     <link href="css/index2.css" rel="stylesheet" media="screen">
     <link href="css/buju.css" rel="stylesheet" media="screen">
@@ -31,7 +31,9 @@
 <script src="js/index.js"></script>
 <script src="js/jquery.mousewheel.js"></script>
 <script src="js/unslider.min.js"></script>
-<!--<script src="js/Move.js"></script>-->
+<script src="js/video.min.js"></script>
+<!-- If you'd like to support IE8 -->
+<script src="js/videojs-ie8.min.js"></script>
 
 <body id="body" onload="start()" onresize="resize()" onorientationchange="resize()" onmousedown="context.fillStyle='rgba(240,240,245,'+opacity+')'" onmouseup="context.fillStyle='rgb(240,240,245)'">
 
@@ -521,11 +523,22 @@
     <img src="img/close.png" alt="" class="zz-page-close page-close">
     <div class="wdy-page-left">
         <div class="wdy-page-left-info">《天使之路》 卢麒烨T台秀意外摔倒</div>
-        <div class="wdy-page-left-screen"></div>
+        <div class="wdy-page-left-screen">
+            <video id="my-video" class="video-js" controls preload="auto" width="640" height="264"
+                   poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+                <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+                <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
+                <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a web browser that
+                    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
+        </div>
         <div class="wdy-page-left-bar">
-            <div class="wdy-page-left-bar-button"><img src="img/share.png" alt=""><span>分享</span></div>
-            <div class="wdy-page-left-bar-button"><img src="img/collect.png" alt=""><span>收藏</span></div>
-            <div class="wdy-page-left-bar-button"><img src="img/good.png" alt=""><span>点赞</span></div>
+            <!--<div class="wdy-page-left-bar-button"><img src="img/share.png" alt=""><span>分享</span></div>-->
+            <div class="wdy-page-left-bar-button"><img src="img/collect.png" alt=""><span></span></div>
+            <div class="wdy-page-left-bar-button"><img src="img/good.png" alt=""><span>10000+</span></div>
         </div>
     </div>
     <div class="wdy-page-right ">
